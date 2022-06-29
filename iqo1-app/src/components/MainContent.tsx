@@ -3,65 +3,53 @@ import { FormattedMessage, IntlProvider } from "react-intl";
 import{messages} from '../i18n/eng';
 import { LOCALES } from "../i18n/constants";
 import styled from "styled-components";
+import { Canvas, } from '@react-three/fiber';
+import RenderGltf from "./Model3D";
 
 const MainContent = () => {
 
   const[locale, setLocale]= useState(LOCALES.ENGLISH);
-  
+
   return (
     <IntlProvider messages={messages[locale]} locale={locale} >
-        <HeaderContainer>
-            <NavContainer>
-                <div><FormattedMessage id="home" /></div>
-                <div><FormattedMessage id="pages" /></div>
-                <div><FormattedMessage id="terms" /></div>
-                <div><FormattedMessage id="blog" /></div>
-                <div><FormattedMessage id="contacts" /></div>
-            </NavContainer>
-            <LoginButtonContainer>
-                <div>eng</div>
-                <LoginButton>Login</LoginButton>
-            </LoginButtonContainer>
-        </HeaderContainer>
+       
+        <MainContentContainer>
+            <MainTextContainer>
+                <FormattedMessage id="slogan"/>
+            </MainTextContainer>
+            <CanvasContainer>
+                <Canvas>
+                    <RenderGltf /> 
+                </Canvas>
+            </CanvasContainer>
+        </MainContentContainer>
     </IntlProvider>
   );
 };
 
 export default MainContent;
 
-const HeaderContainer = styled.div`
-height: 120px;
-color: white;
+const MainContentContainer = styled.div`
 display: flex;
-justify-content: space-between ;
+justify-content: space-between;
+height: calc(100vh - 120px) ;
 align-items: center;
 `;
 
-const NavContainer = styled.div`
-width: 30vw;
+const MainTextContainer = styled.div`
 display: flex;
-justify-content: space-between ;
+width: 500px;
 margin-left: 300px;
 `;
 
-const LoginButtonContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 150px;
-    margin-right: 300px;
+const MainTextHeader = styled.div`
+display: flex;
+width: 500px;
+margin-left: 300px;
 `;
 
-const LoginButton = styled.button`
-border-radius: none;
-border:2px solid white;
-background: none;
-color: white;
-font-weight: bold;
-height: 40px;
-width: 90px;
-
-:hover{
-    cursor: pointer;
-}
+const CanvasContainer = styled.div`
+width: 400px;
+height: 600px;
+margin-right: 200px;
 `;

@@ -7,6 +7,6 @@ export const messages = {
        terms: "Terms & Conditions",
        blog: "Blog",
        contacts: "Contacts",
-       
+       slogan: "TRADE WITH TRUSTED",
    }
 };
