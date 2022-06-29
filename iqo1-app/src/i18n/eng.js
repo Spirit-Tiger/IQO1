@@ -7,6 +7,11 @@ export const messages = {
        terms: "Terms & Conditions",
        blog: "Blog",
        contacts: "Contacts",
-       slogan: "TRADE WITH TRUSTED",
+       language_change1: "ENG",
+       language_change2: "PL",
+       login_btn: "LOGIN",
+       slogan_header: "TRADE WITH TRUSTED",
+       slogan_text: "We will help you start learning",
+       starting_btn: "GET STARTED",
    }
 };
