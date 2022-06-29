@@ -6,6 +6,7 @@ export const messages = {
        pages: "Pages",
        terms: "Terms & Conditions",
        blog: "Blog",
-       contacts: "Contacts"
+       contacts: "Contacts",
+       
    }
 };

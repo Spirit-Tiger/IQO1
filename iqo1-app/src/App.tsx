@@ -5,37 +5,12 @@ import { LOCALES } from './i18n/constants';
 import{messages} from './i18n/eng';
 import styled from 'styled-components';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Canvas, useFrame, useLoader, } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import * as THREE from 'three/src/Three'
-import { Stage,} from '@react-three/drei';
+import { Canvas, } from '@react-three/fiber';
+
+import RenderGltf from './components/Model3D';
 
 import MainImg from "./main_background.png";
 import MainPage from './pages/Main.Page';
-
-const RenderGltf = () => {
-  const gltf = useLoader(GLTFLoader, '/scene.gltf')
-  const mesh = useRef<THREE.Mesh>(null);
-  useFrame(() => {if (mesh.current !== null) {
-    mesh.current.rotation.y += 0.01;
-  }})
-  useEffect(()=>{
-    gltf.scene.scale.set(2,2,2);
-  },[]);
-
-  console.log(gltf);
- 
-
-  return (
-    <Stage intensity={1}> 
-    <mesh ref={mesh}  >
-      <Suspense fallback={null}>
-        <primitive object={gltf.scene} />
-      </Suspense>
-    </mesh>
-   </Stage>
-  )
-}
 
 
 function App() {
