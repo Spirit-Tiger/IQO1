@@ -13,25 +13,27 @@ const MainContent = () => {
 
     return (
         <WorkWithUsFrame>
-            <HeadContainer>
-                <Head><FormattedMessage id="work_header" /></Head>
-                <WorkParagraph><FormattedMessage id="work_header__p"/></WorkParagraph>
-            </HeadContainer>
-            <MainContentContainer>
-            <PhoneWrap>
-                <PhoneContainer>
-                    <EthContainer>
-                    <Canvas>
-                    <RenderGltf shadow={true} scale={1.5} version={2} /> 
-                    </Canvas>
-                    </EthContainer>
-                </PhoneContainer>
-                <GradientButton textId="work_btn" />
-                </PhoneWrap>
-                <TextBlockWrap>
-                    <WorkTextBlock/>
-                </TextBlockWrap>
-            </MainContentContainer>
+            <FlexContainer>
+                <HeadContainer>
+                    <Head><FormattedMessage id="work_header" /></Head>
+                    <WorkParagraph><FormattedMessage id="work_header__p"/></WorkParagraph>
+                </HeadContainer>
+                <MainContentContainer>
+                    <PhoneWrap>
+                        <PhoneContainer>
+                            <EthContainer>
+                            <Canvas>
+                            <RenderGltf shadow={true} scale={1.5} version={2} /> 
+                            </Canvas>
+                            </EthContainer>
+                        </PhoneContainer>
+                        <GradientButton textId="work_btn" />
+                    </PhoneWrap>
+                    <TextBlockWrap>
+                        <WorkTextBlock/>
+                    </TextBlockWrap>
+                </MainContentContainer>
+            </FlexContainer>
         </WorkWithUsFrame>
     )
 
@@ -39,15 +41,21 @@ const MainContent = () => {
 
 export default MainContent;
 
+const FlexContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 67.8vw;
+`;
+
 const Head = styled.h2`
 font-size:32px;
 line-height: 54px;
 color:  #FFFFFF;
 margin: 0;
+align-self: flex-start;
 `
 
 const HeadContainer = styled.div`
-margin: 80px 0 0 310px;
 @media (min-width: 350px) {
     margin: 40px 0 0 40px;
   }
@@ -55,16 +63,15 @@ margin: 80px 0 0 310px;
     margin: 60px 0 0 140px;
 }
 @media (min-width: 1080px) {
-    margin: 80px 0 0 310px;
+    margin: 80px 0 40px 0;
 }
     
 `
 const MainContentContainer = styled.div`
 display: flex;
-justify-content: space-around;
 height: 100% ;
-flex-wrap: wrap ;
 align-items: center;
+justify-content: space-between;
 flex-direction: row;
 
 `;
@@ -76,6 +83,7 @@ max-width: 100%;
 background: #12181E; 
 display: flex;
 flex-direction: column;
+align-items: center;
 padding: 0;
 margin: 0;
 `

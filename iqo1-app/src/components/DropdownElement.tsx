@@ -42,7 +42,7 @@ export default DropdownElement;
 const DropdownElementContainer = styled.div<{isActive: boolean}>`
      width: 33.3vw;
      height: ${props => props.isActive ? 'inherit':'61px' };
-     background-color: #6a6c6e;
+     background-color: #1C1D1F;;
      border-radius: 10px;
      overflow: hidden;
      margin-bottom: 20px;
