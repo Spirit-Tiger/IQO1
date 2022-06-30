@@ -48,7 +48,7 @@ justify-content: center;
 align-items: center;
 column-gap: 33px ;
 row-gap: 20px;
-overflow-y: auto;
+overflow:visible;
 padding: 15px 0;
 width: 700px;
 min-width: 350px;
@@ -67,12 +67,17 @@ const Item = styled.div`
 display: flex;
     width: 310px;
     height: 345px;
+    background-color: #12181e;
    /* outline: solid 1px #FFFFFF blur(3px); */
    box-shadow: 0px 0px 5px 5px #ffffff3b;
    justify-content: flex-start;
    /* align-items: center; */
    text-align: justify;
    flex-direction: column;
+   transition:all 0.25s ease;
+   :hover{
+    transform: scale(1.2);
+   }
 `
 const ItemHead = styled.h2`
     font-size: 24px;
