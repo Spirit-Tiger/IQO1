@@ -44,7 +44,6 @@ export default MainContent;
 const FlexContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 67.8vw;
 `;
 
 const Head = styled.h2`
@@ -60,20 +59,29 @@ const HeadContainer = styled.div`
     margin: 40px 0 0 40px;
   }
 @media (min-width: 768px) {
-    margin: 60px 0 0 140px;
+    margin: 60px 0 0 0;
 }
 @media (min-width: 1080px) {
     margin: 80px 0 40px 0;
 }
     
+@media (max-width: 1260px) {
+    align-self: center;
+    }
 `
 const MainContentContainer = styled.div`
 display: flex;
 height: 100% ;
+width: 1300px;
 align-items: center;
 justify-content: space-between;
-flex-direction: row;
+flex-wrap: wrap;
 
+@media (max-width: 1300px) {
+    width: 100%;
+    max-width: 1300px;
+    justify-content: center;
+    }
 `;
 
 const WorkWithUsFrame = styled.div`
@@ -113,16 +121,8 @@ height: 400px;
 margin: 0 45px 250px 0;
 `
 
-export const Btn = styled.button`
-  background: linear-gradient(to left, #967113, #FFB800);
-  display: block;
-  width: 200px;
-  height: 50px;
-  border: none;
-  border-radius: 8px;
-`
 const PhoneWrap = styled.div`
-  display:flex;
+display:flex;
 justify-content: center;
 align-items: center;
 height: 100%;
