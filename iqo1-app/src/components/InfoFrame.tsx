@@ -57,15 +57,13 @@ const ThirdFrameContainer= styled.div`
     width: 100vw;
     max-width: 100%;
     padding-top: 80px;
-    background-color: #1E1E1E;
+    background-color: #12181E;
     color: white;
     display: flex;
     justify-content: center;
 `;
 
 const FlexContainer= styled.div`
-    //width: 1300px;
-    background-color: #1E1E1E;
     color: white;
     display: flex;
     flex-direction: column;
@@ -108,8 +106,7 @@ const InfoBlock = styled.div`
     font-size: 4em;
     border: 1px solid;
     border-image-slice:1 ;
-    border-image-source: linear-gradient( rgba(255, 255, 255, 0.7)0 15%, rgba(0, 0, 0, 0.5) 40% 65%,rgba(255, 255, 255, 1));
-
+    border-image-source: linear-gradient( rgba(255, 255, 255, 0.7) 0 15%, rgba(0, 0, 0, 0.5) 40% 65%,rgba(255, 255, 255, 1));
 `;
 
 const InfoText = styled.p`

@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import MainContent from "../components/MainContent";
 import InfoFrame from "../components/InfoFrame";
 import MainImg from "../images/main_background.png";
+import WorkWithUs from '../components/WorkWithUs'
 import DropdownFrame from "../components/DropdownFrame";
 
 const MainPage = () => {
@@ -13,9 +14,11 @@ const MainPage = () => {
             <Header />
             <MainContent />
         </MainFrame>
+        <WorkWithUs />
         <InfoFrame />
         <DropdownFrame />
     </div>
+
   );
 };
 

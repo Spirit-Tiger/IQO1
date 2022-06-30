@@ -47,7 +47,7 @@ const DropdownFrameContainer = styled.div`
     width: 100vw;
     max-width: 100%;
     padding-top: 150px;
-    background-color: #1E1E1E;
+    background-color: #12181E;
     color: white;
     display: flex;
     justify-content: center;

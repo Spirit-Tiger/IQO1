@@ -30,7 +30,7 @@ const MainContent = () => {
             </MainTextContainer>
             <CanvasContainer>
                 <Canvas>
-                    <RenderGltf /> 
+                    <RenderGltf shadow={false} scale={2} version={1}/> 
                 </Canvas>
             </CanvasContainer>
         </MainContentContainer>
