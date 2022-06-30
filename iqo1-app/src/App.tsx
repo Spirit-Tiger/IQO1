@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 import { LOCALES } from './i18n/constants';
 import{messages} from './i18n/eng';
@@ -18,9 +17,6 @@ function App() {
     <BrowserRouter>
       <IntlProvider messages={messages[locale]} locale={locale} >
           <MainPage />
-            <StyledMessage>
-              <FormattedMessage id="home" />
-            </StyledMessage>
       </IntlProvider>
     </BrowserRouter>
   );
@@ -28,9 +24,6 @@ function App() {
 
 export default App;
 
-const StyledMessage = styled.p`
-    font-size: 4em;
-`;
 
 
 

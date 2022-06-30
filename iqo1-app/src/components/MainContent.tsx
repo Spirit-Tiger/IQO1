@@ -5,6 +5,7 @@ import { LOCALES } from "../i18n/constants";
 import styled from "styled-components";
 import { Canvas, } from '@react-three/fiber';
 import RenderGltf from "./Model3D";
+import GradientButton from "./GradientButton";
 
 const MainContent = () => {
 
@@ -20,9 +21,7 @@ const MainContent = () => {
                 <MainText>
                     <FormattedMessage id="slogan_text"/>
                 </MainText>
-                <GetStartedButton>
-                    <FormattedMessage id="starting_btn"/>
-                </GetStartedButton>
+                <GradientButton textId="starting_btn"/>
                 <MockCaruselChange>
                     <Mock1></Mock1>
                     <Mock2></Mock2>
@@ -44,6 +43,7 @@ export default MainContent;
 const MainContentContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    width: 1300px;
     height: calc(100vh - 120px) ;
     align-items: center;
 `;
@@ -53,7 +53,6 @@ const MainTextContainer = styled.div`
     display: flex;
     flex-direction: column ;
     width: 600px;
-    margin-left: 300px;
 `;
 
 const MainTextHeader = styled.h1`
@@ -70,23 +69,8 @@ const MainText = styled.p`
 const CanvasContainer = styled.div`
     width: 400px;
     height: 600px;
-    margin-right: 300px;
 `;
 
-const GetStartedButton = styled.button`
-    color: white;
-    font-weight: bold;
-    border: none;
-    background: linear-gradient(92.77deg, #FFB800 16.59%, #9D7100 97.23%);
-    border-radius: 8px;
-    height: 40px;
-    width: 180px;
-    margin-top: 60px;
-
-    :hover {
-        cursor: pointer;
-    }
-`;
 
 const MockCaruselChange = styled.div`
     display:flex;

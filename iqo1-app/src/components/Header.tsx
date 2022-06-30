@@ -33,6 +33,7 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.div`
+    width: 1300px;
     height: 120px;
     color: white;
     display: flex;
@@ -41,10 +42,10 @@ const HeaderContainer = styled.div`
 `;
 
 const NavContainer = styled.div`
-    width: 30vw;
+    width: 27vw;
+    min-width: 500px;
     display: flex;
     justify-content: space-between ;
-    margin-left: 300px;
 `;
 
 const LoginButtonContainer = styled.div`
@@ -52,7 +53,6 @@ const LoginButtonContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 210px;
-    margin-right: 300px;
 `;
 
 const LoginButton = styled.button`
