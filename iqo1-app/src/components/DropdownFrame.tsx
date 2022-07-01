@@ -71,6 +71,18 @@ const AllDropdowns = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
+    flex-wrap: wrap;
+@media (min-width:350px) {
+    flex-direction: column;
+}
+@media (min-width:768px) {
+    width: 82vw;
+    flex-direction: row;
+}
+@media (min-width:1080px) {
+    width: 67vw;
+    flex-direction: row;
+}
 `;
 
 
