@@ -15,22 +15,22 @@ const WorkTextBlock = () => {
        <Container>
         <Item>
             <StyledSVG/>
-            <ItemHead>kek</ItemHead>
+            <ItemHead><FormattedMessage id="work_txt_head_blck1"/></ItemHead>
             <ItemText><FormattedMessage id="work_txt_blck1"/></ItemText>
         </Item>
         <Item>
             <StyledSVG1/>
-            <ItemHead>kek</ItemHead>
+            <ItemHead><FormattedMessage id="work_txt_head_blck2"/></ItemHead>
             <ItemText><FormattedMessage id="work_txt_blck2"/></ItemText>
         </Item>
         <Item>  
             <StyledSVG2/>
-            <ItemHead>kek</ItemHead>
+            <ItemHead><FormattedMessage id="work_txt_head_blck3"/></ItemHead>
             <ItemText><FormattedMessage id="work_txt_blck3"/></ItemText>
         </Item>
         <Item> 
             <StyledSVG3/>
-            <ItemHead>kek</ItemHead>
+            <ItemHead><FormattedMessage id="work_txt_head_blck4"/></ItemHead>
             <ItemText><FormattedMessage id="work_txt_blck4"/></ItemText>
         </Item>
 
@@ -64,25 +64,35 @@ width: 750px ;
 /* margin-bottom: 100px; */
 `
 const Item = styled.div`
+@keyframes learn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 display: flex;
     width: 310px;
     height: 345px;
     background-color: #12181e;
    /* outline: solid 1px #FFFFFF blur(3px); */
    box-shadow: 0px 0px 5px 5px #ffffff3b;
-   justify-content: flex-start;
-   /* align-items: center; */
+   justify-content: center;
+   align-items: center;
    text-align: justify;
    flex-direction: column;
    transition:all 0.25s ease;
+   p{
+    opacity: 0;
+   }
    :hover{
     transform: scale(1.2);
-   }
+    p{
+       animation: 1s learn 1 forwards;
+    };
+}
 `
 const ItemHead = styled.h2`
     font-size: 24px;
     color:white;
-    margin: 0 0 0 40px;
+
    
 `
 const ItemText = styled.p`
