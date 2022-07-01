@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef, useMemo } from 'react';
+import React, { Suspense, useEffect, useRef, useMemo, useState, useCallback } from 'react';
 import { Canvas, useFrame, useLoader, } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three/src/Three'
@@ -14,8 +14,18 @@ const RenderGltf = ({ shadow, scale, version }: myProps) => {
     const gltf = useLoader(GLTFLoader, '/scene.gltf')
     const gltf2 = useLoader(GLTFLoader, '/scene2.gltf')
     const mesh = useRef<THREE.Mesh>(null);
+    let dir :boolean;
     useFrame(() => {if (mesh.current !== null) {
       mesh.current.rotation.y += 0.01;
+      if (version == 2) {
+        if( parseFloat(mesh.current.position.y.toPrecision(5)) <= 0.00){
+          dir = true
+        }
+        if(parseFloat(mesh.current.position.y.toPrecision(5)) >= 0.6){
+          dir = false
+        }
+        dir ? mesh.current.position.y += 0.01 : mesh.current.position.y -= 0.01;
+      }
     }})
     useEffect(()=>{
       version==1 ?
