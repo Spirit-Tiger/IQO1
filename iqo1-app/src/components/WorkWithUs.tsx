@@ -22,9 +22,9 @@ const MainContent = () => {
                     <PhoneWrap>
                         <PhoneContainer>
                             <EthContainer>
-                            <Canvas>
-                            <RenderGltf shadow={true} scale={1.5} version={2} /> 
-                            </Canvas>
+                                <Canvas>
+                                    <RenderGltf shadow={true} scale={1.5} version={2} /> 
+                                </Canvas>
                             </EthContainer>
                         </PhoneContainer>
                         <GradientButton textId="work_btn" />
@@ -47,53 +47,55 @@ const FlexContainer = styled.div`
 `;
 
 const Head = styled.h2`
-font-size:32px;
-line-height: 54px;
-color:  #FFFFFF;
-margin: 0;
-align-self: flex-start;
+    color:  #FFFFFF;
+    margin: 0;
+
+    @media (min-width: 768px) {
+        font-size: 2em;
+        line-height: 54px;
+        align-self: flex-start;
+    }
+   
 `
 
 const HeadContainer = styled.div`
-@media (min-width: 350px) {
-    margin: 40px 0 0 40px;
-  }
-@media (min-width: 768px) {
-    margin: 60px 0 0 0;
-}
-@media (min-width: 1080px) {
-    margin: 80px 0 40px 0;
-}
-    
-@media (max-width: 1260px) {
-    align-self: center;
+    @media (min-width: 320px) {
+        margin: 40px 0 0 40px;
     }
+    @media (min-width: 768px) {
+        margin: 60px 0 0 0;
+    }
+    @media (min-width: 1080px) {
+        margin: 80px 0 40px 0;
+    }
+    
 `
 const MainContentContainer = styled.div`
-display: flex;
-height: 100% ;
-width: 1300px;
-align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
+    display: flex;
+    height: 100% ;
+    width: 1300px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-@media (max-width: 1300px) {
-    width: 100%;
-    max-width: 1300px;
-    justify-content: center;
+    @media (max-width: 1300px) {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
     }
+
 `;
 
 const WorkWithUsFrame = styled.div`
-width: 100vw;
-height: 100%;
-max-width: 100%;
-background: #12181E; 
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0;
-margin: 0;
+    width: 100vw;
+    height: 100%;
+    max-width: 100%;
+    background: #12181E; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 `
 const WorkParagraph = styled.p`
     font-size: 16px;
@@ -101,41 +103,63 @@ const WorkParagraph = styled.p`
     margin: 0;
 `
 const PhoneContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-wrap: wrap;
-width: 567px;
-height: 567px;
-background:url(${PhoneImg}) no-repeat center/contain;
-@media (min-width: 350px) {
-    width: 350px ;
-  }
-@media (min-width: 768px) {
-width: 750px ;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background:url(${PhoneImg}) no-repeat center/contain;
+
+    @media (min-width: 320px) {
+        width: 320px ;
+        height: 400px;
+    }
+
+    @media (min-width: 768px) {
+        width: 567px;
+        height: 590px;
+    }   
 `
 const EthContainer = styled.div`
-width: 400px;
-height: 400px;
-margin: 0 45px 250px 0;
+    @media (min-width: 320px) {
+        width: 100% ;
+        height: 300px;
+        margin: -100px 35px 0 0;
+    }
+
+    @media (min-width: 768px) {
+        width: 400px;
+        height: 400px;
+        margin: -300px 75px 0 0;
+    }
+
+
+
 `
 
 const PhoneWrap = styled.div`
-display:flex;
-justify-content: center;
-align-items: center;
-height: 100%;
-width: 100%;
-max-width: 580px;
-flex-direction: column;  
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 580px;
+    flex-direction: column;  
 `
 const TextBlockWrap = styled.div`
-display:flex;
-justify-content: center;
-align-items: center;
-height: 100%;
-max-width: 680px;
-width: 100%;
-flex-direction: column;
+    
+
+    @media (min-width: 320px) {
+        margin-top: 40px
+    }
+
+    @media (min-width: 768px) {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        max-width: 680px;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 0;
+    }
 `

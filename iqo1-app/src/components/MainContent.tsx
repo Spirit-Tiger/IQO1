@@ -6,34 +6,71 @@ import styled from "styled-components";
 import { Canvas, } from '@react-three/fiber';
 import RenderGltf from "./Model3D";
 import GradientButton from "./GradientButton";
+import  { Pagination, Autoplay  } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+import './sliderPagination.css';
 
 const MainContent = () => {
 
   const[locale, setLocale]= useState(LOCALES.ENGLISH);
+  const [open, setOpen] = useState(false);
 
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
-        <MainContentContainer>
-            <MainTextContainer>
-                <MainTextHeader>
-                    <FormattedMessage id="slogan_header"/>
-                </MainTextHeader>
-                <MainText>
-                    <FormattedMessage id="slogan_text"/>
-                </MainText>
-                <GradientButton textId="starting_btn"/>
-                <MockCaruselChange>
-                    <Mock1></Mock1>
-                    <Mock2></Mock2>
-                    <Mock3></Mock3>
-                </MockCaruselChange>
-            </MainTextContainer>
-            <CanvasContainer>
-                <Canvas>
-                    <RenderGltf shadow={false} scale={2} version={1}/> 
-                </Canvas>
-            </CanvasContainer>
-        </MainContentContainer>
+    <IntlProvider messages={messages[locale]} locale={locale}>
+            <Swiper className='sliderPagination'
+                // allowTouchMove={false}
+                modules={[Pagination, Autoplay]}
+                slidesPerView={1}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                clickable: true,     
+                }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log('slide change')}
+                >
+                    <SwiperSlide>
+                        <MainContentContainer>
+                            <MainTextContainer>
+                                <MainTextHeader>
+                                    <FormattedMessage id="slogan_header"/>
+                                </MainTextHeader>
+                                <MainText>
+                                    <FormattedMessage id="slogan_text"/>
+                                </MainText>
+                            </MainTextContainer>
+                            <ButtonContainer>
+                                <GradientButton textId="starting_btn"/>
+                            </ButtonContainer>
+                            <CanvasContainer>
+                                <Canvas>
+                                    <RenderGltf shadow={false} scale={1.6} version={1}/> 
+                                </Canvas>
+                            </CanvasContainer>
+                        </MainContentContainer>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <SecondSlideContainer>
+                            <SlideHeader>
+                                <FormattedMessage id="slogan_header_slide2"/>
+                            </SlideHeader>
+                            <GradientButton textId="starting_btn"/>
+                        </SecondSlideContainer>
+                    </SwiperSlide>
+                    <SwiperSlide>  
+                        <SecondSlideContainer>
+                            <SlideHeader>
+                                <FormattedMessage id="slogan_header_slide3"/>
+                            </SlideHeader>
+                            <GradientButton textId="starting_btn"/>
+                        </SecondSlideContainer>
+                    </SwiperSlide>
+            </Swiper>
     </IntlProvider>
   );
 };
@@ -41,60 +78,183 @@ const MainContent = () => {
 export default MainContent;
 
 const MainContentContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
     width: 1300px;
     height: calc(100vh - 120px) ;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    @media (min-width: 320px) {
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: calc(100vh - 120px) ;
+    }
+
+    @media (min-width: 768px) {
+        width: 1300px;
+        height: calc(100vh - 120px) ;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
 `;
 
 const MainTextContainer = styled.div`
     color: white;
     display: flex;
     flex-direction: column ;
-    width: 600px;
+    min-width: max-content;
+    align-self: center;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    
+    @media (min-width: 320px) {
+        align-self: start;
+        justify-self: center;
+    }
+   
+    @media (min-width: 768px) {
+        color: white;
+        display: flex;
+        flex-direction: column ;
+        min-width: max-content;
+        align-self: center;
+        justify-self: start;
+
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
 `;
 
 const MainTextHeader = styled.h1`
     font-size:3.2em ;
     margin: 0;
 
+    @media (min-width: 320px) {
+        font-size:1.5em;
+    }
+
+    @media (min-width: 768px) {
+        font-size:3.2em ;
+        margin: 0;
+    }
+
 `;
 
 const MainText = styled.p`
     font-size:1.6em ;
     margin: 0;
+
+    @media (min-width: 320px) {
+        font-size:1.3em;
+    }
+
+    @media (min-width: 768px) {
+        font-size:1.6em ;
+        margin: 0;
+    }
 `;
 
 const CanvasContainer = styled.div`
-    width: 400px;
-    height: 600px;
+    width: 450px;
+    height: 100%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    justify-self: end;
+
+    @media (min-width: 320px) {
+        width: 82vw;
+        height: 62vh;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        justify-self: center;
+    }
+
+    @media (min-width: 375px) {
+        width: 82vw;
+        height: 62vh;
+    }
+
+    @media (min-width: 768px) {
+        width: 450px;
+        height: 100%;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        justify-self: end;
+    }
 `;
-
-
-const MockCaruselChange = styled.div`
-    display:flex;
-    margin-top: 200px;
-    align-items: center;
-`;
-
-const Mock1 =styled.div`
-    width: 84px;
-    margin-right:8px ;
-    border:2px solid #FFB800;
-    border-radius: 10px;
-`;
-
-const Mock2 =styled.div`
-    width: 84px;
-    margin-right:8px ;
-    border:1px solid #808080;
+const ButtonContainer = styled.div`
     
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end:3;
+    align-self: center;
+
+    @media (min-width: 320px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end:4;
+        justify-self: center;
+        align-self: start ;
+        margin-top: -45px;
+    }
+
+    @media (min-width: 375px) {
+        margin-top: -25px;;
+    }
+
+    @media (min-width: 768px) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end:3;
+        align-self: center;
+        justify-self: start;
+    }
 `;
 
-const Mock3 =styled.div`
-    width: 84px;
-    margin-right:8px ;
-    border:1px solid #808080;
-    height: 0px;
+const SecondSlideContainer = styled.div`
+    color: white;
+    
+    @media (min-width: 320px) {
+        min-width: 320px;
+        height: calc(100vh - 120px) ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        width: 1300px;
+        height: calc(100vh - 120px) ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        }
 `;
+
+const SlideHeader = styled(MainTextHeader)`
+    margin-top: -220px;
+    margin-bottom: 60px;
+`;
+
+

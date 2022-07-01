@@ -12,14 +12,16 @@ const InfoFrame = () => {
   return (
     <IntlProvider messages={messages[locale]} locale={locale} >
             <ThirdFrameContainer>
-                <LeftNumber>1.5k</LeftNumber>
+                <LeftNumber>415-650</LeftNumber>
                 <FlexContainer>
-                    <ThirdFrameHeader>
-                        <div><FormattedMessage id="about_our_company" /></div>
-                    </ThirdFrameHeader>
-                    <ThirdFrameText>
-                        <div><FormattedMessage id="fill_text" /></div>
-                    </ThirdFrameText>
+                    <HeaderContainer>
+                        <ThirdFrameHeader>
+                            <div><FormattedMessage id="about_our_company" /></div>
+                        </ThirdFrameHeader>
+                        <ThirdFrameText>
+                            <div><FormattedMessage id="fill_text" /></div>
+                        </ThirdFrameText>
+                    </HeaderContainer>
                     <InfoContainer>
                         <InfoBlockContainer>
                             <InfoBlock>415</InfoBlock>
@@ -68,45 +70,93 @@ const FlexContainer= styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-   
-   
+    justify-content: center; 
+`;
+
+const HeaderContainer = styled.div`
+    align-self: flex-start;
+
+    @media (min-width:320px) {
+        width: 82vw;
+    }
+
+    @media (min-width:768px) {
+        width: 67.8vw;
+    }
+
+
 `;
 
 const ThirdFrameHeader = styled.h2`
     margin: 0;
-    align-self: flex-start;
+
+    @media (min-width:320px) {
+        font-size: 1.5em;
+    }
+
+    @media (min-width:768px) {
+        font-size: 2em;
+    }
+
+  
 `;
 
 const ThirdFrameText = styled.p`
     margin: 0;
-    align-self: flex-start;
 `;
 
 const InfoContainer = styled.div`
     width: 67.8vw;
     display: flex ;
     justify-content: space-between;
+
+    @media (min-width:320px) {
+        width: 82vw;
+        flex-direction: column;
+    }
+
+    @media (min-width:768px) {
+        width: 67.8vw;
+        flex-direction: row;
+    }
+
 `;
 
 const InfoBlockContainer = styled.div`
     display: flex ;
     flex-direction: column;
     align-items: center;
-    margin-top: 70px;
+    
+
+    @media (min-width:320px) {
+        margin-top: 30px;
+    }
+
+    @media (min-width:768px) {
+        margin-top: 70px;
+    }
 `;
 
 const InfoBlock = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 21.9vw;
-    height: 21.7vh;
     background: rgba(0, 0, 0, 0.32);
     font-size: 4em;
     border: 1px solid;
     border-image-slice:1 ;
     border-image-source: linear-gradient( rgba(255, 255, 255, 0.7) 0 15%, rgba(0, 0, 0, 0.5) 40% 65%,rgba(255, 255, 255, 1));
+
+    @media (min-width:320px) {
+        width: 100%;
+        height: 25vh;
+    }
+
+    @media (min-width:768px) {
+        width: 21.9vw;
+        height: 21.7vh;
+    }
+
 `;
 
 const InfoText = styled.p`
@@ -114,16 +164,20 @@ const InfoText = styled.p`
 `;
 
 const LeftNumber = styled.div`
-    font-size: 4em;
+    font-size: 3em;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 280px;
+    padding-bottom: 190px;
 
+    @media (max-width: 1300px) {
+        display: none;
+    }
 `;
 
 const Description = styled.p`
+    width: 67.8vw;
     margin: 60px 0;
 `;
 

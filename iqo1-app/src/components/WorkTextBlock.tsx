@@ -42,24 +42,25 @@ const WorkTextBlock = () => {
 export default WorkTextBlock;
 
 const Container= styled.div`
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-column-gap: 33px ;
-row-gap: 20px;
-overflow:visible;
-padding: 15px 0;
-width: 700px;
-min-width: 350px;
-max-width: 100%;
-height: 100%;
-@media (min-width: 350px) {
-    width: 350px ;
-  }
-@media (min-width: 768px) {
-width: 750px ;
-}
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 33px ;
+    row-gap: 20px;
+    overflow:visible;
+    padding: 15px 0;
+    width: 700px;
+    min-width: 350px;
+    max-width: 100%;
+    height: 100%;
+
+    @media (min-width: 320px) {
+        width: 320px;
+    }
+    @media (min-width: 768px) {
+        width: 750px ;
+    }
 /* padding-bottom: 100px; */
 /* margin-bottom: 100px; */
 `

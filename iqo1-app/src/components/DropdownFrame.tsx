@@ -46,11 +46,18 @@ export default DropdownFrame;
 const DropdownFrameContainer = styled.div`
     width: 100vw;
     max-width: 100%;
-    padding-top: 150px;
     background-color: #12181E;
     color: white;
     display: flex;
     justify-content: center;
+
+    @media (min-width:320px) {
+        padding-top: 80px;
+    }
+
+    @media (min-width:768px) {
+        padding-top: 150px;
+    }
 `;
 
 const ContentContainer = styled.div`
@@ -58,6 +65,7 @@ const ContentContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 67.8vw;
 `;
 
 const LeftDropdowns = styled.div`
@@ -70,28 +78,47 @@ const AllDropdowns = styled.div`
     width: 67.8vw;
     display: flex;
     justify-content: space-between;
-    margin-top: 100px;
     flex-wrap: wrap;
-@media (min-width:350px) {
-    flex-direction: column;
-}
-@media (min-width:768px) {
-    width: 82vw;
-    flex-direction: row;
-}
-@media (min-width:1080px) {
-    width: 67vw;
-    flex-direction: row;
-}
+
+    @media (min-width:320px) {
+        width: 82vw;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+    @media (min-width:768px) {
+        width: 82vw;
+        margin-top: 100px;
+        flex-direction: row;
+       
+    }
+    @media (min-width:1080px) {
+        width: 67.8vw;
+        flex-direction: row;
+    }
 `;
 
 
 const DropdownFrameHeader = styled.h2`
-    margin: 0;
-    align-self: flex-start;
+    @media (min-width:320px) {
+        font-size: 1.5em;
+    }
+
+    @media (min-width:768px) {
+        font-size: 2em;
+        margin: 0;
+        align-self: flex-start;
+    }
 `;
 
 const DropdownFrameText = styled.p`
     margin: 0;
-    align-self: flex-start;
+
+    @media (min-width:320px) {
+        width: 82vw;
+    }
+
+    @media (min-width:768px) {
+        align-self: flex-start;
+    }
 `;
