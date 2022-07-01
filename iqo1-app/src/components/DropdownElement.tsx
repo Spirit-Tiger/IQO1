@@ -46,7 +46,7 @@ const DropdownElementContainer = styled.div<{isActive: boolean}>`
      border-radius: 10px;
      overflow: hidden;
      margin-bottom: 20px;
-     @media (min-width:350px) {
+     @media (min-width:320px) {
         width: 100%
      }
      @media (min-width:768px) {
@@ -58,27 +58,38 @@ const DropdownElementContainer = styled.div<{isActive: boolean}>`
 `;
 
 const DropdownElementHeaderContainer = styled.div`
-   height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 0 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
 
-   :hover {
-    cursor: pointer;
-   }
+    :hover {
+        cursor: pointer;
+    }
+
+    @media (min-width:320px) {
+        font-size: 0.9em;
+    }
+
+    @media (min-width:768px) {
+        font-size: 1em;
+    }
 `;
 
 const DropdownElementHeader = styled.h3`
-   margin: 0;
-   padding: 30px 0;
-   width: 75%;
-   @media (min-width:350px) {
-    width: 100%;
-     }
-     @media (min-width:768px) {
+    margin: 0;
+    padding: 30px 0;
+    width: 75%;
+
+    @media (min-width:320px) {
         width: 100%;
     }
+
+    @media (min-width:768px) {
+        width: 100%;
+    }
+
     @media (min-width:1080px) {
         width: 75%;
     }

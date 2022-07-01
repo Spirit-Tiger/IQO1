@@ -3,17 +3,15 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import MainContent from "../components/MainContent";
 import InfoFrame from "../components/InfoFrame";
-import MainImg from "../images/main_background.png";
+
 import WorkWithUs from '../components/WorkWithUs'
 import DropdownFrame from "../components/DropdownFrame";
+import MainFrame from "../components/MainFrame";
 
 const MainPage = () => {
   return (
     <div>
-        <MainFrame>
-            <Header />
-            <MainContent />
-        </MainFrame>
+        <MainFrame />
         <WorkWithUs />
         <InfoFrame />
         <DropdownFrame />
@@ -24,12 +22,3 @@ const MainPage = () => {
 
 export default MainPage;
 
-const MainFrame = styled.div`
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    background: linear-gradient(254.61deg, rgba(255, 184, 0, 0.81) 0%, rgba(15, 23, 30, 0.92) 80.94%), url(${MainImg}) no-repeat center/cover; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;

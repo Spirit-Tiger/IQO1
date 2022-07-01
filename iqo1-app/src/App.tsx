@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 import { LOCALES } from './i18n/constants';
 import{messages} from './i18n/eng';
-import styled from 'styled-components';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainPage from './pages/Main.Page';
 

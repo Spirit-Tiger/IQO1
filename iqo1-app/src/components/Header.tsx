@@ -3,6 +3,7 @@ import { FormattedMessage, IntlProvider } from "react-intl";
 import{messages} from '../i18n/eng';
 import { LOCALES } from "../i18n/constants";
 import styled from "styled-components";
+import LogoImg from "../images/logo.png";
 
 const Header = () => {
 
@@ -10,11 +11,11 @@ const Header = () => {
   return (
     <IntlProvider messages={messages[locale]} locale={locale} >
         <HeaderContainer>
+            <LogoImageContainer></LogoImageContainer>
             <NavContainer>
                 <div><FormattedMessage id="home" /></div>
-                <div><FormattedMessage id="pages" /></div>
-                <div><FormattedMessage id="terms" /></div>
-                <div><FormattedMessage id="blog" /></div>
+                <div><FormattedMessage id="about_us" /></div>
+                <div><FormattedMessage id="company" /></div>
                 <div><FormattedMessage id="contacts" /></div>
             </NavContainer>
             <LoginButtonContainer>
@@ -39,13 +40,42 @@ const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between ;
     align-items: center;
+
+    @media (min-width: 320px) {
+        min-width: 320px;
+        height: 100px;
+        justify-content: center ;
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        width: 1300px;
+    height: 120px;
+    color: white;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    }
+    
 `;
 
 const NavContainer = styled.div`
-    width: 27vw;
-    min-width: 500px;
+    width: 24vw;
+    min-width: 450px;
     display: flex;
     justify-content: space-between ;
+
+    @media (min-width: 320px) {
+       display: none;
+    }
+
+    @media (min-width: 768px) {
+    width: 24vw;
+    min-width: 450px;
+    display: flex;
+    justify-content: space-between ;
+    }
+
 `;
 
 const LoginButtonContainer = styled.div`
@@ -53,6 +83,16 @@ const LoginButtonContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 210px;
+    @media (min-width: 320px) {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+    }
 `;
 
 const LoginButton = styled.button`
@@ -68,4 +108,17 @@ const LoginButton = styled.button`
     :hover{
         cursor: pointer;
     }
+`;
+
+const LogoImageContainer = styled.div`
+
+    @media (min-width: 320px) {
+    width: 125px;
+    height: 56px;
+    background: url(${LogoImg}) no-repeat center/cover;
+        }
+
+    @media (min-width: 768px) {
+       display: none;
+     }
 `;

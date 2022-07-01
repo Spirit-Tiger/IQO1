@@ -31,7 +31,6 @@ const GradientButtonStyle = styled.button`
     border-radius: 8px;
     height: 40px;
     width: 180px;
-    margin-top: 80px;
 
     :hover {
         cursor: pointer;
