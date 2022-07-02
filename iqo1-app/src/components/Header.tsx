@@ -4,6 +4,7 @@ import{messages} from '../i18n/eng';
 import { LOCALES } from "../i18n/constants";
 import styled from "styled-components";
 import LogoImg from "../images/logo.png";
+import Burger from "./Burger";
 
 const Header = () => {
 
@@ -26,6 +27,7 @@ const Header = () => {
                     <FormattedMessage id="login_btn" />
                 </LoginButton>
             </LoginButtonContainer>
+            <Burger />
         </HeaderContainer>
     </IntlProvider>
   );
@@ -49,19 +51,23 @@ const HeaderContainer = styled.div`
     }
 
     @media (min-width: 768px) {
+        min-width: 768px;
+        height: 120px;
+        justify-content: space-evenly ;
+    }
+
+    @media (min-width: 1080px) {
         width: 1300px;
-    height: 120px;
-    color: white;
-    display: flex;
-    justify-content: space-between ;
-    align-items: center;
+        height: 120px;
+        display: flex;
+        justify-content: space-between ;
+        align-items: center;
     }
     
 `;
 
 const NavContainer = styled.div`
     width: 24vw;
-    min-width: 450px;
     display: flex;
     justify-content: space-between ;
 
@@ -70,10 +76,19 @@ const NavContainer = styled.div`
     }
 
     @media (min-width: 768px) {
-    width: 24vw;
-    min-width: 450px;
-    display: flex;
-    justify-content: space-between ;
+        display: flex;
+        width: max-content;
+        
+        div{
+            margin-left: 20px;
+        }
+    }
+
+    @media (min-width: 1080px) {
+        width: 24vw;
+        min-width: 450px;
+        display: flex;
+        justify-content: space-between ;
     }
 
 `;
