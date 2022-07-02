@@ -31,7 +31,6 @@ const DropdownFrame = () => {
                     <RightDropdowns>
                         <DropdownElement headerId="faq_header_4" textId="faq_text_4" />
                         <DropdownElement headerId="faq_header_5" textId="faq_text_5" />
-                        <DropdownElement headerId="faq_header_6" textId="faq_text_6" />
                     </RightDropdowns>
                 </AllDropdowns>
                 <GradientButton textId="faq_btn"/>
@@ -53,10 +52,12 @@ const DropdownFrameContainer = styled.div`
 
     @media (min-width:320px) {
         padding-top: 80px;
+        padding-bottom: 80px;
     }
 
     @media (min-width:768px) {
         padding-top: 150px;
+        padding-bottom: 100px;
     }
 `;
 

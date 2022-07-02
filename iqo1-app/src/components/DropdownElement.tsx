@@ -58,7 +58,7 @@ const DropdownElementContainer = styled.div<{isActive: boolean}>`
 `;
 
 const DropdownElementHeaderContainer = styled.div`
-    height: 100%;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;

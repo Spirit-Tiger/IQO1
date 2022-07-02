@@ -179,5 +179,13 @@ const LeftNumber = styled.div`
 const Description = styled.p`
     width: 67.8vw;
     margin: 60px 0;
+
+    @media (min-width: 320px) {
+        width: 82vw;
+    }
+
+    @media (min-width: 768px) {
+         width: 67.8vw;
+    }
 `;
 
