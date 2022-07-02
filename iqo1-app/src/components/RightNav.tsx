@@ -22,7 +22,7 @@ const RightNav = ({ open }:RightNavProps) => {
                     </LoginButton>
                     <div><FormattedMessage id="home" /></div>
                     <div><FormattedMessage id="about_us" /></div>
-                    <div><FormattedMessage id="company" /></div>
+                    <div><FormattedMessage id="terms" /></div>
                     <div><FormattedMessage id="contacts" /></div>
                     <HorizontalLine />
                     <LanguageOptions>

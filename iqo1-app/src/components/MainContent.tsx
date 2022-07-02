@@ -25,7 +25,7 @@ const MainContent = () => {
                 modules={[Pagination, Autoplay]}
                 slidesPerView={1}
                 autoplay={{
-                    delay: 3000,
+                    delay: 3000000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
@@ -40,9 +40,6 @@ const MainContent = () => {
                                 <MainTextHeader>
                                     <FormattedMessage id="slogan_header"/>
                                 </MainTextHeader>
-                                <MainText>
-                                    <FormattedMessage id="slogan_text"/>
-                                </MainText>
                             </MainTextContainer>
                             <ButtonContainer>
                                 <GradientButton textId="starting_btn"/>
@@ -56,17 +53,20 @@ const MainContent = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <SecondSlideContainer>
-                            <SlideHeader>
+                            <SlideHeader1>
                                 <FormattedMessage id="slogan_header_slide2"/>
-                            </SlideHeader>
+                            </SlideHeader1>
+                            <MainText>
+                                <FormattedMessage id="slogan_text_slide2"/>
+                            </MainText>
                             <GradientButton textId="starting_btn"/>
                         </SecondSlideContainer>
                     </SwiperSlide>
                     <SwiperSlide>  
                         <SecondSlideContainer>
-                            <SlideHeader>
+                            <SlideHeader2>
                                 <FormattedMessage id="slogan_header_slide3"/>
-                            </SlideHeader>
+                            </SlideHeader2>
                             <GradientButton textId="starting_btn"/>
                         </SecondSlideContainer>
                     </SwiperSlide>
@@ -103,7 +103,6 @@ const MainTextContainer = styled.div`
     color: white;
     display: flex;
     flex-direction: column ;
-    min-width: max-content;
     align-self: center;
 
     grid-column-start: 1;
@@ -114,15 +113,17 @@ const MainTextContainer = styled.div`
     @media (min-width: 320px) {
         align-self: start;
         justify-self: center;
+        margin: 0 10px;
     }
    
     @media (min-width: 768px) {
         color: white;
+        width: 30vw;
         display: flex;
         flex-direction: column ;
-        min-width: max-content;
         align-self: center;
         justify-self: start;
+        margin: 0;
 
         grid-column-start: 1;
         grid-column-end: 2;
@@ -147,16 +148,16 @@ const MainTextHeader = styled.h1`
 `;
 
 const MainText = styled.p`
-    font-size:1.6em ;
     margin: 0;
-
+    margin-bottom: 60px;
+    
     @media (min-width: 320px) {
         font-size:1.3em;
+
     }
 
     @media (min-width: 768px) {
-        font-size:1.6em ;
-        margin: 0;
+        font-size:1.4em ;
     }
 `;
 
@@ -243,16 +244,22 @@ const SecondSlideContainer = styled.div`
     }
 
     @media (min-width: 768px) {
-        width: 1300px;
+        width: 33vw;;
         height: calc(100vh - 120px) ;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        text-align: left;
         }
 `;
 
-const SlideHeader = styled(MainTextHeader)`
+const SlideHeader1 = styled(MainTextHeader)`
+    margin-top: -220px;
+
+`;
+
+const SlideHeader2 = styled(MainTextHeader)`
     margin-top: -220px;
     margin-bottom: 60px;
 `;
