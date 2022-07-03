@@ -80,7 +80,11 @@ display: flex;
    text-align: justify;
    flex-direction: column;
    transition:all 0.25s ease;
-   p{
+   @media (min-width:320px) {
+    
+   }
+   @media (min-width:768px) {
+    p{
     opacity: 0;
    }
    :hover{
@@ -89,10 +93,15 @@ display: flex;
        animation: 1s learn 1 forwards;
     };
 }
+}
 `
 const ItemHead = styled.h2`
     font-size: 24px;
     color:white;
+    font-size: 24px;
+    padding: 0 15px;
+    text-align: justify;
+    word-break: break-word;
 
    
 `
