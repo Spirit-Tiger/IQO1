@@ -41,7 +41,7 @@ export const messages = {
        work_txt_head_blck2: 'Brak rekwotowań',
        work_txt_head_blck3: 'Szybka i profesjonalna obsługa Klienta',
        work_txt_head_blck4: 'Łatwe inwestowanie',
-       work_txt_blck1: 'pracujemy nad tym, aby stale ulepszać Twoje doświadczenia związane z inwestowaniem, niezależnie od tego, czy inwestujesz w kryptowaluty od dawna, czy dopiero zaczynasz',
+       work_txt_blck1: 'Pracujemy nad tym, aby stale ulepszać Twoje doświadczenia związane z inwestowaniem, niezależnie od tego, czy inwestujesz w kryptowaluty od dawna, czy dopiero zaczynasz',
        work_txt_blck2: 'Nasza zaawansowana technologia pozwala na inwestowania bez rekwotowań. Możesz być pewien że Twoje transakcje zostaną zrealizowane',
        work_txt_blck3: 'Dział obsługi klienta jest dostępny i gotowy odpowiedzieć na wszystkie pytania i pomóc w rozwiązaniu problemu.',
        work_txt_blck4: 'Dzięki naszej platformie będziesz miał natychmiastowe wpłaty i wypłaty oraz statystykę swoich zysków.',

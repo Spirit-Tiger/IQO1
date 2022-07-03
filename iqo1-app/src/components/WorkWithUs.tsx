@@ -112,18 +112,20 @@ const PhoneContainer = styled.div`
     @media (min-width: 320px) {
         width: 320px ;
         height: 400px;
+        background-position:  top 60px right 0;
     }
 
     @media (min-width: 768px) {
         width: 567px;
         height: 590px;
+        background-position:  0;
     }   
 `
 const EthContainer = styled.div`
     @media (min-width: 320px) {
         width: 100% ;
-        height: 300px;
         margin: -100px 35px 0 0;
+        height: 60%;
     }
 
     @media (min-width: 768px) {
