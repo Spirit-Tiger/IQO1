@@ -3,6 +3,7 @@ import { FormattedMessage, IntlProvider } from "react-intl";
 import{messages} from '../i18n/eng';
 import { LOCALES } from "../i18n/constants";
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 interface RightNavProps {
     open: boolean,
@@ -17,9 +18,11 @@ const RightNav = ({ open }:RightNavProps) => {
     <IntlProvider messages={messages[locale]} locale={locale} >
         <RightNavContainer open={open}>
                 <NavList>
-                    <LoginButton>
-                        <FormattedMessage id="login_btn" />
-                    </LoginButton>
+                    <Link to="login">
+                        <LoginButton>
+                            <FormattedMessage id="login_btn" />
+                        </LoginButton>
+                    </Link>
                     <div><FormattedMessage id="home" /></div>
                     <div><FormattedMessage id="about_us" /></div>
                     <div><FormattedMessage id="terms" /></div>

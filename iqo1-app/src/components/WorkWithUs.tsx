@@ -8,11 +8,13 @@ import RenderGltf from "./Model3D";
 import PhoneImg from '../images/phone.png';
 import WorkTextBlock from "./WorkTextBlock";
 import GradientButton from "./GradientButton";
+import Ellipse1 from "../images/ellipse_1.png";
 
 const MainContent = () => { 
 
     return (
         <WorkWithUsFrame>
+            <EllipseImage src={Ellipse1}/>
             <FlexContainer>
                 <HeadContainer>
                     <Head><FormattedMessage id="work_header" /></Head>
@@ -87,6 +89,7 @@ const MainContentContainer = styled.div`
 `;
 
 const WorkWithUsFrame = styled.div`
+    position: relative;
     width: 100vw;
     height: 100%;
     max-width: 100%;
@@ -96,6 +99,10 @@ const WorkWithUsFrame = styled.div`
     align-items: center;
     padding: 0;
     margin: 0;
+
+    @media (max-width: 768px){
+        overflow: hidden;
+    }
 `
 const WorkParagraph = styled.p`
     font-size: 16px;
@@ -165,3 +172,21 @@ const TextBlockWrap = styled.div`
         margin-top: 0;
     }
 `
+
+const EllipseImage = styled.img`
+    position: absolute;
+
+    @media (min-width: 375px){
+        width: 600px;
+        top: 41%;
+        left: 0;
+    }
+
+    @media (min-width: 768px){
+        width: 500px;
+        margin-top: -250px;
+        top:0;
+        left:0;
+    }
+  
+`;

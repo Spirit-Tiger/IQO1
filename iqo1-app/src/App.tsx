@@ -4,6 +4,7 @@ import { LOCALES } from './i18n/constants';
 import{messages} from './i18n/eng';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainPage from './pages/Main.Page';
+import LoginPage from './pages/LoginPage';
 
 
 function App() {
@@ -13,11 +14,14 @@ function App() {
 
 
   return (
-    <BrowserRouter>
-      <IntlProvider messages={messages[locale]} locale={locale} >
-          <MainPage />
-      </IntlProvider>
-    </BrowserRouter>
+    <IntlProvider messages={messages[locale]} locale={locale} >
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="login" element={<LoginPage />} />
+          </Routes>
+      </BrowserRouter>
+    </IntlProvider>
   );
 }
 

@@ -5,6 +5,7 @@ import { LOCALES } from "../i18n/constants";
 import styled from "styled-components";
 import DropdownElement from "./DropdownElement";
 import GradientButton from "./GradientButton";
+import Ellipse3 from "../images/ellipse_3.png";
 
 
 
@@ -15,6 +16,7 @@ const DropdownFrame = () => {
   return (
     <IntlProvider messages={messages[locale]} locale={locale} >
         <DropdownFrameContainer>
+            <EllipseImage />
             <ContentContainer>
                 <DropdownFrameHeader>
                     <FormattedMessage id="faq_header" />
@@ -43,6 +45,7 @@ const DropdownFrame = () => {
 export default DropdownFrame;
 
 const DropdownFrameContainer = styled.div`
+    position: relative;
     width: 100vw;
     max-width: 100%;
     background-color: #12181E;
@@ -59,9 +62,12 @@ const DropdownFrameContainer = styled.div`
         padding-top: 150px;
         padding-bottom: 100px;
     }
+
+
 `;
 
 const ContentContainer = styled.div`
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,5 +127,27 @@ const DropdownFrameText = styled.p`
 
     @media (min-width:768px) {
         align-self: flex-start;
+    }
+`;
+
+const EllipseImage = styled.div`
+    position: absolute;
+    z-index: 1;  
+    background: url(${Ellipse3}) no-repeat center/cover;
+
+    @media (min-width: 375px){
+        width: 100%;
+        height: 1050px;
+        top:0;
+        margin-top: -100px;
+        background-position: 75% 25%;
+    }
+
+    @media (min-width: 768px){
+        width: 100%;
+        height: 1015px;
+        top:5%;
+        left: 0;
+        margin-top: -180px;
     }
 `;

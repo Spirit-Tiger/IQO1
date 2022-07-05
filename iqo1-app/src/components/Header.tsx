@@ -5,6 +5,7 @@ import { LOCALES } from "../i18n/constants";
 import styled from "styled-components";
 import LogoImg from "../images/logo.png";
 import Burger from "./Burger";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -23,9 +24,11 @@ const Header = () => {
                 <div><FormattedMessage id="language_change1"/></div>
                 <div>/</div>
                 <div><FormattedMessage id="language_change2"/></div>
-                <LoginButton>
-                    <FormattedMessage id="login_btn" />
-                </LoginButton>
+                <Link to="login">
+                    <LoginButton>
+                        <FormattedMessage id="login_btn" />
+                    </LoginButton>
+                </Link>
             </LoginButtonContainer>
             <Burger />
         </HeaderContainer>

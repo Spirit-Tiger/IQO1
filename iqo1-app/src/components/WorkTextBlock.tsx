@@ -54,6 +54,7 @@ const Container= styled.div`
     min-width: 350px;
     max-width: 100%;
     height: 100%;
+    z-index: 2;
 
     @media (min-width: 320px) {
         width: 320px;
@@ -72,7 +73,7 @@ const Item = styled.div`
 display: flex;
     width: 310px;
     height: 345px;
-    background-color: #12181e;
+    background-color: #12181e5e;
    /* outline: solid 1px #FFFFFF blur(3px); */
    box-shadow: 0px 0px 5px 5px #ffffff3b;
    justify-content: center;
@@ -89,6 +90,7 @@ display: flex;
    }
    :hover{
     transform: scale(1.2);
+    background-color: #12181e;
     p{
        animation: 1s learn 1 forwards;
     };
