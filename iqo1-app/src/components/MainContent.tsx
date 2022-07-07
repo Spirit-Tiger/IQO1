@@ -17,6 +17,7 @@ const MainContent = () => {
 
   const[locale, setLocale]= useState(LOCALES.ENGLISH);
   const [open, setOpen] = useState(false);
+  
 
   return (
     <IntlProvider messages={messages[locale]} locale={locale}>

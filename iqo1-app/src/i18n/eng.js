@@ -68,5 +68,17 @@ export const messages = {
        registration_login_name: "Логин",
        registration_password: "Пароль",
        registration_btn: "Зарегистрироваться",
+
+       dm_dashboard: "Dashboard",
+       dm_market: "Market",
+       dm_deposit: "Deposit",
+       dm_verify: "Verify",
+       dm_settings: "Settings",
+
+       dm_sub_menu: "Menu :",
+       dm_sub_home: "Home",
+       dm_sub_faq: "FAQ",
+       dm_sub_contacts: "Contacts",
+       dm_sub_support: "Support",
     }
 };

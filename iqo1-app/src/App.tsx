@@ -5,6 +5,12 @@ import{messages} from './i18n/eng';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainPage from './pages/Main.Page';
 import LoginPage from './pages/LoginPage';
+import Dashboard from './components/Dashboard';
+import DashboardMain from './components/DashboardMain';
+import Market from './components/Market';
+import Deposit from './components/Deposit';
+import Verify from './components/Verify';
+import Settings from './components/Settings';
 
 
 function App() {
@@ -19,6 +25,13 @@ function App() {
           <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="login" element={<LoginPage />} />
+              <Route path="dashboard" element={<Dashboard />}> 
+                <Route index element={<DashboardMain />} />
+                <Route path="market" element={<Market />} />
+                <Route path="deposit" element={<Deposit />} />
+                <Route path="veryfy" element={<Verify />} />
+                <Route path="settings" element={<Settings />} />
+              </Route>
           </Routes>
       </BrowserRouter>
     </IntlProvider>

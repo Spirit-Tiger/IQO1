@@ -15,7 +15,7 @@ const Header = () => {
         <HeaderContainer>
             <LogoImageContainer></LogoImageContainer>
             <NavContainer>
-                <div><FormattedMessage id="home" /></div>
+                <div><Link to="dashboard"><FormattedMessage id="home" /></Link></div>
                 <div><FormattedMessage id="about_us" /></div>
                 <div><FormattedMessage id="terms" /></div>
                 <div><FormattedMessage id="contacts" /></div>
@@ -73,6 +73,11 @@ const NavContainer = styled.div`
     width: 24vw;
     display: flex;
     justify-content: space-between ;
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
 
     @media (min-width: 320px) {
        display: none;
