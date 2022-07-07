@@ -10,7 +10,7 @@ interface myProps {
  version:number
 }
 
-const RenderGltf = ({ shadow, scale, version }: myProps) => {
+const RenderGltf: React.FC<myProps> = ({ shadow, scale, version }: myProps) => {
     const gltf = useLoader(GLTFLoader, '/scene.gltf')
     const gltf2 = useLoader(GLTFLoader, '/scene2.gltf')
     const mesh = useRef<THREE.Mesh>(null);

@@ -4,6 +4,7 @@ import{messages} from '../i18n/eng';
 import { LOCALES } from "../i18n/constants";
 import styled from "styled-components";
 import GradientButton from "./GradientButton";
+import Ellipse2 from "../images/ellipse_2.png";
 
 const InfoFrame = () => {
 
@@ -12,6 +13,7 @@ const InfoFrame = () => {
   return (
     <IntlProvider messages={messages[locale]} locale={locale} >
             <ThirdFrameContainer>
+                <EllipseImage src={Ellipse2}/>
                 <LeftNumber>415-650</LeftNumber>
                 <FlexContainer>
                     <HeaderContainer>
@@ -56,6 +58,7 @@ const InfoFrame = () => {
 export default InfoFrame;
 
 const ThirdFrameContainer= styled.div`
+    position: relative;
     width: 100vw;
     max-width: 100%;
     padding-top: 80px;
@@ -63,6 +66,10 @@ const ThirdFrameContainer= styled.div`
     color: white;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 768px){
+        overflow: hidden;
+    }
 `;
 
 const FlexContainer= styled.div`
@@ -186,6 +193,26 @@ const Description = styled.p`
 
     @media (min-width: 768px) {
          width: 67.8vw;
+    }
+`;
+
+const EllipseImage = styled.img`
+    position: absolute;
+    z-index: 1;
+
+    @media (min-width: 375px){
+        width: 500px;
+        top:9%;
+        right:0;
+        opacity: 0.8;
+    }
+
+    @media (min-width: 768px){
+        width: 750px;
+        margin-top: -450px;
+        top:0;
+        right:0;
+        opacity: 1;
     }
 `;
 

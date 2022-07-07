@@ -5,6 +5,7 @@ import { LOCALES } from "../i18n/constants";
 import styled from "styled-components";
 import LogoImg from "../images/logo.png";
 import Burger from "./Burger";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -14,7 +15,7 @@ const Header = () => {
         <HeaderContainer>
             <LogoImageContainer></LogoImageContainer>
             <NavContainer>
-                <div><FormattedMessage id="home" /></div>
+                <div><Link to="dashboard"><FormattedMessage id="home" /></Link></div>
                 <div><FormattedMessage id="about_us" /></div>
                 <div><FormattedMessage id="terms" /></div>
                 <div><FormattedMessage id="contacts" /></div>
@@ -23,9 +24,11 @@ const Header = () => {
                 <div><FormattedMessage id="language_change1"/></div>
                 <div>/</div>
                 <div><FormattedMessage id="language_change2"/></div>
-                <LoginButton>
-                    <FormattedMessage id="login_btn" />
-                </LoginButton>
+                <Link to="login">
+                    <LoginButton>
+                        <FormattedMessage id="login_btn" />
+                    </LoginButton>
+                </Link>
             </LoginButtonContainer>
             <Burger />
         </HeaderContainer>
@@ -70,6 +73,11 @@ const NavContainer = styled.div`
     width: 24vw;
     display: flex;
     justify-content: space-between ;
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
 
     @media (min-width: 320px) {
        display: none;

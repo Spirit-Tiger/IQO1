@@ -21,6 +21,7 @@ export const messages = {
        traders_in_company: "TRADERS IN COMPANY",
        description: "In 2015, a group of 25 P.H.D students at the University of Manchester led by Pocock, Adrian Richard was engaged in the study of the Nature and Scope of the Blockchain Technology and it's applicability in the 21st century and beyond. As well as the development of new alternative cryptocurrency types. Its blueprint was Launched In 2015 through CoinDeck, a Fin-Tech Startup based In Hong Kong. The research shows that by 2030, the Wealth of the Entire World Would be redistributed and More than 80% of it Would be In the Coin Market Cap of the Crypto Market. Hence, those Who Advance towards Cryptocurrency Inclination at this Point, stand a greater chance of having a fair share from the Wealth redistribution about to take Place.",
        read_more_btn: "READ MORE",
+
        faq_header: "CHECK YOUR FAQ",
        faq_text: "Текст-заполнитель — это текст, который имеет некоторые",
        faq_header_1: "W jaki sposób ustalane są ceny walut?",
@@ -34,6 +35,7 @@ export const messages = {
        faq_text_4: "AML to skrót od frazy Anti-Money Laundering, która dotyczy wszystkich działań podejmowanych przez organizacje świadczące usługi finansowe, mających na celu wyeliminowanie zjawiska prania brudnych pieniędzy.",
        faq_text_5: "Po zarejestrowaniu i dokonaniu weryfikacji na naszej platformie zostanie utworzony twój prywatny portfel. ",
        faq_btn: "SEE MORE",
+
        work_header:'WHY YOU MUST WORK WITH US?',
        work_header__p: 'some msg',
        work_btn: "GET STARTED",
@@ -45,6 +47,38 @@ export const messages = {
        work_txt_blck2: 'Nasza zaawansowana technologia pozwala na inwestowania bez rekwotowań. Możesz być pewien że Twoje transakcje zostaną zrealizowane',
        work_txt_blck3: 'Dział obsługi klienta jest dostępny i gotowy odpowiedzieć na wszystkie pytania i pomóc w rozwiązaniu problemu.',
        work_txt_blck4: 'Dzięki naszej platformie będziesz miał natychmiastowe wpłaty i wypłaty oraz statystykę swoich zysków.',
+
        footer_text: "Copyright © 2022 (название, думаем над ним) Inc. All rights reserved.",
+
+       auth_header:"Авторизация",
+       auth_text:"Введите пожалуйста свои данные:",
+       auth_login_name:"Логин",
+       auth_password:"Пароль",
+       auth_forget_password:"Забыли пароль?",
+       auth_login_btn: "Войти",
+       auth_registration_btn: "Регистрация",
+
+       registration_header:"Регистрация",
+       registration_text:"Введите пожалуйста свои данные:",
+       registration_first_name:"Имя",
+       registration_last_name:"Фамилия",
+       registration_country:"Страна",
+       registration_phone_number:"Номер телефона",
+       registration_email: "Почта",
+       registration_login_name: "Логин",
+       registration_password: "Пароль",
+       registration_btn: "Зарегистрироваться",
+
+       dm_dashboard: "Dashboard",
+       dm_market: "Market",
+       dm_deposit: "Deposit",
+       dm_verify: "Verify",
+       dm_settings: "Settings",
+
+       dm_sub_menu: "Menu :",
+       dm_sub_home: "Home",
+       dm_sub_faq: "FAQ",
+       dm_sub_contacts: "Contacts",
+       dm_sub_support: "Support",
     }
 };

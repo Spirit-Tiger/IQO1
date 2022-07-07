@@ -71,6 +71,7 @@ const FooterContent = styled.div`
 const ImagesContainer = styled.div`
     display: flex;
     align-items: center;
+    z-index: 2;
 
     @media (min-width:320px){
         margin:5px 20px 25px 0;

@@ -17,6 +17,7 @@ const MainContent = () => {
 
   const[locale, setLocale]= useState(LOCALES.ENGLISH);
   const [open, setOpen] = useState(false);
+  
 
   return (
     <IntlProvider messages={messages[locale]} locale={locale}>
@@ -25,7 +26,7 @@ const MainContent = () => {
                 modules={[Pagination, Autoplay]}
                 slidesPerView={1}
                 autoplay={{
-                    delay: 3000000,
+                    delay: 4000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
@@ -115,7 +116,7 @@ const MainTextContainer = styled.div`
         justify-self: center;
         margin: 0 10px;
     }
-   
+
     @media (min-width: 768px) {
         color: white;
         width: 30vw;
@@ -129,6 +130,10 @@ const MainTextContainer = styled.div`
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 3;
+    }
+   
+    @media (max-width: 1390px) {
+        width: 55vw;
     }
 `;
 
@@ -217,7 +222,7 @@ const ButtonContainer = styled.div`
     }
 
     @media (min-width: 375px) {
-        margin-top: -25px;;
+        margin-top: -25px;
     }
 
     @media (min-width: 768px) {
@@ -227,6 +232,7 @@ const ButtonContainer = styled.div`
         grid-row-end:3;
         align-self: center;
         justify-self: start;
+        margin-top: 20px;
     }
 `;
 
