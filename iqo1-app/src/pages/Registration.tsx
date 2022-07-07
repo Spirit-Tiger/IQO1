@@ -17,7 +17,7 @@ interface MyFormValues {
 }
 
 
-const LoginPage = () => {
+const Registration = () => {
 
   const[locale, setLocale]= useState(LOCALES.ENGLISH);
   const initialValues: MyFormValues = { login:'',password:'' };
@@ -31,10 +31,10 @@ const LoginPage = () => {
                 <FlexContainer>
                      <div>
                         <Header>
-                            <FormattedMessage id="auth_header" />
+                            <FormattedMessage id="registration_header" />
                         </Header>
                         <Text> 
-                            <FormattedMessage id="auth_text" />
+                            <FormattedMessage id="registration_text" />
                         </Text>
                     </div>
                     <Link to="/"><CloseBtn></CloseBtn></Link>
@@ -48,18 +48,24 @@ const LoginPage = () => {
                     }}
                 >
                     <FormikStyledForm>
-                        <FormikStyledField name="login" placeholder={intl.formatMessage({id:"auth_login_name"})} />
-                        <FormikStyledField autocomplete="off" list="autocompleteOff"  type="password" name="password" placeholder={intl.formatMessage({id:"auth_password"})} />
-                        <ForgetPassButton>
-                            <Link to="/">
-                                <FormattedMessage id="auth_forget_password" />
-                            </Link>
-                        </ForgetPassButton>
-                        <LoginButton type="submit">
-                            <FormattedMessage id="auth_login_btn" />
-                        </LoginButton>
-                        <RegistrationButton to="/registation">
-                            <FormattedMessage id="auth_registration_btn" />
+                        <FieldGroup>
+                            <FormikHalfField name="name" placeholder={intl.formatMessage({id:"registration_first_name"})} />
+                            <FormikHalfField autocomplete="off" list="autocompleteOff"  type="text" name="surname" placeholder={intl.formatMessage({id:"registration_last_name"})} />
+
+                        </FieldGroup>
+                        <FieldGroup>
+                            <FormikOneThirdField  autocomplete="off" list="autocompleteOff"  type="text" name="country" placeholder={intl.formatMessage({id:"registration_country"})} />
+                            <FormikTwoThirdField autocomplete="off" list="autocompleteOff"  type="phone" name="phone" placeholder={intl.formatMessage({id:"registration_phone_number"})} />
+                        </FieldGroup>
+                       
+                        <FormikStyledField autocomplete="off" list="autocompleteOff"  type="email" name="email" placeholder={intl.formatMessage({id:"registration_email"})} />
+                        <FieldGroup>
+                            <FormikHalfField autocomplete="off" list="autocompleteOff"  type="text" name="login" placeholder={intl.formatMessage({id:"registration_login_name"})} />
+                            <FormikHalfField autocomplete="off" list="autocompleteOff"  type="password" name="password" placeholder={intl.formatMessage({id:"registration_password"})} />
+                        </FieldGroup>
+
+                        <RegistrationButton to="/">
+                            <FormattedMessage id="registration_btn" />
                         </RegistrationButton>
                     </FormikStyledForm>
                 </Formik>
@@ -69,11 +75,27 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Registration;
+
+const FieldGroup = styled.div`
+justify-content: center;
+     @media (min-width: 320px) {
+        display: flex;
+        flex-direction: column;
+        gap: 15px 30px;
+    }
+    @media (min-width: 1080px) {
+        display: flex;
+        flex-direction: row;
+        gap: 15px 30px;
+        
+    }
+`
+
 
 const LoginPageContainer = styled.div`
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 100%;
     color: white;
     background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MainImg}) no-repeat center/cover; 
@@ -82,18 +104,18 @@ const LoginPageContainer = styled.div`
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 375px){
-        background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MobileMainImg}) no-repeat center/cover; 
+    @media (min-width: 320px){
+        background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MobileMainImg}) no-repeat center/cover fixed; 
         background-size: 130%;
     }
 
     @media (min-width: 768px){
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         max-width: 100%;
         color: white;
-        background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MainImg}) no-repeat center/cover; 
-        background-size: 130%;
+        background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MainImg}) no-repeat center/cover fixed; 
+        background-size: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -116,7 +138,7 @@ const Logo = styled.img`
 
 const FormContainer = styled.div`
     
-    height: 65vh;
+    height: 100%;
     background-color:rgba(38, 49, 61, 1);
     border-radius: 20px;
     margin-bottom: 10px;
@@ -135,7 +157,7 @@ const FormContainer = styled.div`
     }
 
     @media (min-width: 1080px) {
-        width: 30vw;
+        width: 690px;
     }
 `;
 
@@ -143,7 +165,7 @@ const FlexContainer = styled.div`
     
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin: 15px 0;
 
     @media (min-width: 375px) {
         width: 90%;
@@ -181,11 +203,12 @@ const CloseBtn = styled.div`
 `;
 
 const FormikStyledForm = styled(Form)`
-    height: 38vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    margin: 30px 0;
+    row-gap: 15px;
     @media (min-width: 375px) {
         width: 85%;
     }
@@ -194,7 +217,54 @@ const FormikStyledForm = styled(Form)`
         width: 75%;
     }
 `;
+ const FormikHalfField = styled(Field)`
+     font-size:1.2em ;
+    color: white;
+    height: 40px;
+    min-height: 35px;
+    padding: 3px 25px;
+    border-radius: 6px;
+    border:1px solid rgba(255, 255, 255, 0.58) ;
+    background-color: rgba(38, 49, 61, 1);
+    @media (min-width: 320px) {
+       width: auto;
+    }
+    @media (min-width: 1080px) {
+        width: 50%;
+        
+    }
+ `
+  const FormikOneThirdField = styled(Field)`
+  font-size:1.2em ;
+ color: white;
+ height: 40px;
+ min-height: 35px;
+ padding: 3px 25px;
+ border-radius: 6px;
+ border:1px solid rgba(255, 255, 255, 0.58) ;
+ background-color: rgba(38, 49, 61, 1);
+ flex: 1 1 auto;
+ @media (min-width: 320px) {
+       width: auto;
+    }
+    @media (min-width: 1080px) {
+        width: 50%;
+        
+    }
+`
+const FormikTwoThirdField = styled(Field)`
+font-size:1.2em ;
+color: white;
+height: 40px;
+min-height: 35px;
+padding: 3px 25px;
+border-radius: 6px;
+border:1px solid rgba(255, 255, 255, 0.58) ;
+background-color: rgba(38, 49, 61, 1);
+width: auto;
+flex: 2 1 auto;
 
+`
 const FormikStyledField = styled(Field)`
     font-size:1.2em ;
     color: white;
@@ -234,15 +304,15 @@ export const LoginButton = styled.button`
 `;
 
 const RegistrationButton = styled(Link)`
-    color: white;
+    color: black;
+    font-weight: 500;
     font-size: 1.2em;
     height: 48px;
     text-decoration: none;
     border:1px solid rgba(255, 255, 255, 0.58) ;
     border-radius: 14px;
-    background-color: rgba(38, 49, 61, 1);
+    background: linear-gradient(92.77deg, #FFB800 16.59%, #9D7100 97.23%);
     display: flex;
     justify-content: center;
     align-items: center;
 `;
-

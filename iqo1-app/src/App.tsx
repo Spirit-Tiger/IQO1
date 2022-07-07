@@ -11,6 +11,7 @@ import Market from './components/Market';
 import Deposit from './components/Deposit';
 import Verify from './components/Verify';
 import Settings from './components/Settings';
+import Registration from './pages/Registration';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                 <Route path="veryfy" element={<Verify />} />
                 <Route path="settings" element={<Settings />} />
               </Route>
+              <Route path="registation" element={<Registration />} />
           </Routes>
       </BrowserRouter>
     </IntlProvider>
