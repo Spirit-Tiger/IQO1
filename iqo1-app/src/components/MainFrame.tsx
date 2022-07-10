@@ -42,13 +42,13 @@ const MainFrameStyle = styled.div`
 `;
 
 const MainFrameContainer = styled.div`
-    width: 1300px;
+    width: 67.8vw;
 
     @media (min-width: 320px) {
         width: 100%;
     }
 
     @media (min-width: 768px) {
-        width: 1300px;
+        width: 67.8vw;
     }
 `;
