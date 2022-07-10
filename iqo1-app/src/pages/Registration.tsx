@@ -3,8 +3,8 @@ import { FormattedMessage, IntlProvider } from "react-intl";
 import{messages} from '../i18n/eng';
 import { LOCALES } from "../i18n/constants";
 import styled from "styled-components";
-import MainImg from '../images/main_background.png';
-import MobileMainImg from '../images/mobile_background.png';
+import MainImg from '../images/main_background.webp';
+import MobileMainImg from '../images/mobile_background.webp';
 import LogoImg from '../images/logo.png';
 import {Formik, Form, Field} from 'formik';
 import { useIntl } from "react-intl";
@@ -137,19 +137,18 @@ const Logo = styled.img`
 `;
 
 const FormContainer = styled.div`
-    
     height: 100%;
     background-color:rgba(38, 49, 61, 1);
     border-radius: 20px;
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.15);
 
-    @media (min-width: 375px) {
-       width: 95vw;
+    @media (min-width: 350px) {
+        width: 90vw;
+        margin: 0px 10px 30px 10px;
     }
 
     @media (min-width: 768px) {
@@ -157,6 +156,7 @@ const FormContainer = styled.div`
     }
 
     @media (min-width: 1080px) {
+        min-height: 580px;
         width: 690px;
     }
 `;
@@ -315,4 +315,11 @@ const RegistrationButton = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (min-width: 320px) {
+       margin-top:10px;
+    }
+    @media (min-width: 769px) {
+        margin-top:20px;
+        
+    }
 `;

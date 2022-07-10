@@ -73,6 +73,8 @@ const ThirdFrameContainer= styled.div`
 `;
 
 const FlexContainer= styled.div`
+    position: relative;
+    z-index: 2;
     color: white;
     display: flex;
     flex-direction: column;

@@ -44,6 +44,7 @@ const MainContent = () => {
 export default MainContent;
 
 const FlexContainer = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
 `;
@@ -175,6 +176,7 @@ const TextBlockWrap = styled.div`
 
 const EllipseImage = styled.img`
     position: absolute;
+    z-index: 0;
 
     @media (min-width: 375px){
         width: 600px;

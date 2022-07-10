@@ -12,6 +12,7 @@ import Deposit from './components/Deposit';
 import Verify from './components/Verify';
 import Settings from './components/Settings';
 import Registration from './pages/Registration';
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
               </Route>
               <Route path="registation" element={<Registration />} />
           </Routes>
+          <Footer />
       </BrowserRouter>
     </IntlProvider>
   );
