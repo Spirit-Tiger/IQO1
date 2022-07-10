@@ -76,14 +76,14 @@ const LoginPageContainer = styled.div`
     height: 100vh;
     max-width: 100%;
     color: white;
-    background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MainImg}) no-repeat center/cover; 
+    background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MainImg}) no-repeat center/cover ; 
     background-size: 130%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     @media (min-width: 375px){
-        background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MobileMainImg}) no-repeat center/cover; 
+        background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MobileMainImg}) no-repeat center/cover fixed; 
         background-size: 130%;
     }
 
@@ -92,8 +92,8 @@ const LoginPageContainer = styled.div`
         height: 100vh;
         max-width: 100%;
         color: white;
-        background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MainImg}) no-repeat center/cover; 
-        background-size: 130%;
+        background: linear-gradient(243.18deg, rgba(255, 184, 0, 0.67) 28.65%, rgba(18, 24, 30, 0.67) 100%), url(${MainImg}) no-repeat center/cover fixed; 
+        background-size: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -127,7 +127,7 @@ const FormContainer = styled.div`
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.15);
 
     @media (min-width: 375px) {
-       width: 95vw;
+       width: 90vw;
     }
 
     @media (min-width: 768px) {
