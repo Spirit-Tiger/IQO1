@@ -39,7 +39,7 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.div`
-    width: 1300px;
+    width: 67.8vw;
     height: 120px;
     color: white;
     display: flex;
@@ -60,7 +60,7 @@ const HeaderContainer = styled.div`
     }
 
     @media (min-width: 1080px) {
-        width: 1300px;
+        width: 67.8vw;
         height: 120px;
         display: flex;
         justify-content: space-between ;
@@ -88,7 +88,7 @@ const NavContainer = styled.div`
         width: max-content;
         
         div{
-            margin-left: 20px;
+            margin-right: 20px;
         }
     }
 

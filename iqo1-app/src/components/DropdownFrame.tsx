@@ -21,9 +21,6 @@ const DropdownFrame = () => {
                 <DropdownFrameHeader>
                     <FormattedMessage id="faq_header" />
                 </DropdownFrameHeader>
-                <DropdownFrameText>
-                    <FormattedMessage id="faq_text" />
-                </DropdownFrameText>
                 <AllDropdowns>
                     <LeftDropdowns>
                         <DropdownElement headerId="faq_header_1" textId="faq_text_1" />
@@ -72,7 +69,15 @@ const ContentContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 67.8vw;
+    
+
+    @media (min-width:320px) {
+        width: 82vw;
+    }
+
+    @media (min-width:768px) {
+        width: 67.8vw;
+    }
 `;
 
 const LeftDropdowns = styled.div`
@@ -107,26 +112,14 @@ const AllDropdowns = styled.div`
 
 
 const DropdownFrameHeader = styled.h2`
+    margin: 0;
+    align-self: flex-start;
     @media (min-width:320px) {
         font-size: 1.5em;
     }
 
     @media (min-width:768px) {
         font-size: 2em;
-        margin: 0;
-        align-self: flex-start;
-    }
-`;
-
-const DropdownFrameText = styled.p`
-    margin: 0;
-
-    @media (min-width:320px) {
-        width: 82vw;
-    }
-
-    @media (min-width:768px) {
-        align-self: flex-start;
     }
 `;
 
@@ -137,7 +130,7 @@ const EllipseImage = styled.div`
 
     @media (min-width: 375px){
         width: 100%;
-        height: 1050px;
+        height: 1015px;
         top:0;
         margin-top: -100px;
         background-position: 75% 25%;
@@ -145,7 +138,7 @@ const EllipseImage = styled.div`
 
     @media (min-width: 768px){
         width: 100%;
-        height: 1015px;
+        height: 995px;
         top:5%;
         left: 0;
         margin-top: -180px;

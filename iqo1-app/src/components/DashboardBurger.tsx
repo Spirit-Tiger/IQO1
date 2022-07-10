@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import styled from 'styled-components';
-import RightNav from './RightNav';
+import DashboardRightNav from './DashboardRightNav';
 
-const Burger = () => {
-  const [open, setOpen] = useState(false);
-  
+const DashboardBurger = () => {
+    const [open, setOpen] = useState(false);
   return (
     <>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <div />
-        <div />
-        <div />
-      </StyledBurger>
-      <RightNav open={open}/>
+        <StyledBurger open={open} onClick={() => setOpen(!open)}>
+            <div />
+            <div />
+            <div />
+        </StyledBurger>
+        <DashboardRightNav open={open}/>
     </>
   )
 }
 
-export default Burger;
+export default DashboardBurger;
+
 
 const StyledBurger = styled.div<{open: boolean}>`
     width: 38px;

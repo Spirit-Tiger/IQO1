@@ -26,7 +26,7 @@ const MainContent = () => {
                 modules={[Pagination, Autoplay]}
                 slidesPerView={1}
                 autoplay={{
-                    delay: 4000,
+                    delay: 400000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
@@ -79,7 +79,7 @@ const MainContent = () => {
 export default MainContent;
 
 const MainContentContainer = styled.div`
-    width: 1300px;
+    width: 67.8vw;
     height: calc(100vh - 120px) ;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -92,7 +92,7 @@ const MainContentContainer = styled.div`
     }
 
     @media (min-width: 768px) {
-        width: 1300px;
+        width: 67.8vw;
         height: calc(100vh - 120px) ;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -132,9 +132,6 @@ const MainTextContainer = styled.div`
         grid-row-end: 3;
     }
    
-    @media (max-width: 1390px) {
-        width: 55vw;
-    }
 `;
 
 const MainTextHeader = styled.h1`
@@ -146,10 +143,12 @@ const MainTextHeader = styled.h1`
     }
 
     @media (min-width: 768px) {
-        font-size:3.2em ;
-        margin: 0;
+        font-size:2.8em ;
     }
 
+    @media (min-width: 1400px) {
+        font-size:3.2em ;
+    }
 `;
 
 const MainText = styled.p`

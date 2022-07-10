@@ -20,9 +20,6 @@ const InfoFrame = () => {
                         <ThirdFrameHeader>
                             <div><FormattedMessage id="about_our_company" /></div>
                         </ThirdFrameHeader>
-                        <ThirdFrameText>
-                            <div><FormattedMessage id="fill_text" /></div>
-                        </ThirdFrameText>
                     </HeaderContainer>
                     <InfoContainer>
                         <InfoBlockContainer>
@@ -110,9 +107,6 @@ const ThirdFrameHeader = styled.h2`
   
 `;
 
-const ThirdFrameText = styled.p`
-    margin: 0;
-`;
 
 const InfoContainer = styled.div`
     width: 67.8vw;
@@ -200,7 +194,6 @@ const Description = styled.p`
 
 const EllipseImage = styled.img`
     position: absolute;
-    z-index: 1;
 
     @media (min-width: 375px){
         width: 500px;

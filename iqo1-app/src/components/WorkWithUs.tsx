@@ -14,11 +14,10 @@ const MainContent = () => {
 
     return (
         <WorkWithUsFrame>
-            <EllipseImage src={Ellipse1}/>
+            <EllipseImage />
             <FlexContainer>
                 <HeadContainer>
                     <Head><FormattedMessage id="work_header" /></Head>
-                    <WorkParagraph><FormattedMessage id="work_header__p"/></WorkParagraph>
                 </HeadContainer>
                 <MainContentContainer>
                     <PhoneWrap>
@@ -100,16 +99,8 @@ const WorkWithUsFrame = styled.div`
     align-items: center;
     padding: 0;
     margin: 0;
+`
 
-    @media (max-width: 768px){
-        overflow: hidden;
-    }
-`
-const WorkParagraph = styled.p`
-    font-size: 16px;
-    color: #7D7D7D;
-    margin: 0;
-`
 const PhoneContainer = styled.div`
     display: flex;
     align-items: center;
@@ -174,21 +165,26 @@ const TextBlockWrap = styled.div`
     }
 `
 
-const EllipseImage = styled.img`
+const EllipseImage = styled.div`
     position: absolute;
-    z-index: 0;
-
+    background: url(${Ellipse1}) no-repeat left/contain;
+  
     @media (min-width: 375px){
-        width: 600px;
-        top: 41%;
+        width: 100%;
+        height:50%;
+        bottom: -20%;
         left: 0;
+    
+        z-index: 1;
     }
 
     @media (min-width: 768px){
-        width: 500px;
-        margin-top: -250px;
+        width: 450px;
+        height:1000px;
+        margin-top: -240px;
         top:0;
         left:0;
+        z-index: 0;
     }
   
 `;

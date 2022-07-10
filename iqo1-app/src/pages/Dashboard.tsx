@@ -1,17 +1,19 @@
 import React from 'react'
 import { Outlet } from 'react-router';
 import styled from 'styled-components';
-import DashboardMenu from './DashboardMenu';
+import DashboardMenu from '../components/DashboardMenu';
 
 const Dashboard = () => {
     
   return (
-    <DashboardContainer>
-      <DashboardMenu />
-      <OutletContainer>
-         <Outlet />
-      </OutletContainer>
-    </DashboardContainer>
+    <>
+      <DashboardContainer>
+        <DashboardMenu />
+        <OutletContainer>
+          <Outlet />
+        </OutletContainer>
+      </DashboardContainer>
+    </>
   )
 
 }

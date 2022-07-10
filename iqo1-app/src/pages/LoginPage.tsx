@@ -156,13 +156,28 @@ const FlexContainer = styled.div`
 
 const Header = styled.h2`
     margin: 0;
-    font-size: 2.4em;
+    
+    @media (min-width: 375px) {
+        font-size: 1.8em;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 2.4em;
+    }
 `;
 
 const Text = styled.p`
     margin: 5px 0;
     color:rgba(199, 199, 199, 1);
-    font-size: 1.2em;
+    
+
+    @media (min-width: 375px) {
+        font-size: 1.1em;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 1.2em;
+    }
 `;
 
 const CloseBtn = styled.div`
