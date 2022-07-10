@@ -14,22 +14,30 @@ const WorkTextBlock = () => {
     return (
        <Container>
         <Item>
+        <SvgWrapper>
             <StyledSVG/>
+            </SvgWrapper>
             <ItemHead><FormattedMessage id="work_txt_head_blck1"/></ItemHead>
             <ItemText><FormattedMessage id="work_txt_blck1"/></ItemText>
         </Item>
         <Item>
+            <SvgWrapper>
             <StyledSVG1/>
+            </SvgWrapper>
             <ItemHead><FormattedMessage id="work_txt_head_blck2"/></ItemHead>
             <ItemText><FormattedMessage id="work_txt_blck2"/></ItemText>
         </Item>
         <Item>  
+        <SvgWrapper>
             <StyledSVG2/>
+            </SvgWrapper>
             <ItemHead><FormattedMessage id="work_txt_head_blck3"/></ItemHead>
             <ItemText><FormattedMessage id="work_txt_blck3"/></ItemText>
         </Item>
         <Item> 
+        <SvgWrapper>
             <StyledSVG3/>
+            </SvgWrapper>
             <ItemHead><FormattedMessage id="work_txt_head_blck4"/></ItemHead>
             <ItemText><FormattedMessage id="work_txt_blck4"/></ItemText>
         </Item>
@@ -42,7 +50,11 @@ const WorkTextBlock = () => {
 export default WorkTextBlock;
 
 const Container= styled.div`
-    display: flex;
+    @media (min-width: 320px) {
+        /* width: 500px; */
+        display: flex;
+        width:  330px;
+
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -50,17 +62,14 @@ const Container= styled.div`
     row-gap: 20px;
     overflow:visible;
     padding: 15px 0;
-    width: 700px;
-    min-width: 350px;
+    /* width: 700px; */
+    /* min-width: 350px; */
     max-width: 100%;
     height: 100%;
     z-index: 2;
-
-    @media (min-width: 320px) {
-        width: 320px;
     }
     @media (min-width: 768px) {
-        width: 750px ;
+        width: 100% ;
     }
 /* padding-bottom: 100px; */
 /* margin-bottom: 100px; */
@@ -71,24 +80,31 @@ const Item = styled.div`
     to {opacity: 1;}
 }
 display: flex;
-    width: 310px;
-    height: 345px;
+    aspect-ratio : 1 / 1;
     background-color: #12181e5e;
    /* outline: solid 1px #FFFFFF blur(3px); */
    box-shadow: 0px 0px 5px 5px #ffffff3b;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
    text-align: justify;
    flex-direction: column;
    transition:all 0.25s ease;
    @media (min-width:320px) {
-    
+    width: 90%;
+    height: 100%;
    }
    @media (min-width:768px) {
+    overflow: hidden;
+    height: 0;
+    padding-bottom: calc(50% + 14px);
+    width: calc(50% - 21px);
     p{
     opacity: 0;
    }
    :hover{
+    /* height: 100%; */
+    overflow: visible;
+    padding-bottom: 50%;
     transform: scale(1.2);
     background-color: #12181e;
     p{
@@ -96,32 +112,100 @@ display: flex;
     };
 }
 }
+@media (min-width:1280px) {
+    :hover{
+    /* height: 100%; */
+    overflow: visible;
+    padding-bottom: calc(50% + 14px);
+    transform: scale(1.1);
+    background-color: #12181e;
+    p{
+       animation: 1s learn 1 forwards;
+    };
+   }
+}
 `
 const ItemHead = styled.h2`
-    font-size: 24px;
+    margin: 0;
+   
     color:white;
-    font-size: 24px;
     padding: 0 15px;
-    text-align: justify;
-    word-break: break-word;
+    /* text-align: justify; */
+    word-break: break-all;
+    @media (min-width:320px) {
+    font-size: 24px;
+    margin: 15px 0;
+}
+@media (min-width:768px) {
+    font-size: 1.25vw;
+    margin: 1.2vw 0;
+
+}
 
    
 `
 const ItemText = styled.p`
-    font-size: 14px;
-    color: #7D7D7D;
     margin: 0 20px;
+    
+    color: #7D7D7D;
+    @media (min-width:320px) {
+    font-size: 14px;
+}
+@media (min-width:768px) {
+    font-size: 0.72vw;
+}
 
 `
 const StyledSVG = styled(BrandIcon)`
-    margin: 45px;
+    /* margin: 45px 0 0 0 ; */
+  
+    @media (min-width:320px) {
+    font-size: 14px;
+}
+@media (min-width:768px) {
+    width: 3.125vw;
+    /* height: 8.34vh; */
+}
+
 `
 const StyledSVG1 = styled(BrandIcon1)`
-    margin: 45px;
+    /* margin: 45px 0 0 0 ; */
+    @media (min-width:320px) {
+    font-size: 14px;
+}
+@media (min-width:768px) {
+    width: 3.125vw;
+    /* height: 8.34vh; */
+}
+
 `
 const StyledSVG2 = styled(BrandIcon2)`
-    margin: 45px;
+    /* margin: 45px 0 0 0 ; */
+    @media (min-width:320px) {
+    font-size: 14px;
+}
+@media (min-width:768px) {
+    width: 3.125vw;
+    /* height: 8.34vh; */
+}
 `
 const StyledSVG3 = styled(BrandIcon3)`
-    margin: 45px;
+    /* margin: 45px 0 0 0 ;  */
+    @media (min-width:320px) {
+    font-size: 14px;
+}
+@media (min-width:768px) {
+    width: 3.125vw;
+    /* height: 8.34vh; */
+}
+
+`
+const SvgWrapper = styled.div`
+    margin-top:  1.5vw;
+    @media (min-width:320px) {
+    margin-top: 30px;
+}
+@media (min-width:768px) {
+    margin-top:  1.5vw;
+}
 `
