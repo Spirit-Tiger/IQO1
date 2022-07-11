@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import Arrow from "../images/arrow.png";
 
@@ -12,7 +10,6 @@ interface DropdownElementProps {
 
 const DropdownElement = ({headerId, textId}:DropdownElementProps) => {
 
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
   const [isActive, setIsActive] = useState(false);
 
   const OpenDropdown = () => {
@@ -21,19 +18,17 @@ const DropdownElement = ({headerId, textId}:DropdownElementProps) => {
   }
 
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
-        <DropdownElementContainer isActive={isActive} onClick={OpenDropdown}>
-            <DropdownElementHeaderContainer>
-                <DropdownElementHeader>
-                    <FormattedMessage id={headerId}/>
-                </DropdownElementHeader>
-                <ArrowImg isActive={isActive} src={Arrow}/>
-            </DropdownElementHeaderContainer>
-            <DropdownElementText>
-                <FormattedMessage id={textId}/>
-            </DropdownElementText>
-        </DropdownElementContainer>
-    </IntlProvider>
+    <DropdownElementContainer isActive={isActive} onClick={OpenDropdown}>
+        <DropdownElementHeaderContainer>
+            <DropdownElementHeader>
+                <FormattedMessage id={headerId}/>
+            </DropdownElementHeader>
+            <ArrowImg isActive={isActive} src={Arrow}/>
+        </DropdownElementHeaderContainer>
+        <DropdownElementText>
+            <FormattedMessage id={textId}/>
+        </DropdownElementText>
+    </DropdownElementContainer>
   );
 };
 

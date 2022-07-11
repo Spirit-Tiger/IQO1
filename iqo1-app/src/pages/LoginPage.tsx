@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage} from "react-intl";
 import styled from "styled-components";
 import MainImg from '../images/main_background.webp';
 import MobileMainImg from '../images/mobile_background.webp';
@@ -19,12 +17,10 @@ interface MyFormValues {
 
 const LoginPage = () => {
 
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
   const initialValues: MyFormValues = { login:'',password:'' };
   const intl = useIntl();
 
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
         <LoginPageContainer>
             <Logo src={LogoImg} alt="logo" />
             <FormContainer>
@@ -65,7 +61,6 @@ const LoginPage = () => {
                 </Formik>
             </FormContainer>
         </LoginPageContainer>
-    </IntlProvider>
   );
 };
 

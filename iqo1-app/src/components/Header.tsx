@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import LogoImg from "../images/logo.png";
 import Burger from "./Burger";
@@ -9,30 +7,27 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
 
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
-        <HeaderContainer>
-            <LogoImageContainer></LogoImageContainer>
-            <NavContainer>
-                <div><Link to="dashboard"><FormattedMessage id="home" /></Link></div>
-                <div><FormattedMessage id="about_us" /></div>
-                <div><FormattedMessage id="terms" /></div>
-                <div><FormattedMessage id="contacts" /></div>
-            </NavContainer>
-            <LoginButtonContainer>
-                <div><FormattedMessage id="language_change1"/></div>
-                <div>/</div>
-                <div><FormattedMessage id="language_change2"/></div>
-                <Link to="login">
-                    <LoginButton>
-                        <FormattedMessage id="login_btn" />
-                    </LoginButton>
-                </Link>
-            </LoginButtonContainer>
-            <Burger />
-        </HeaderContainer>
-    </IntlProvider>
+    <HeaderContainer>
+        <LogoImageContainer></LogoImageContainer>
+        <NavContainer>
+            <div><Link to="dashboard"><FormattedMessage id="home" /></Link></div>
+            <div><FormattedMessage id="about_us" /></div>
+            <div><FormattedMessage id="terms" /></div>
+            <div><FormattedMessage id="contacts" /></div>
+        </NavContainer>
+        <LoginButtonContainer>
+            <div><FormattedMessage id="language_change1"/></div>
+            <div>/</div>
+            <div><FormattedMessage id="language_change2"/></div>
+            <Link to="login">
+                <LoginButton>
+                    <FormattedMessage id="login_btn" />
+                </LoginButton>
+            </Link>
+        </LoginButtonContainer>
+        <Burger />
+    </HeaderContainer>
   );
 };
 

@@ -80,5 +80,9 @@ export const messages = {
        dm_sub_faq: "FAQ",
        dm_sub_contacts: "Contacts",
        dm_sub_support: "Support",
+
+       total_balance_header: "Total Balance :",
+       invest_btn: "Invest",
+       withdrow_btn: "Withdrow", 
     }
 };

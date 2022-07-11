@@ -17,45 +17,43 @@ interface RightNavProps {
 }
 
 const DashboardRightNav = ({ open, setOpen }:RightNavProps) => {
-    const[locale, setLocale]= useState(LOCALES.ENGLISH);
+
     return (
-        <IntlProvider messages={messages[locale]} locale={locale} >
-            <RightNavContainer open={open}>
-                <DashboardMenuContainer>
-                    <Logo src={LogoImg} alt="logo"/>
-                    <MenuList>
-                        <MenuItem onClick={() => setOpen(!open)}>
-                            <MenuIcon src={DashbordIcon} />
-                            <Link to=""><FormattedMessage id="dm_dashboard" /></Link>
-                        </MenuItem>
-                        <MenuItem onClick={() => setOpen(!open)}>
-                            <MenuIcon src={MarketIcon}/>
-                            <Link to="market"><FormattedMessage id="dm_market" /></Link>
-                        </MenuItem>
-                        <MenuItem onClick={() => setOpen(!open)}>
-                            <MenuIcon src={DepositIcon}/>
-                            <Link to="deposit"><FormattedMessage id="dm_deposit" /></Link>
-                        </MenuItem>
-                        <MenuItem onClick={() => setOpen(!open)}>
-                            <MenuIcon src={VeifyIcon}/>
-                            <Link to="veryfy"><FormattedMessage id="dm_verify" /></Link>
-                        </MenuItem>
-                        <MenuItem onClick={() => setOpen(!open)}>
-                            <MenuIcon src={SettingsIcon}/>
-                            <Link to="settings"><FormattedMessage id="dm_settings" /></Link>
-                        </MenuItem>   
-                    </MenuList>
-                    <SubMenu>
-                        <div><FormattedMessage id="dm_sub_menu" /></div>
-                        <Link to="/"><FormattedMessage id="dm_sub_home" /></Link>
-                        <Link to="/"><FormattedMessage id="dm_sub_faq" /></Link>
-                        <Link to="/"><FormattedMessage id="dm_sub_contacts" /></Link>
-                        <Link to="/"><FormattedMessage id="dm_sub_support" /></Link>
-                    </SubMenu>
-                </DashboardMenuContainer>
-            </RightNavContainer>
-        </IntlProvider>
-      )
+        <RightNavContainer open={open}>
+            <DashboardMenuContainer>
+                <Logo src={LogoImg} alt="logo"/>
+                <MenuList>
+                    <MenuItem onClick={() => setOpen(!open)}>
+                        <MenuIcon src={DashbordIcon} />
+                        <Link to=""><FormattedMessage id="dm_dashboard" /></Link>
+                    </MenuItem>
+                    <MenuItem onClick={() => setOpen(!open)}>
+                        <MenuIcon src={MarketIcon}/>
+                        <Link to="market"><FormattedMessage id="dm_market" /></Link>
+                    </MenuItem>
+                    <MenuItem onClick={() => setOpen(!open)}>
+                        <MenuIcon src={DepositIcon}/>
+                        <Link to="deposit"><FormattedMessage id="dm_deposit" /></Link>
+                    </MenuItem>
+                    <MenuItem onClick={() => setOpen(!open)}>
+                        <MenuIcon src={VeifyIcon}/>
+                        <Link to="veryfy"><FormattedMessage id="dm_verify" /></Link>
+                    </MenuItem>
+                    <MenuItem onClick={() => setOpen(!open)}>
+                        <MenuIcon src={SettingsIcon}/>
+                        <Link to="settings"><FormattedMessage id="dm_settings" /></Link>
+                    </MenuItem>   
+                </MenuList>
+                <SubMenu>
+                    <div><FormattedMessage id="dm_sub_menu" /></div>
+                    <Link to="/"><FormattedMessage id="dm_sub_home" /></Link>
+                    <Link to="/"><FormattedMessage id="dm_sub_faq" /></Link>
+                    <Link to="/"><FormattedMessage id="dm_sub_contacts" /></Link>
+                    <Link to="/"><FormattedMessage id="dm_sub_support" /></Link>
+                </SubMenu>
+            </DashboardMenuContainer>
+        </RightNavContainer>
+    )
 }
 
 export default DashboardRightNav;

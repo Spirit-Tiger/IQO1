@@ -26,8 +26,6 @@ const Wrapper = ({children}:any) => {
 function App() {
 
    const[locale, setLocale]= useState(LOCALES.ENGLISH);
-   console.log(IntlProvider);
-
 
   return (
     <IntlProvider messages={messages[locale]} locale={locale} >
