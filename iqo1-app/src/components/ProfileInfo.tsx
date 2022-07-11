@@ -27,6 +27,10 @@ const ProfileInfoContainer = styled.div`
     color: white;
     display: flex;
     justify-content: space-between;
+
+    @media (max-height: 700px){
+        margin: 15px 0;
+    }
 `;
 
 const ProfileImage = styled.img`

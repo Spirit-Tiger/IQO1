@@ -16,8 +16,6 @@ import './sliderPagination.css';
 const MainContent = () => {
 
   const[locale, setLocale]= useState(LOCALES.ENGLISH);
-  const [open, setOpen] = useState(false);
-  
 
   return (
     <IntlProvider messages={messages[locale]} locale={locale}>
@@ -140,10 +138,12 @@ const MainTextHeader = styled.h1`
 
     @media (min-width: 320px) {
         font-size:1.5em;
+        text-align: center;
     }
 
     @media (min-width: 768px) {
         font-size:2.8em ;
+        text-align: left;
     }
 
     @media (min-width: 1400px) {

@@ -14,4 +14,8 @@ export default DashboardMain;
 const DasboardMainContainer = styled.div`
     font-size: 5em;
     margin: 50px; 
+
+    @media (max-width: 768px){
+      font-size: 2em;
+    }
 `;
