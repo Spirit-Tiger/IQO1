@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 
 interface GradientButtonProps {
@@ -10,14 +8,10 @@ interface GradientButtonProps {
 
 const GradientButton = ({textId}:GradientButtonProps) => {
 
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
-
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
-        <GradientButtonStyle>
-            <FormattedMessage id={textId}/>
-        </GradientButtonStyle>
-    </IntlProvider>
+    <GradientButtonStyle>
+        <FormattedMessage id={textId}/>
+    </GradientButtonStyle>
   );
 };
 

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import { Canvas, } from '@react-three/fiber';
 import RenderGltf from "./Model3D";
@@ -15,64 +13,58 @@ import './sliderPagination.css';
 
 const MainContent = () => {
 
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
-  const [open, setOpen] = useState(false);
-  
-
   return (
-    <IntlProvider messages={messages[locale]} locale={locale}>
-            <Swiper className='sliderPagination'
-                // allowTouchMove={false}
-                modules={[Pagination, Autoplay]}
-                slidesPerView={1}
-                autoplay={{
-                    delay: 400000,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                clickable: true,     
-                }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
-                >
-                    <SwiperSlide>
-                        <MainContentContainer>
-                            <MainTextContainer>
-                                <MainTextHeader>
-                                    <FormattedMessage id="slogan_header"/>
-                                </MainTextHeader>
-                            </MainTextContainer>
-                            <ButtonContainer>
-                                <GradientButton textId="starting_btn"/>
-                            </ButtonContainer>
-                            <CanvasContainer>
-                                <Canvas>
-                                    <RenderGltf shadow={false} scale={1.6} version={1}/> 
-                                </Canvas>
-                            </CanvasContainer>
-                        </MainContentContainer>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <SecondSlideContainer>
-                            <SlideHeader1>
-                                <FormattedMessage id="slogan_header_slide2"/>
-                            </SlideHeader1>
-                            <MainText>
-                                <FormattedMessage id="slogan_text_slide2"/>
-                            </MainText>
-                            <GradientButton textId="starting_btn"/>
-                        </SecondSlideContainer>
-                    </SwiperSlide>
-                    <SwiperSlide>  
-                        <SecondSlideContainer>
-                            <SlideHeader2>
-                                <FormattedMessage id="slogan_header_slide3"/>
-                            </SlideHeader2>
-                            <GradientButton textId="starting_btn"/>
-                        </SecondSlideContainer>
-                    </SwiperSlide>
-            </Swiper>
-    </IntlProvider>
+    <Swiper className='sliderPagination'
+        // allowTouchMove={false}
+        modules={[Pagination, Autoplay]}
+        slidesPerView={0.999}
+        autoplay={{
+            delay: 500000,
+            disableOnInteraction: false,
+        }}
+        pagination={{
+        clickable: true,     
+        }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log('slide change')}
+        >
+            <SwiperSlide>
+                <MainContentContainer>
+                    <MainTextContainer>
+                        <MainTextHeader>
+                            <FormattedMessage id="slogan_header"/>
+                        </MainTextHeader>
+                    </MainTextContainer>
+                    <ButtonContainer>
+                        <GradientButton textId="starting_btn"/>
+                    </ButtonContainer>
+                    <CanvasContainer>
+                        <Canvas>
+                            <RenderGltf shadow={false} scale={1.6} version={1}/> 
+                        </Canvas>
+                    </CanvasContainer>
+                </MainContentContainer>
+            </SwiperSlide>
+            <SwiperSlide>
+                <SecondSlideContainer>
+                    <SlideHeader1>
+                        <FormattedMessage id="slogan_header_slide2"/>
+                    </SlideHeader1>
+                    <MainText>
+                        <FormattedMessage id="slogan_text_slide2"/>
+                    </MainText>
+                    <GradientButton textId="starting_btn"/>
+                </SecondSlideContainer>
+            </SwiperSlide>
+            <SwiperSlide>  
+                <SecondSlideContainer>
+                    <SlideHeader2>
+                        <FormattedMessage id="slogan_header_slide3"/>
+                    </SlideHeader2>
+                    <GradientButton textId="starting_btn"/>
+                </SecondSlideContainer>
+            </SwiperSlide>
+    </Swiper>
   );
 };
 
@@ -87,7 +79,7 @@ const MainContentContainer = styled.div`
 
     @media (min-width: 320px) {
         grid-template-columns: 1fr;
-        width: 100%;
+        width: 82vw;
         height: calc(100vh - 120px) ;
     }
 
@@ -140,10 +132,12 @@ const MainTextHeader = styled.h1`
 
     @media (min-width: 320px) {
         font-size:1.5em;
+        text-align: center;
     }
 
     @media (min-width: 768px) {
         font-size:2.8em ;
+        text-align: left;
     }
 
     @media (min-width: 1400px) {
@@ -231,7 +225,7 @@ const ButtonContainer = styled.div`
         grid-row-end:3;
         align-self: center;
         justify-self: start;
-        margin-top: 20px;
+        margin-top: 40px;
     }
 `;
 

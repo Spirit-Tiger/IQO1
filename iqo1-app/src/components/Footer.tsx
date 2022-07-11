@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import VisaImg from '../images/visa.png';
 import MasterCardImg from "../images/mastercard.png";
@@ -9,10 +7,7 @@ import MasterCardImg from "../images/mastercard.png";
 
 const Footer = () => {
 
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
-
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
         <FooterContainer>
           <FooterContent>
               <div><FormattedMessage id="footer_text"/></div>
@@ -22,7 +17,6 @@ const Footer = () => {
               </ImagesContainer>
           </FooterContent>
         </FooterContainer>
-    </IntlProvider>
   );
 };
 

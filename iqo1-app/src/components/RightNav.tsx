@@ -1,7 +1,5 @@
 import React,{useState} from 'react';
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage} from "react-intl";
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
@@ -11,11 +9,7 @@ interface RightNavProps {
 
 const RightNav = ({ open }:RightNavProps) => {
 
-
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
-    
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
         <RightNavContainer open={open}>
                 <NavList>
                     <Link to="login">
@@ -34,9 +28,7 @@ const RightNav = ({ open }:RightNavProps) => {
                         <div><FormattedMessage id="language_change2"/></div>
                     </LanguageOptions>
                 </NavList>
-
         </RightNavContainer>
-    </IntlProvider>
   )
 }
 

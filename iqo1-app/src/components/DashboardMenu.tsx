@@ -54,12 +54,16 @@ export default DashboardMenu;
 
 const DashboardMenuContainer = styled.div`
   width: 260px;
-  height: 100%;
+  min-height: 100%;
   background-color: #26313D;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+
+  @media (max-width: 768px){
+        display: none;
+    }
 `;
 
 const Logo = styled.img`
@@ -67,10 +71,12 @@ const Logo = styled.img`
 `;
 
 const MenuList = styled.nav`
+  margin: 10px 0;
   display: flex;
   flex-direction: column;
   height: 240px;
   justify-content: space-between;
+
   a {
     text-decoration: none;
     color: white;

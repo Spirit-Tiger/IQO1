@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage} from "react-intl";
 import styled from "styled-components";
 import MainImg from '../images/main_background.webp';
 import MobileMainImg from '../images/mobile_background.webp';
@@ -19,12 +17,10 @@ interface MyFormValues {
 
 const LoginPage = () => {
 
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
   const initialValues: MyFormValues = { login:'',password:'' };
   const intl = useIntl();
 
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
         <LoginPageContainer>
             <Logo src={LogoImg} alt="logo" />
             <FormContainer>
@@ -65,7 +61,6 @@ const LoginPage = () => {
                 </Formik>
             </FormContainer>
         </LoginPageContainer>
-    </IntlProvider>
   );
 };
 
@@ -123,15 +118,17 @@ const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+   
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.15);
 
     @media (min-width: 375px) {
        width: 90vw;
+       justify-content: space-around;
     }
 
     @media (min-width: 768px) {
         width: 70vw;
+        justify-content: space-evenly;
     }
 
     @media (min-width: 1080px) {
@@ -140,17 +137,13 @@ const FormContainer = styled.div`
 `;
 
 const FlexContainer = styled.div`
-    
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    width: 85%;
 
-    @media (min-width: 375px) {
-        width: 90%;
-    }
-
-    @media (min-width: 768px) {
-        width: 85%;
+    @media (max-width: 768px) {
+        margin: 0;
     }
 `;
 
@@ -161,7 +154,11 @@ const Header = styled.h2`
         font-size: 1.8em;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1080px) {
+        font-size: 2em;
+    }
+
+    @media (min-width: 1400px) {
         font-size: 2.4em;
     }
 `;
@@ -172,17 +169,21 @@ const Text = styled.p`
     
 
     @media (min-width: 375px) {
+        font-size: 1em;
+    }
+
+    @media (min-width: 1080px) {
         font-size: 1.1em;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1400px) {
         font-size: 1.2em;
     }
 `;
 
 const CloseBtn = styled.div`
     background: url(${CloseBtnImg}) no-repeat center/cover; 
-    
+    margin-top: 5px;
 
     @media (min-width: 375px) {
         width: 24px;
@@ -190,23 +191,29 @@ const CloseBtn = styled.div`
     }
 
     @media (min-width: 768px) {
+        width: 26px;
+        height: 26px;
+    }
+
+    @media (min-width: 1400px) {
         width: 30px;
         height: 30px;
     }
 `;
 
 const FormikStyledForm = styled(Form)`
-    height: 38vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     @media (min-width: 375px) {
         width: 85%;
+        height: 42vh;
     }
 
     @media (min-width: 768px) {
         width: 75%;
+        height: 38vh;
     }
 `;
 
@@ -219,6 +226,12 @@ const FormikStyledField = styled(Field)`
     border-radius: 6px;
     border:1px solid rgba(255, 255, 255, 0.58) ;
     background-color: rgba(38, 49, 61, 1);
+
+    @media (max-height: 700px){
+        height: 30px;
+        min-height: 25px;
+        font-size:1.1em ;
+    }
 `;
 
 
@@ -246,6 +259,12 @@ export const LoginButton = styled.button`
     :hover {
         cursor: pointer;
     }
+
+    @media (max-height: 700px){
+        height: 42px;
+        min-height: 30px;
+        font-size:1.1em ;
+    }
 `;
 
 const RegistrationButton = styled(Link)`
@@ -259,5 +278,11 @@ const RegistrationButton = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-height: 700px){
+        height: 42px;
+        min-height: 30px;
+        font-size:1.1em ;
+    }
 `;
 

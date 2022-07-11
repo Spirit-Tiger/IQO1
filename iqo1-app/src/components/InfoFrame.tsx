@@ -1,54 +1,48 @@
 import React, { useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import GradientButton from "./GradientButton";
 import Ellipse2 from "../images/ellipse_2.png";
 
 const InfoFrame = () => {
 
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
-
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
-            <ThirdFrameContainer>
-                <EllipseImage src={Ellipse2}/>
-                <LeftNumber>415-650</LeftNumber>
-                <FlexContainer>
-                    <HeaderContainer>
-                        <ThirdFrameHeader>
-                            <div><FormattedMessage id="about_our_company" /></div>
-                        </ThirdFrameHeader>
-                    </HeaderContainer>
-                    <InfoContainer>
-                        <InfoBlockContainer>
-                            <InfoBlock>415</InfoBlock>
-                            <InfoText>
-                                <div><FormattedMessage id="active_clients" /></div>
-                            </InfoText>
-                        </InfoBlockContainer>
-                        <InfoBlockContainer>
-                            <InfoBlock> {'>'}100 </InfoBlock>
-                            <InfoText>
-                                <div><FormattedMessage id="tokens_trading" /></div>
-                            </InfoText>
-                        </InfoBlockContainer>
-                            <InfoBlockContainer>
-                            <InfoBlock>14</InfoBlock>
-                            <InfoText>
-                                <div><FormattedMessage id="traders_in_company" /></div>
-                            </InfoText>
-                        </InfoBlockContainer>
-                    </InfoContainer>
-                    <Description>
-                        <div><FormattedMessage id="description" /></div>
-                    </Description>
-                    <GradientButton textId="read_more_btn" />
-                </FlexContainer>
-                <LeftNumber></LeftNumber>
-            </ThirdFrameContainer>
-    </IntlProvider>
+    <ThirdFrameContainer>
+        <EllipseImage src={Ellipse2}/>
+        <LeftNumber>415-650</LeftNumber>
+        <FlexContainer>
+            <HeaderContainer>
+                <ThirdFrameHeader>
+                    <div><FormattedMessage id="about_our_company" /></div>
+                </ThirdFrameHeader>
+            </HeaderContainer>
+            <InfoContainer>
+                <InfoBlockContainer>
+                    <InfoBlock>415</InfoBlock>
+                    <InfoText>
+                        <div><FormattedMessage id="active_clients" /></div>
+                    </InfoText>
+                </InfoBlockContainer>
+                <InfoBlockContainer>
+                    <InfoBlock> {'>'}100 </InfoBlock>
+                    <InfoText>
+                        <div><FormattedMessage id="tokens_trading" /></div>
+                    </InfoText>
+                </InfoBlockContainer>
+                    <InfoBlockContainer>
+                    <InfoBlock>14</InfoBlock>
+                    <InfoText>
+                        <div><FormattedMessage id="traders_in_company" /></div>
+                    </InfoText>
+                </InfoBlockContainer>
+            </InfoContainer>
+            <Description>
+                <div><FormattedMessage id="description" /></div>
+            </Description>
+            <GradientButton textId="read_more_btn" />
+        </FlexContainer>
+        <LeftNumber></LeftNumber>
+    </ThirdFrameContainer>
   );
 };
 

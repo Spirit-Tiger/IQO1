@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef, useMemo, useState, useCallback } from 'react';
+import React, { Suspense, useLayoutEffect, useRef, useMemo, useState, useCallback } from 'react';
 import { Canvas, useFrame, useLoader, } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three/src/Three'
@@ -27,7 +27,7 @@ const RenderGltf: React.FC<myProps> = ({ shadow, scale, version }: myProps) => {
         dir ? mesh.current.position.y += 0.01 : mesh.current.position.y -= 0.01;
       }
     }})
-    useEffect(()=>{
+    useLayoutEffect(()=>{
       version==1 ?
       gltf.scene.scale.set(scale,scale,scale):
       gltf2.scene.scale.set(scale,scale,scale);

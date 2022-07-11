@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import{messages} from '../i18n/eng';
-import { LOCALES } from "../i18n/constants";
+import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import DropdownElement from "./DropdownElement";
 import GradientButton from "./GradientButton";
@@ -11,31 +9,27 @@ import Ellipse3 from "../images/ellipse_3.png";
 
 const DropdownFrame = () => {
 
-  const[locale, setLocale]= useState(LOCALES.ENGLISH);
-
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} >
-        <DropdownFrameContainer>
-            <EllipseImage />
-            <ContentContainer>
-                <DropdownFrameHeader>
-                    <FormattedMessage id="faq_header" />
-                </DropdownFrameHeader>
-                <AllDropdowns>
-                    <LeftDropdowns>
-                        <DropdownElement headerId="faq_header_1" textId="faq_text_1" />
-                        <DropdownElement headerId="faq_header_2" textId="faq_text_2" />
-                        <DropdownElement headerId="faq_header_3" textId="faq_text_3" />
-                    </LeftDropdowns>
-                    <RightDropdowns>
-                        <DropdownElement headerId="faq_header_4" textId="faq_text_4" />
-                        <DropdownElement headerId="faq_header_5" textId="faq_text_5" />
-                    </RightDropdowns>
-                </AllDropdowns>
-                <GradientButton textId="faq_btn"/>
-            </ContentContainer>
-        </DropdownFrameContainer>
-    </IntlProvider>
+    <DropdownFrameContainer>
+        <EllipseImage />
+        <ContentContainer>
+            <DropdownFrameHeader>
+                <FormattedMessage id="faq_header" />
+            </DropdownFrameHeader>
+            <AllDropdowns>
+                <LeftDropdowns>
+                    <DropdownElement headerId="faq_header_1" textId="faq_text_1" />
+                    <DropdownElement headerId="faq_header_2" textId="faq_text_2" />
+                    <DropdownElement headerId="faq_header_3" textId="faq_text_3" />
+                </LeftDropdowns>
+                <RightDropdowns>
+                    <DropdownElement headerId="faq_header_4" textId="faq_text_4" />
+                    <DropdownElement headerId="faq_header_5" textId="faq_text_5" />
+                </RightDropdowns>
+            </AllDropdowns>
+            <GradientButton textId="faq_btn"/>
+        </ContentContainer>
+    </DropdownFrameContainer>
   );
 };
 

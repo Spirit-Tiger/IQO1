@@ -45,7 +45,7 @@ const MainFrameContainer = styled.div`
     width: 67.8vw;
 
     @media (min-width: 320px) {
-        width: 100%;
+        width: 82vw;
     }
 
     @media (min-width: 768px) {
