@@ -43,7 +43,7 @@ const MainContent = () => {
 export default MainContent;
 
 const FlexContainer = styled.div`
-    /* position: relative; */
+    position: relative;
     display: flex;
     @media (min-width: 768px) {
        width: 67.8vw;
@@ -91,13 +91,13 @@ const MainContentContainer = styled.div`
     @media (min-width: 1280px) {
         width: 100%;
         flex-direction: row;
-        justify-content: center;
+        justify-content:space-between;
     }
 
 `;
 
 const WorkWithUsFrame = styled.div`
-    /* position: relative; */
+    position: relative;
     width: 100vw;
     height: 100%;
     max-width: 100%;
@@ -163,13 +163,15 @@ const TextBlockWrap = styled.div`
         justify-content: center;
         align-items: center;
         height: 100%;
-        max-width: 680px;
         width: 100%;
         flex-direction: column;
         margin-top: 40px
     }
-
     @media (min-width: 768px) {
+        width: 100%;
+        margin: 20px 0;
+    }
+    @media (min-width: 1280px) {
         width: 33.5vw;
         margin-top: 0;
     }

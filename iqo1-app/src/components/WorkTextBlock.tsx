@@ -69,8 +69,10 @@ const Container= styled.div`
     z-index: 2;
     }
     @media (min-width: 768px) {
+        justify-content: space-between;
         width: 100% ;
     }
+  
 /* padding-bottom: 100px; */
 /* margin-bottom: 100px; */
 `
@@ -90,34 +92,29 @@ display: flex;
    flex-direction: column;
    transition:all 0.25s ease;
    @media (min-width:320px) {
+    max-width: 340px;
     width: 90%;
     height: 100%;
    }
    @media (min-width:768px) {
+    height: 100%;
     overflow: hidden;
-    height: 0;
-    padding-bottom: calc(50% + 14px);
     width: calc(50% - 21px);
+  
+ 
+}
+@media (min-width:1280px) {
+    padding-bottom: calc(50% + 14px);
+
+    height: 0;
     p{
     opacity: 0;
    }
-   :hover{
-    /* height: 100%; */
-    overflow: visible;
-    padding-bottom: 50%;
-    transform: scale(1.2);
-    background-color: #12181e;
-    p{
-       animation: 1s learn 1 forwards;
-    };
-}
-}
-@media (min-width:1280px) {
     :hover{
     /* height: 100%; */
     overflow: visible;
     padding-bottom: calc(50% + 14px);
-    transform: scale(1.1);
+    transform: scale(1.2);
     background-color: #12181e;
     p{
        animation: 1s learn 1 forwards;
@@ -137,6 +134,11 @@ const ItemHead = styled.h2`
     margin: 15px 0;
 }
 @media (min-width:768px) {
+    font-size: 24px;
+    margin: 1.2vw 0;
+
+}
+@media (min-width:1280px) {
     font-size: 1.25vw;
     margin: 1.2vw 0;
 
@@ -152,6 +154,10 @@ const ItemText = styled.p`
     font-size: 14px;
 }
 @media (min-width:768px) {
+    text-align: justify;
+    font-size: 16px;
+}
+@media (min-width:1280px) {
     font-size: 0.72vw;
 }
 
@@ -162,7 +168,7 @@ const StyledSVG = styled(BrandIcon)`
     @media (min-width:320px) {
     font-size: 14px;
 }
-@media (min-width:768px) {
+@media (min-width:1280px) {
     width: 3.125vw;
     /* height: 8.34vh; */
 }
@@ -173,7 +179,7 @@ const StyledSVG1 = styled(BrandIcon1)`
     @media (min-width:320px) {
     font-size: 14px;
 }
-@media (min-width:768px) {
+@media (min-width:1280px) {
     width: 3.125vw;
     /* height: 8.34vh; */
 }
@@ -182,9 +188,8 @@ const StyledSVG1 = styled(BrandIcon1)`
 const StyledSVG2 = styled(BrandIcon2)`
     /* margin: 45px 0 0 0 ; */
     @media (min-width:320px) {
-    font-size: 14px;
 }
-@media (min-width:768px) {
+@media (min-width:1280px) {
     width: 3.125vw;
     /* height: 8.34vh; */
 }
@@ -194,7 +199,7 @@ const StyledSVG3 = styled(BrandIcon3)`
     @media (min-width:320px) {
     font-size: 14px;
 }
-@media (min-width:768px) {
+@media (min-width:1280px) {
     width: 3.125vw;
     /* height: 8.34vh; */
 }
