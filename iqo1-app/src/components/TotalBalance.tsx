@@ -43,13 +43,21 @@ const BalanceHeader = styled.h3`
 
 const FlexContainer = styled.div`
     display: flex;
-    height: 105px;
-    width: 550px;
     justify-content: space-between;
+
+    @media (min-width: 375px){
+        height: 120px;
+        flex-direction: column;
+    }
+
+    @media (min-width: 768px){
+        height: 105px;
+        width: 550px;
+        flex-direction: row;
+    }
 `;
 
 const BalanceContainer = styled.div`
-    width: 330px;
     background-color: #26313D;
     border-radius: 12px;
     display: flex;
@@ -64,43 +72,74 @@ const BalanceContainer = styled.div`
 
     p {
         margin: 0;
-        font-size: 2em;
         font-weight: bold;
     }
 
+    @media (min-width: 375px) {
+        width: 310px;
+        font-size: 1.8em;
+    }
+
+    @media (min-width: 768px) {
+        width: 330px;
+        font-size: 2em;
+    }
 `;
 
 
 const ButtonsContainer = styled.div`
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    
+
     button {
         color: white;
         font-size: 1.1em;
         display: flex;
         justify-content: center;
         align-items: center;
+        border: none;
 
         img {
             margin-right: 10px;
         }
     }
+   
+    @media (min-width: 375px) {
+        flex-direction: row;
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: column;
+        
+    }
 `;
 
 const InvestButton = styled.button`
-    width: 155px;
-    height: 45px;
     background: #01A224;
     border-radius: 8px;
-    border: none;
+
+    @media (min-width: 375px) {
+        width: 148px;
+        height: 40px;
+    }
+
+    @media (min-width: 768px) {
+        width: 155px;
+        height: 45px;
+    }
 `;
 
 const WithdrowButton = styled.button`
-    width: 192px;
-    height: 45px;
     background: #26313D;
     border-radius: 8px;
-    border: none;
+
+    @media (min-width: 375px) {
+        width: 148px;
+        height: 40px;
+    }
+
+    @media (min-width: 768px) {
+        width: 192px;
+        height: 45px;
+    }
 `;
