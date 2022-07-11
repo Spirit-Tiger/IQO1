@@ -276,18 +276,6 @@ const FormikStyledField = styled(Field)`
     background-color: rgba(38, 49, 61, 1);
 `;
 
-
-const ForgetPassButton = styled.div`
-
-    text-align: center;
-    margin-bottom: -15px;
-    a{
-        color: white;
-    }
-
-
-`;
-
 export const LoginButton = styled.button`
     color: #000000;
     font-size: 1.2em;
@@ -309,9 +297,8 @@ const RegistrationButton = styled(Link)`
     font-size: 1.2em;
     height: 48px;
     text-decoration: none;
-    border:1px solid rgba(255, 255, 255, 0.58) ;
     border-radius: 14px;
-    background: linear-gradient(92.77deg, #FFB800 16.59%, #9D7100 97.23%);
+    background: linear-gradient(92.77deg, #FFB800  16.59%,   #FF9900  100%);
     display: flex;
     justify-content: center;
     align-items: center;

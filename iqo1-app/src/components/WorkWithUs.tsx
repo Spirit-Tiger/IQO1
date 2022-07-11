@@ -45,6 +45,9 @@ export default MainContent;
 const FlexContainer = styled.div`
     position: relative;
     display: flex;
+    @media (min-width: 768px) {
+       width: 67.8vw;
+    }
     flex-direction: column;
 `;
 
@@ -75,15 +78,20 @@ const HeadContainer = styled.div`
 const MainContentContainer = styled.div`
     display: flex;
     height: 100% ;
-    width: 1300px;
+    width: 67.8vw;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 
-    @media (max-width: 1300px) {
+    @media (min-width: 320px) {
         width: 100%;
         flex-direction: column;
         justify-content: center;
+    }
+    @media (min-width: 1280px) {
+        width: 100%;
+        flex-direction: row;
+        justify-content:space-between;
     }
 
 `;
@@ -102,6 +110,7 @@ const WorkWithUsFrame = styled.div`
 `
 
 const PhoneContainer = styled.div`
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,8 +124,8 @@ const PhoneContainer = styled.div`
     }
 
     @media (min-width: 768px) {
-        width: 567px;
-        height: 590px;
+        width: 29.5vw;
+        height: 29.5vw;
         background-position:  0;
     }   
 `
@@ -128,9 +137,9 @@ const EthContainer = styled.div`
     }
 
     @media (min-width: 768px) {
-        width: 400px;
-        height: 400px;
-        margin: -300px 75px 0 0;
+        width: 20.833333333333332vw;
+        height: 20.833333333333332vw;
+        margin: -15.625vw 3.90625vw 0 0;
     }
 
 
@@ -142,7 +151,7 @@ const PhoneWrap = styled.div`
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
+    width: 50%;
     max-width: 580px;
     flex-direction: column;  
 `
@@ -150,17 +159,20 @@ const TextBlockWrap = styled.div`
     
 
     @media (min-width: 320px) {
-        margin-top: 40px
-    }
-
-    @media (min-width: 768px) {
         display:flex;
         justify-content: center;
         align-items: center;
         height: 100%;
-        max-width: 680px;
         width: 100%;
         flex-direction: column;
+        margin-top: 40px
+    }
+    @media (min-width: 768px) {
+        width: 100%;
+        margin: 20px 0;
+    }
+    @media (min-width: 1280px) {
+        width: 33.5vw;
         margin-top: 0;
     }
 `
