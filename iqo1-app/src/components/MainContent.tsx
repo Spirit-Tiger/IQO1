@@ -24,9 +24,9 @@ const MainContent = () => {
             <Swiper className='sliderPagination'
                 // allowTouchMove={false}
                 modules={[Pagination, Autoplay]}
-                slidesPerView={1}
+                slidesPerView={0.999}
                 autoplay={{
-                    delay: 400000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
@@ -87,7 +87,7 @@ const MainContentContainer = styled.div`
 
     @media (min-width: 320px) {
         grid-template-columns: 1fr;
-        width: 100%;
+        width: 82vw;
         height: calc(100vh - 120px) ;
     }
 

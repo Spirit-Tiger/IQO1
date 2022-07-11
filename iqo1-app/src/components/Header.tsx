@@ -54,9 +54,8 @@ const HeaderContainer = styled.div`
     }
 
     @media (min-width: 768px) {
-        min-width: 768px;
         height: 120px;
-        justify-content: space-evenly ;
+        justify-content: space-between ;
     }
 
     @media (min-width: 1080px) {

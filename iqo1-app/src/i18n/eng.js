@@ -4,7 +4,7 @@ export const messages = {
    [LOCALES.ENGLISH]: {
        home: "Home",
        about_us: "About Us",
-       terms: "Terms & Conditions",
+       terms: "Company",
        contacts: "Contacts",
        language_change1: "ENG",
        language_change2: "PL",
