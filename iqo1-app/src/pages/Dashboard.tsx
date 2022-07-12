@@ -33,4 +33,7 @@ const DashboardContainer = styled.div`
 `;
 const OutletContainer = styled.div`
   color: white;
+  width: 100%;
+  justify-content: center;
+  display: flex;
 `;
