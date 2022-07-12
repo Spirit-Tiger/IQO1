@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import MainPage from './pages/Main.Page';
 import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
-import DashboardMain from './components/DashboardMain';
+import DashboardMain from './components/Dashboard';
 import Market from './components/Market';
 import Deposit from './components/Deposit';
 import Verify from './components/Verify';

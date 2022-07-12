@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
-import TotalBalanceIcon from "../images/total_balance_icon.png";
-import InvestIcon from "../images/invest_icon.png";
-import WithdrowIcon from "../images/withdrow_icon.png";
+import TotalBalanceIcon from "images/total_balance_icon.png";
+
+import InvestIcon from "images/invest_icon.png";
+import WithdrowIcon from "images/withdrow_icon.png";
 
 const TotalBalance = () => {
   return (

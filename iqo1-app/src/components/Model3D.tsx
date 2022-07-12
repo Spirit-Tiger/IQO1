@@ -1,5 +1,5 @@
-import React, { Suspense, useLayoutEffect, useRef, useMemo, useState, useCallback } from 'react';
-import { Canvas, useFrame, useLoader, } from '@react-three/fiber';
+import React, { Suspense, useLayoutEffect, useRef } from 'react';
+import { useFrame, useLoader, } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three/src/Three'
 import { Stage,} from '@react-three/drei';
@@ -29,16 +29,15 @@ const RenderGltf: React.FC<myProps> = ({ shadow, scale, version }: myProps) => {
     }})
     useLayoutEffect(()=>{
       version==1 ?
-      gltf.scene.scale.set(scale,scale,scale):
-      gltf2.scene.scale.set(scale,scale,scale);
-      
+      mesh.current?.scale.set(scale,scale,scale):
+      mesh.current?.scale.set(scale,scale,scale);
     },[]);
   
     return (
       shadow ?
       
       <Stage intensity={1} contactShadow={false} > 
-      <mesh ref={mesh} >
+      <mesh ref={mesh}>
         <Suspense fallback={null}>
           <primitive object={gltf2.scene} />
         </Suspense>
@@ -46,7 +45,7 @@ const RenderGltf: React.FC<myProps> = ({ shadow, scale, version }: myProps) => {
      </Stage>
      : 
      <Stage contactShadow={false} intensity={1}> 
-     <mesh ref={mesh}  >
+     <mesh ref={mesh}>
        <Suspense fallback={null}>
          <primitive object={gltf.scene} />
        </Suspense>
