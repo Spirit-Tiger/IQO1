@@ -19,7 +19,7 @@ const MainContent = () => {
         modules={[Pagination, Autoplay]}
         slidesPerView={0.999}
         autoplay={{
-            delay: 5000,
+            delay: 500000,
             disableOnInteraction: false,
         }}
         pagination={{
@@ -127,7 +127,6 @@ const MainTextContainer = styled.div`
 `;
 
 const MainTextHeader = styled.h1`
-    font-size:3.2em ;
     margin: 0;
 
     @media (min-width: 320px) {
@@ -136,11 +135,12 @@ const MainTextHeader = styled.h1`
     }
 
     @media (min-width: 768px) {
-        font-size:2.8em ;
+        font-size:3.5vw ;
         text-align: left;
+        margin-top: -20px;
     }
 
-    @media (min-width: 1400px) {
+    @media (min-width: 1500px) {
         font-size:3.2em ;
     }
 `;
@@ -150,12 +150,12 @@ const MainText = styled.p`
     margin-bottom: 60px;
     
     @media (min-width: 320px) {
-        font-size:1.3em;
+        font-size:1.2em;
 
     }
 
     @media (min-width: 768px) {
-        font-size:1.4em ;
+        font-size:1.3em ;
     }
 `;
 
@@ -225,7 +225,15 @@ const ButtonContainer = styled.div`
         grid-row-end:3;
         align-self: center;
         justify-self: start;
-        margin-top: 40px;
+        margin-top: 90px;
+    }
+
+    @media (min-width: 1280px) {
+        margin-top: 70px;
+    }
+
+    @media (min-width: 1500px) {
+        margin-top: 20px;
     }
 `;
 
@@ -254,13 +262,21 @@ const SecondSlideContainer = styled.div`
 `;
 
 const SlideHeader1 = styled(MainTextHeader)`
-    margin-top: -220px;
+    margin-top: -180px;
+
+    @media (min-width: 768px) {
+        margin-top: -200px;
+    }
 
 `;
 
 const SlideHeader2 = styled(MainTextHeader)`
-    margin-top: -220px;
+    margin-top: -180px;
     margin-bottom: 60px;
+
+    @media (min-width: 768px) {
+        margin-top: -200px;
+    }
 `;
 
 
