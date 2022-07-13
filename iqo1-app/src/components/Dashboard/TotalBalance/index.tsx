@@ -47,7 +47,7 @@ const FlexContainer = styled.div`
     justify-content: space-between;
 
     @media (min-width: 375px){
-        height: 120px;
+        height: 150px;
         flex-direction: column;
     }
 
@@ -77,12 +77,14 @@ const BalanceContainer = styled.div`
     }
 
     @media (min-width: 375px) {
-        width: 310px;
+        width: 100%;
+        height: 90px;
         font-size: 1.8em;
     }
 
     @media (min-width: 768px) {
         width: 330px;
+        height: initial;
         font-size: 2em;
     }
 `;
@@ -120,7 +122,7 @@ const InvestButton = styled.button`
     border-radius: 8px;
 
     @media (min-width: 375px) {
-        width: 148px;
+        width: 47%;
         height: 40px;
     }
 
@@ -135,7 +137,7 @@ const WithdrowButton = styled.button`
     border-radius: 8px;
 
     @media (min-width: 375px) {
-        width: 148px;
+        width: 47%;
         height: 40px;
     }
 

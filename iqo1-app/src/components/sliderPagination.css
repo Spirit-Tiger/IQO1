@@ -61,7 +61,14 @@
 @media screen and  (min-width: 768px) {
     .sliderPagination .swiper-pagination{
         top: 50vh;
-        left: -24vw;
+        left: -25.5vw;
+     }
+  }
+
+  @media screen and  (min-width: 1080px) {
+    .sliderPagination .swiper-pagination{
+        top: 50vh;
+        left: -26vw;
      }
   }
 
@@ -69,8 +76,5 @@
     .sliderPagination .swiper-pagination{
         top: 50vh;
         left: -26.2vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
      }
   }
