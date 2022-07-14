@@ -102,7 +102,7 @@ const DasboardMainContainer = styled.div`
      width: 100%;
     }
     @media (min-width: 1024px) {
-     flex-basis: 75%;
+     width: 74%;
     }
 `;
 
