@@ -1,8 +1,10 @@
+import Market from './Market';
 import React from 'react'
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import ActiveCurrencies from './ActiveCurrencies';
 import Profit from './Profit';
+import Referal from './Referral';
 import TotalBalance from './TotalBalance';
 
 const DashboardMain = () => {
@@ -13,7 +15,9 @@ const DashboardMain = () => {
       <InfoBlockc>
         <ActiveCurrencies />
         <Profit />
+        <Referal />
       </InfoBlockc>
+      <Market />
     </DasboardMainContainer>
   )
 }
@@ -21,16 +25,27 @@ const DashboardMain = () => {
 export default DashboardMain;
 
 const DasboardMainContainer = styled.div`
+display: flex;
+flex-direction:column;
     height: fit-content;
-    width: 85%;
- 
+    gap: 20px;
+    @media (min-width: 320px) {
+      width: 85%;
+
+    }
+    @media (min-width: 768px) {
+     width: 90%;
+    }
+    @media (min-width: 1024px) {
+     width: 85%;
+    }
 `;
 
 const DashboardTitle = styled.h2`
   width: 100%;
   height: fit-content;
   font-size: 32px;
-  margin: 2.5vw 0 1.25vw 0;
+  margin: 0;
   @media (min-width: 320px) {
     margin-top: 20px;
       font-size: 24px;

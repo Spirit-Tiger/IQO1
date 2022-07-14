@@ -8,6 +8,7 @@ import {Formik, Form, Field} from 'formik';
 import { useIntl } from "react-intl";
 import { Link } from "react-router-dom";
 import CloseBtnImg from "../images/close_btn.png"
+import Footer from "components/Footer";
 
 interface MyFormValues {
     login: string;
@@ -21,52 +22,55 @@ const Registration = () => {
   const intl = useIntl();
 
   return (
-        <LoginPageContainer>
-            <Logo src={LogoImg} alt="logo" />
-            <FormContainer>
-                <FlexContainer>
-                     <div>
-                        <Header>
-                            <FormattedMessage id="registration_header" />
-                        </Header>
-                        <Text> 
-                            <FormattedMessage id="registration_text" />
-                        </Text>
-                    </div>
-                    <Link to="/"><CloseBtn></CloseBtn></Link>
-                </FlexContainer>
-                <Formik
-                    initialValues={initialValues}
-                    onSubmit={(values, actions) => {
-                        console.log({ values, actions });
-                        alert(JSON.stringify(values, null, 2));
-                        actions.setSubmitting(false);
-                    }}
-                >
-                    <FormikStyledForm>
-                        <FieldGroup>
-                            <FormikHalfField name="name" placeholder={intl.formatMessage({id:"registration_first_name"})} />
-                            <FormikHalfField autocomplete="off" list="autocompleteOff"  type="text" name="surname" placeholder={intl.formatMessage({id:"registration_last_name"})} />
+        <>
+            <LoginPageContainer>
+                <Logo src={LogoImg} alt="logo" />
+                <FormContainer>
+                    <FlexContainer>
+                        <div>
+                            <Header>
+                                <FormattedMessage id="registration_header" />
+                            </Header>
+                            <Text> 
+                                <FormattedMessage id="registration_text" />
+                            </Text>
+                        </div>
+                        <Link to="/"><CloseBtn></CloseBtn></Link>
+                    </FlexContainer>
+                    <Formik
+                        initialValues={initialValues}
+                        onSubmit={(values, actions) => {
+                            console.log({ values, actions });
+                            alert(JSON.stringify(values, null, 2));
+                            actions.setSubmitting(false);
+                        }}
+                    >
+                        <FormikStyledForm>
+                            <FieldGroup>
+                                <FormikHalfField name="name" placeholder={intl.formatMessage({id:"registration_first_name"})} />
+                                <FormikHalfField autocomplete="off" list="autocompleteOff"  type="text" name="surname" placeholder={intl.formatMessage({id:"registration_last_name"})} />
 
-                        </FieldGroup>
-                        <FieldGroup>
-                            <FormikOneThirdField  autocomplete="off" list="autocompleteOff"  type="text" name="country" placeholder={intl.formatMessage({id:"registration_country"})} />
-                            <FormikTwoThirdField autocomplete="off" list="autocompleteOff"  type="phone" name="phone" placeholder={intl.formatMessage({id:"registration_phone_number"})} />
-                        </FieldGroup>
-                       
-                        <FormikStyledField autocomplete="off" list="autocompleteOff"  type="email" name="email" placeholder={intl.formatMessage({id:"registration_email"})} />
-                        <FieldGroup>
-                            <FormikHalfField autocomplete="off" list="autocompleteOff"  type="text" name="login" placeholder={intl.formatMessage({id:"registration_login_name"})} />
-                            <FormikHalfField autocomplete="off" list="autocompleteOff"  type="password" name="password" placeholder={intl.formatMessage({id:"registration_password"})} />
-                        </FieldGroup>
+                            </FieldGroup>
+                            <FieldGroup>
+                                <FormikOneThirdField  autocomplete="off" list="autocompleteOff"  type="text" name="country" placeholder={intl.formatMessage({id:"registration_country"})} />
+                                <FormikTwoThirdField autocomplete="off" list="autocompleteOff"  type="phone" name="phone" placeholder={intl.formatMessage({id:"registration_phone_number"})} />
+                            </FieldGroup>
+                        
+                            <FormikStyledField autocomplete="off" list="autocompleteOff"  type="email" name="email" placeholder={intl.formatMessage({id:"registration_email"})} />
+                            <FieldGroup>
+                                <FormikHalfField autocomplete="off" list="autocompleteOff"  type="text" name="login" placeholder={intl.formatMessage({id:"registration_login_name"})} />
+                                <FormikHalfField autocomplete="off" list="autocompleteOff"  type="password" name="password" placeholder={intl.formatMessage({id:"registration_password"})} />
+                            </FieldGroup>
 
-                        <RegistrationButton to="/">
-                            <FormattedMessage id="registration_btn" />
-                        </RegistrationButton>
-                    </FormikStyledForm>
-                </Formik>
-            </FormContainer>
-        </LoginPageContainer>
+                            <RegistrationButton to="/">
+                                <FormattedMessage id="registration_btn" />
+                            </RegistrationButton>
+                        </FormikStyledForm>
+                    </Formik>
+                </FormContainer>
+            </LoginPageContainer>
+            <Footer />
+        </>
   );
 };
 

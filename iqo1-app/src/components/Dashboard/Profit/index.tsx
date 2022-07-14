@@ -12,18 +12,17 @@ const Profit = () => {
         </BalanceHeader>
         <FlexContainer>
             <BlockTitle>
-                <p>
+                <h3>
                     You paid <span>45%</span>:
-                </p>
-                <p>
+                </h3>
+                <h3>
                     11.11.2012
-                </p>
+                </h3>
             </BlockTitle>
             <div  className='circle'>
             <StyledCircularProgressbar value={66} maxValue={100} text={`66%`} 
              styles={buildStyles({
-          
-            
+                strokeLinecap: 'butt',
                 // Can specify path transition in more detail, or remove it entirely
                 // pathTransition: 'none',
             
@@ -63,6 +62,11 @@ const BlockTitle = styled.div`
     span {
        color: #EDA54C
     }
+    h3{
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+    }
     justify-content: space-between;
 `;
 
@@ -74,21 +78,24 @@ const FlexContainer = styled.div`
     border-radius: 12px;
     display: flex;
     height: fit-content;
-    min-height: 313px;
+    justify-content: flex-start;
    .circle{
+    margin-top: 20px;
     width: 90%;
     
    }
     /* justify-content: center; */
 
     @media (min-width: 320px){
-        height: 120px;
+        /* height: 120px; */
         flex-direction: column;
         align-items: center;
-
+        min-height: fit-content;
     }
 
     @media (min-width: 768px){
+        min-height: 313px;
+
         height: fit-content;
         width: 100%;
         flex-direction: column;

@@ -43,7 +43,6 @@ function App() {
                 </Route>
                 <Route path="registation" element={<Registration />} />
             </Routes>
-            <Footer />
         </Wrapper>
       </BrowserRouter>
     </IntlProvider>

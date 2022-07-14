@@ -8,6 +8,7 @@ import {Formik, Form, Field} from 'formik';
 import { useIntl } from "react-intl";
 import { Link } from "react-router-dom";
 import CloseBtnImg from "../images/close_btn.png"
+import Footer from "components/Footer";
 
 interface MyFormValues {
     login: string;
@@ -21,46 +22,49 @@ const LoginPage = () => {
   const intl = useIntl();
 
   return (
-        <LoginPageContainer>
-            <Logo src={LogoImg} alt="logo" />
-            <FormContainer>
-                <FlexContainer>
-                     <div>
-                        <Header>
-                            <FormattedMessage id="auth_header" />
-                        </Header>
-                        <Text> 
-                            <FormattedMessage id="auth_text" />
-                        </Text>
-                    </div>
-                    <Link to="/"><CloseBtn></CloseBtn></Link>
-                </FlexContainer>
-                <Formik
-                    initialValues={initialValues}
-                    onSubmit={(values, actions) => {
-                        console.log({ values, actions });
-                        alert(JSON.stringify(values, null, 2));
-                        actions.setSubmitting(false);
-                    }}
-                >
-                    <FormikStyledForm>
-                        <FormikStyledField name="login" placeholder={intl.formatMessage({id:"auth_login_name"})} />
-                        <FormikStyledField autocomplete="off" list="autocompleteOff"  type="password" name="password" placeholder={intl.formatMessage({id:"auth_password"})} />
-                        <ForgetPassButton>
-                            <Link to="/">
-                                <FormattedMessage id="auth_forget_password" />
-                            </Link>
-                        </ForgetPassButton>
-                        <LoginButton type="submit">
-                            <FormattedMessage id="auth_login_btn" />
-                        </LoginButton>
-                        <RegistrationButton to="/registation">
-                            <FormattedMessage id="auth_registration_btn" />
-                        </RegistrationButton>
-                    </FormikStyledForm>
-                </Formik>
-            </FormContainer>
-        </LoginPageContainer>
+        <>
+            <LoginPageContainer>
+                <Logo src={LogoImg} alt="logo" />
+                <FormContainer>
+                    <FlexContainer>
+                        <div>
+                            <Header>
+                                <FormattedMessage id="auth_header" />
+                            </Header>
+                            <Text> 
+                                <FormattedMessage id="auth_text" />
+                            </Text>
+                        </div>
+                        <Link to="/"><CloseBtn></CloseBtn></Link>
+                    </FlexContainer>
+                    <Formik
+                        initialValues={initialValues}
+                        onSubmit={(values, actions) => {
+                            console.log({ values, actions });
+                            alert(JSON.stringify(values, null, 2));
+                            actions.setSubmitting(false);
+                        }}
+                    >
+                        <FormikStyledForm>
+                            <FormikStyledField name="login" placeholder={intl.formatMessage({id:"auth_login_name"})} />
+                            <FormikStyledField autocomplete="off" list="autocompleteOff"  type="password" name="password" placeholder={intl.formatMessage({id:"auth_password"})} />
+                            <ForgetPassButton>
+                                <Link to="/">
+                                    <FormattedMessage id="auth_forget_password" />
+                                </Link>
+                            </ForgetPassButton>
+                            <LoginButton type="submit">
+                                <FormattedMessage id="auth_login_btn" />
+                            </LoginButton>
+                            <RegistrationButton to="/registation">
+                                <FormattedMessage id="auth_registration_btn" />
+                            </RegistrationButton>
+                        </FormikStyledForm>
+                    </Formik>
+                </FormContainer>
+            </LoginPageContainer>
+            <Footer />
+        </>
   );
 };
 
