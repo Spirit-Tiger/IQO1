@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ProfileImg from '../images/profile_image.png'
 
@@ -10,9 +11,11 @@ const ProfileInfo = () => {
             <ProfileName>Dmitry Kotov</ProfileName>
             <ProfileId>ID: 12543</ProfileId>
             <Dots>
-                <div />
-                <div />
-                <div />
+                <Link to="profile_edit">
+                    <div />
+                    <div />
+                    <div /> 
+                </Link>
             </Dots>
         </FlexContainer>
     </ProfileInfoContainer>
@@ -54,10 +57,14 @@ const ProfileId = styled.p`
 `;
 
 const Dots = styled.div`
-    width: 25px;
-    display: flex;
-    justify-content: space-between;
     align-self: flex-end;
+
+    a{
+        width: 25px;
+        display: flex;
+        justify-content: space-between;
+        padding: 3px;
+    }
 
     div {
         background-color: #FF9900;
@@ -66,3 +73,4 @@ const Dots = styled.div`
         height: 5px;
     }
 `;
+

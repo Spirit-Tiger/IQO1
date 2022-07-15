@@ -46,7 +46,7 @@ const FlexContainer = styled.div`
     display: flex;
     justify-content: space-between;
 
-    @media (min-width: 375px){
+    @media (min-width: 320px){
         height: 150px;
         flex-direction: column;
     }
@@ -76,7 +76,7 @@ const BalanceContainer = styled.div`
         font-weight: bold;
     }
 
-    @media (min-width: 375px) {
+    @media (min-width: 320px) {
         width: 100%;
         height: 90px;
         font-size: 1.8em;
@@ -107,7 +107,7 @@ const ButtonsContainer = styled.div`
         }
     }
    
-    @media (min-width: 375px) {
+    @media (min-width: 320px) {
         flex-direction: row;
     }
 
@@ -121,7 +121,7 @@ const InvestButton = styled.button`
     background: #01A224;
     border-radius: 8px;
 
-    @media (min-width: 375px) {
+    @media (min-width: 320px) {
         width: 47%;
         height: 40px;
     }
@@ -136,7 +136,7 @@ const WithdrowButton = styled.button`
     background: #26313D;
     border-radius: 8px;
 
-    @media (min-width: 375px) {
+    @media (min-width: 320px) {
         width: 47%;
         height: 40px;
     }

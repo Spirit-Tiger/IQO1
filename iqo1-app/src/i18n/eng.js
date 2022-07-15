@@ -87,5 +87,23 @@ export const messages = {
        dashboard_title:'Dashboard', 
        dashboard_active_currency_title:'Your active:',
        dashboard_profit_title:'Profit:',
+
+       verify_info_header: "Verify :",
+       verify_info_text: "Текст-заполнитель — это текст, который имеет некоторые характеристики реального письменного текста, но является случайным набором слов или сгенерирован иным образом. Его можно использовать для отображения образца шрифтов, создания текста для тестирования или обхода спам-фильтра.",
+
+       verify_status_header: "Your verify status :",
+
+       profile_edit_header: "Your profile :",
+       profile_edit_name: "Name:",
+       profile_edit_last_name: "Second Name:",
+       profile_edit_country: "Country:",
+       profile_edit_id: "ID:",
+       profile_edit_email: "Email:",
+       profile_edit_phone: "Phone:",
+       profile_edit_btn: "Edit",
+       profile_edit_save_btn: "Save",
+
+       verify_needed_text: "You need verify your person!",
+       verify_needed_start_btn: "Start",
     }
 };

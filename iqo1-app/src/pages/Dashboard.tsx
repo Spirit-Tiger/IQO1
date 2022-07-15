@@ -12,6 +12,7 @@ const Dashboard = () => {
         <DashboardBurger />
         <DashboardMenu />
         <OutletContainer>
+          <FakeNav></FakeNav>
           <Outlet />
         </OutletContainer>
       </DashboardContainer>
@@ -25,15 +26,35 @@ export default Dashboard;
 const DashboardContainer = styled.div`
 
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   max-width: 100%;
   background-color: #12181E;
   display: flex;
-
+  overflow: auto;
 `;
 const OutletContainer = styled.div`
   color: white;
-  width: 100%;
+  width: 90%;
   justify-content: center;
   display: flex;
+
+  @media (min-width:320px){
+    width: 100%;
+  }
+
+  @media (min-width:768px){
+    width: 92%;
+  }
+`;
+
+const FakeNav = styled.div`
+  min-width: 380px;
+  
+  @media (min-width:320px){
+    display: none;
+  }
+
+  @media (min-width:768px){
+    display: block;
+  }
 `;

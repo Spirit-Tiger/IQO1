@@ -13,6 +13,7 @@ import Verify from './components/Verify';
 import Settings from './components/Settings';
 import Registration from './pages/Registration';
 import Footer from "./components/Footer";
+import ProfileEdit from 'components/ProfileEdit';
 
 const Wrapper = ({children}:any) => {
   const location = useLocation();
@@ -40,6 +41,7 @@ function App() {
                   <Route path="deposit" element={<Deposit />} />
                   <Route path="veryfy" element={<Verify />} />
                   <Route path="settings" element={<Settings />} />
+                  <Route path="profile_edit" element={<ProfileEdit />} />
                 </Route>
                 <Route path="registation" element={<Registration />} />
             </Routes>

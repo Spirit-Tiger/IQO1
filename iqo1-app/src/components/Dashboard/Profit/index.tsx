@@ -49,7 +49,11 @@ const TotalBalanceContainer = styled.div`
 const StyledCircularProgressbar = styled(CircularProgressbar)`
    width: 100%;
    max-height: 210px;
-   
+   transform: scaleX(-1);
+
+   .CircularProgressbar-text {
+    transform: scaleX(-1) translate(-98px, 0);
+   }
 `;
 const BalanceHeader = styled.h2`
     font-size: 18px;
