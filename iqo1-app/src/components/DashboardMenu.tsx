@@ -53,6 +53,7 @@ const DashboardMenu = () => {
 export default DashboardMenu;
 
 const DashboardMenuContainer = styled.div`
+  position: fixed;
   width: 260px;
   min-height: 100%;
   background-color: #26313D;
@@ -64,6 +65,12 @@ const DashboardMenuContainer = styled.div`
   @media (max-width: 768px){
         display: none;
     }
+
+  @media (max-height: 560px) {
+    *{
+      transform: scale(0.95);
+    }
+  }
 `;
 
 const Logo = styled.img`
@@ -80,6 +87,10 @@ const MenuList = styled.nav`
   a {
     text-decoration: none;
     color: white;
+  }
+
+  @media (max-height: 560px) {
+    height: 170px;
   }
 `;
 
@@ -116,5 +127,9 @@ const SubMenu = styled.nav`
   a {
     color: #848484;
     text-decoration: none;
+  }
+
+  @media (max-height: 560px) {
+    height: 120px;
   }
 `;
