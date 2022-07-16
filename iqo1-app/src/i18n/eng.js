@@ -105,5 +105,13 @@ export const messages = {
 
        verify_needed_text: "You need verify your person!",
        verify_needed_start_btn: "Start",
+
+       verify_card_header1: "Front Photo",
+       verify_card_header2: "Back Photo",
+       verify_card_header3: "Bank Statement/Utility",
+       verify_card_header4: "Selfie",
+       verify_card_btn: "Add photo",
+       
+
     }
 };
