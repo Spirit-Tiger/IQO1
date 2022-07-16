@@ -109,7 +109,7 @@ const DasboardMainContainer = styled.div`
 const StyledLine = styled(Line)`
   width:60%;
   height: fit-content;
-  max-height: fit-content;
+  max-height: 332px;
 `
 const InfoBlockc = styled.div`
  display: flex;

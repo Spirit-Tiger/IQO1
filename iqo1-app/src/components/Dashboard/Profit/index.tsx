@@ -82,6 +82,8 @@ const FlexContainer = styled.div`
     border-radius: 12px;
     display: flex;
     height: fit-content;
+    height: calc(350px - 60px);
+
     justify-content: flex-start;
    .circle{
     margin-top: 20px;
@@ -98,9 +100,7 @@ const FlexContainer = styled.div`
     }
 
     @media (min-width: 768px){
-        min-height: 313px;
 
-        height: fit-content;
         width: 100%;
         flex-direction: column;
         row-gap: 32px;
