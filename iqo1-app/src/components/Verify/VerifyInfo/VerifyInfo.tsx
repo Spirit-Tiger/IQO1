@@ -24,6 +24,12 @@ const VerifyInfoContainer = styled.div`
         font-size: 14px;
     }
 
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 28px;
+    }
+    }
+
     @media (min-width: 768px) {
       width: 60vw;
     }

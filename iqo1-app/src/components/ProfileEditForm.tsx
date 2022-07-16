@@ -2,9 +2,10 @@ import React from "react";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import { Formik, Form, Field } from "formik";
-import ProfileImg from "images/profile_image.png";
+
 import GradientButton from "./GradientButton";
-import CopyIdIcon from 'images/copy_id_icon.png';
+import CopyIdIcon from "images/copy_id_icon.png";
+import ProfileImageEdit from "./ProfileImageEdit";
 
 interface MyFormValues {
   firstName: string;
@@ -25,6 +26,10 @@ const ProfileEditForm = () => {
     phone: "+434 43 321 45 43",
   };
 
+  const handleCopyToClipboard = async () => {
+    await navigator.clipboard.writeText(`${initialValues.userId}`);
+  };
+
   return (
     <ProfileEditFormContainer>
       <div>
@@ -41,47 +46,49 @@ const ProfileEditForm = () => {
         >
           <FormikStyledForm>
             <OuterContainer>
-              <EditProfileImage>
-                <ProfileImage src={ProfileImg} />
-                <EditButton>
-                  <FormattedMessage id="profile_edit_btn" />
-                </EditButton>
-              </EditProfileImage>
+              <ProfileImageEdit />
             </OuterContainer>
             <FormContainer>
               <InnerContainer>
                 <div className="superInner">
-                  <label htmlFor="firstName">
-                    <div>
-                      <FormattedMessage id="profile_edit_name" />
-                    </div>
-                    <FormikStyledField name="firstName" />
-                  </label>
+                  <ProfileImageEditMobile>
+                    <ProfileImageEdit />
+                  </ProfileImageEditMobile>
+                  <MobileContainer>
+                    <label htmlFor="firstName">
+                      <div>
+                        <FormattedMessage id="profile_edit_name" />
+                      </div>
+                      <FormikStyledField name="firstName" />
+                    </label>
 
-                  <label htmlFor="lastName">
-                    <div>
-                      <FormattedMessage id="profile_edit_last_name" />
-                    </div>
-                    <FormikStyledField name="lastName" />
-                  </label>
+                    <label htmlFor="lastName">
+                      <div>
+                        <FormattedMessage id="profile_edit_last_name" />
+                      </div>
+                      <FormikStyledField name="lastName" />
+                    </label>
+                  </MobileContainer>
                 </div>
                 <div className="superInner">
-                  <label htmlFor="country">
-                    <div>
-                      <FormattedMessage id="profile_edit_country" />
-                    </div>
-                    <FormikStyledField name="country" />
-                  </label>
+                  <MobileContainer2>
+                    <label htmlFor="country">
+                      <div>
+                        <FormattedMessage id="profile_edit_country" />
+                      </div>
+                      <FormikStyledField name="country" />
+                    </label>
 
-                  <label htmlFor="userId">
-                    <div>
-                      <FormattedMessage id="profile_edit_id" />
-                    </div>
-                    <IdInputContainer>
-                      <FormikStyledField readOnly name="userId"/>
-                      <img src={CopyIdIcon} />
-                    </IdInputContainer>
-                  </label>
+                    <label htmlFor="userId">
+                      <div>
+                        <FormattedMessage id="profile_edit_id" />
+                      </div>
+                      <IdInputContainer>
+                        <FormikStyledField readOnly name="userId" />
+                        <img src={CopyIdIcon} onClick={handleCopyToClipboard} />
+                      </IdInputContainer>
+                    </label>
+                  </MobileContainer2>
                 </div>
               </InnerContainer>
               <EmailAndPhone>
@@ -100,7 +107,7 @@ const ProfileEditForm = () => {
                 </label>
               </EmailAndPhone>
               <SaveButton>
-                <GradientButton textId="profile_edit_save_btn"  />
+                <GradientButton textId="profile_edit_save_btn" />
               </SaveButton>
             </FormContainer>
           </FormikStyledForm>
@@ -116,31 +123,14 @@ const ProfileEditFormContainer = styled.div`
   margin-top: 50px;
 `;
 
-const EditProfileImage = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const ProfileImage = styled.img`
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
-`;
-
-const EditButton = styled.div`
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: underline;
-  margin-top: 12px;
-  :hover {
-    cursor: pointer;
-  }
-`;
-
 const FormikStyledForm = styled(Form)`
   display: flex;
   gap: 25px;
   height: fit-content;
+
+  @media (min-width: 320px) {
+    width: 85vw;
+  }
 
   @media (min-width: 768px) {
     width: 60vw;
@@ -154,6 +144,10 @@ const OuterContainer = styled.div`
   display: flex;
   align-items: flex-start;
   height: 100%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const InnerContainer = styled.div`
@@ -161,16 +155,13 @@ const InnerContainer = styled.div`
   flex-direction: column;
   gap: 10px;
   margin-bottom: 10px;
+  width: 100%;
 
   .superInner {
     display: flex;
     flex-direction: row;
     gap: 25px;
-
-    input {
-      width: 75%;
-      min-width: 100px;
-    }
+    width: 100%;
   }
 `;
 
@@ -180,8 +171,13 @@ const EmailAndPhone = styled.div`
   gap: 10px;
 
   input {
-    width: 88%;
+    width: calc(100% - 52px);
     min-width: 180px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    margin-top: 10px;
   }
 `;
 
@@ -199,6 +195,7 @@ const FormikStyledField = styled(Field)`
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   label div {
     font-size: 12px;
@@ -214,20 +211,109 @@ const SaveButton = styled.div`
     color: black;
     font-size: 16px;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    button {
+      width: 100%;
+    }
+  }
 `;
 
 const IdInputContainer = styled.div`
   position: relative;
 
-  img{
+  img {
     position: absolute;
     margin-top: 12px;
     margin-right: 8%;
     top: 0;
     right: 0;
 
-    :hover{
+    :hover {
       cursor: pointer;
+    }
+
+    :active {
+      transform: scale(1.1);
+    }
+  }
+`;
+
+const ProfileImageEditMobile = styled.div`
+  height: 100px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const MobileContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  width: 100%;
+
+  input {
+    width: calc(100% - 52px);
+    min-width: 100px;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @media (min-width: 768px) {
+    gap: 10px;
+
+    input {
+      width: calc(24vw - 52px);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    gap: 25px;
+    width: 100%;
+
+    input {
+      width: calc(100% - 52px);
+    }
+  }
+`;
+
+const MobileContainer2 = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  width: 100%;
+
+  input {
+    width: calc(100% - 52px);
+    min-width: 100px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @media (min-width: 768px) {
+    gap: 10px;
+
+    input {
+      width: calc(24vw - 52px);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    gap: 25px;
+    width: 100%;
+
+    input {
+      width: calc(100% - 52px);
     }
   }
 `;

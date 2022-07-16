@@ -33,6 +33,11 @@ const VerifyNeededContainer = styled.div`
   @media (max-width: 1280px){
     width: 60vw;
     justify-content: center;
+    min-width: 300px;
+  }
+
+  @media (max-width: 768px) {
+    align-self: center;
   }
 `;
 
