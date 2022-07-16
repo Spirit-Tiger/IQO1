@@ -44,6 +44,7 @@ const FlexContainer = styled.div`
     border-radius: 12px;
     display: flex;
     height: fit-content;
+    max-height: calc(350px - 60px);
     /* justify-content: center; */
 
     @media (min-width: 325px){

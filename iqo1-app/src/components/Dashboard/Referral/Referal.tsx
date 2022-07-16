@@ -69,10 +69,7 @@ const FlexContainer = styled.div`
     border-radius: 12px;
     display: flex;
     height: fit-content;
-   .circle{
-    width: 90%;
-    
-   }
+  
     /* justify-content: center; */
 
     @media (min-width: 320px){
@@ -83,8 +80,7 @@ const FlexContainer = styled.div`
     }
 
     @media (min-width: 768px){
-        min-height: 313px;
-        height: fit-content;
+        max-height: 290px;
         width: 100%;
         flex-direction: column;
         row-gap: 32px;
@@ -113,14 +109,15 @@ const NameComponent = styled.div`
     gap: 10px;
 `
 const IdComponentWrapper = styled.div`
-    height: 100%;
+    height:275px;
     align-items: center;
     display: flex;
     flex-direction:column;
     padding: 0 10px;
     gap: 10px;
     margin-top: 20px;
-    border-left: 1px solid grey;
+    border-left: 1px solid ;
+    border-image:  linear-gradient(to bottom, rgba(132, 132, 132, 1), rgba(0, 0, 0, 0)) 1 100%; ;
     align-items: center;
    
 `

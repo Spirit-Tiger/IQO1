@@ -47,7 +47,7 @@ const DashboardTitle = styled.h2`
   font-size: 32px;
   margin: 0;
   @media (min-width: 320px) {
-    margin-top: 20px;
+    margin-top: 15px;
       font-size: 24px;
     }
     @media (min-width: 768px) {
@@ -63,6 +63,7 @@ const InfoBlockc = styled.div`
       flex-direction: column;
     }
     @media (min-width: 768px) {
+    max-height: 410px;
       flex-direction:row;
     }
 `
