@@ -241,7 +241,7 @@ const SecondSlideContainer = styled.div`
     color: white;
     
     @media (min-width: 320px) {
-        min-width: 320px;
+        min-width: 280px;
         height: calc(100vh - 120px) ;
         display: flex;
         flex-direction: column;

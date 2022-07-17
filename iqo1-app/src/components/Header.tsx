@@ -42,7 +42,7 @@ const HeaderContainer = styled.div`
     align-items: center;
 
     @media (min-width: 320px) {
-        min-width: 320px;
+        min-width: 310px;
         height: 100px;
         justify-content: center ;
         width: 100%;
