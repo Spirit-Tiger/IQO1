@@ -125,5 +125,6 @@ const VerifyButtonMobile = styled.div`
   button {
     color: black;
     width: 150px;
+    font-size: 15px;
   }
 `;
