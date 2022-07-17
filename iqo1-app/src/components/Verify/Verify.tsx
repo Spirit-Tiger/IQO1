@@ -38,6 +38,7 @@ export default Verify;
 const VerifyContainer = styled.div`
   display: flex;
   flex-direction: column;
+  height: fit-content;
 
 
   @media (min-width: 320px) {
