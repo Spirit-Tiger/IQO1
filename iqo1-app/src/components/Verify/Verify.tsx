@@ -7,10 +7,14 @@ import FrontPhoto from "images/front_photo_icon.png";
 import BackPhoto from "images/back_photo_icon.png";
 import BankStatement from "images/bank_statement_icon.png";
 import Selfie from "images/selfie_icon.png";
+import { ProfileInfoMobile } from "components/ProfileInfo";
+import TotalBalance from "components/Dashboard/TotalBalance";
 
 const Verify = () => {
   return (
     <VerifyContainer>
+      <ProfileInfoMobile />
+      <TotalBalance />
       <FlexContainer>
         <VerifyInfo />
         <VerifyStatus />
