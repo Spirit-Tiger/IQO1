@@ -94,13 +94,15 @@ display: flex;
    @media (min-width:320px) {
     max-width: 340px;
     width: 90%;
-    height: 100%;
+    height: 350px;
+    justify-content: space-evenly;
    }
    @media (min-width:768px) {
+    justify-content: stretch;
     height: 100%;
     overflow: hidden;
     width: calc(50% - 21px);
-  
+    height: 290px;
  
 }
 @media (min-width:1280px) {

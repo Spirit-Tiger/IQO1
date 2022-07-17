@@ -115,9 +115,9 @@ const IdComponentWrapper = styled.div`
     flex-direction:column;
     padding: 0 10px;
     gap: 10px;
-    margin-top: 20px;
-    border-left: 1px solid ;
-    border-image:  linear-gradient(to bottom, rgba(132, 132, 132, 1), rgba(0, 0, 0, 0)) 1 100%; ;
+    margin-top: 18px;
+    border-left: 1px solid black;
+    border-image: linear-gradient(to bottom, grey 0%, grey 15%, grey 95%, #00000000 95%) 1;
     align-items: center;
    
 `
