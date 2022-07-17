@@ -17,7 +17,7 @@ const RightNav = ({ open }:RightNavProps) => {
                             <FormattedMessage id="login_btn" />
                         </LoginButton>
                     </Link>
-                    <div><FormattedMessage id="home" /></div>
+                    <Link to="dashboard"><FormattedMessage id="home" /></Link>
                     <div><FormattedMessage id="about_us" /></div>
                     <div><FormattedMessage id="terms" /></div>
                     <div><FormattedMessage id="contacts" /></div>
@@ -66,6 +66,11 @@ const NavList = styled.ul`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
 `;
 
 const HorizontalLine = styled.div`
