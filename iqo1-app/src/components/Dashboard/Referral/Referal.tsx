@@ -117,6 +117,9 @@ const IdComponentWrapper = styled.div`
     gap: 10px;
     margin-top: 18px;
     border-left: 1px solid black;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
     border-image: linear-gradient(to bottom, grey 0%, grey 15%, grey 95%, #00000000 95%) 1;
     align-items: center;
    
