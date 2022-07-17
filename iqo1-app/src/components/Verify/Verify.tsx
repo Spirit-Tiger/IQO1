@@ -17,12 +17,12 @@ const Verify = () => {
       </FlexContainer>
       <CardContainer>
         <div className="cardsWrapper">
-          <VerifyCard headerId="verify_card_header1" imgSrc={FrontPhoto}/>
-          <VerifyCard headerId="verify_card_header2" imgSrc={BackPhoto}/>
+          <VerifyCard headerId="verify_card_header1" imgSrc={FrontPhoto} />
+          <VerifyCard headerId="verify_card_header2" imgSrc={BackPhoto} />
         </div>
         <div className="cardsWrapper">
-          <VerifyCard headerId="verify_card_header3" imgSrc={BankStatement}/>
-          <VerifyCard headerId="verify_card_header4" imgSrc={Selfie}/>
+          <VerifyCard headerId="verify_card_header3" imgSrc={BankStatement} />
+          <VerifyCard headerId="verify_card_header4" imgSrc={Selfie} />
         </div>
       </CardContainer>
     </VerifyContainer>
@@ -34,8 +34,15 @@ export default Verify;
 const VerifyContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
 
+
+  @media (min-width: 320px) {
+    width: 85%;
+  }
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const FlexContainer = styled.div`
@@ -45,22 +52,19 @@ const FlexContainer = styled.div`
 `;
 
 const CardContainer = styled.div`
-
   display: flex;
   gap: 20px;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+  margin-top: 40px;
+
   .cardsWrapper {
+    width: 100%;
     gap: 20px;
-    display: flex;  
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  @media (min-width: 768px) {
-    margin-top: 40px;
   }
 
   @media (min-width: 1280px) {
