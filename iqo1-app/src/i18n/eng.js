@@ -108,7 +108,7 @@ export const messages = {
 
        verify_card_header1: "Front Photo",
        verify_card_header2: "Back Photo",
-       verify_card_header3: "Bank Statement/Utility",
+       verify_card_header3: "Bank Statement / Utility",
        verify_card_header4: "Selfie",
        verify_card_btn: "Add photo",
        

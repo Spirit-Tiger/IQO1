@@ -23,6 +23,9 @@ const VerifyCard = ({ headerId, imgSrc }: VerifyCardProps) => {
           </VerifyButton>
         </div>
       </VerifyCardContent>
+      <VerifyButtonMobile>
+        <GradientButton textId="verify_card_btn" />
+      </VerifyButtonMobile>
     </VerifyCardContainer>
   );
 };
@@ -35,6 +38,12 @@ const VerifyCardContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 320px) {
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+  }
 
   @media (min-width: 768px) {
     width: 45vw;
@@ -53,12 +62,21 @@ const VerifyCardContent = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 70%;
-  gap: 10px;
+  gap: 15px;
 
   .mainContent {
     display: flex;
     flex-direction: column;
     min-width: 200px;
+  }
+
+  @media (max-width: 768px) {
+    width: 85%;
+    margin-bottom: 20px;
+
+    .mainContent {
+    min-width: 155px;
+  }
   }
 `;
 
@@ -66,6 +84,11 @@ const CardImage = styled.img`
   width: 7vw;
   min-width: 110px;
   height: fit-content;
+
+  @media (max-width: 768px) {
+    width: 25vw;
+    min-width: 120px;
+  }
 `;
 
 const Header = styled.h3`
@@ -75,12 +98,32 @@ const Header = styled.h3`
 const Text = styled.p`
   color: #848484;
   margin: 8px 0 22px 0;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-top: 3px ;
+  }
 `;
 
 const VerifyButton = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   button {
     color: black;
     width: 9vw;
     min-width: 120px;
+  }
+`;
+
+const VerifyButtonMobile = styled.div`
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  button {
+    color: black;
+    width: 150px;
   }
 `;
