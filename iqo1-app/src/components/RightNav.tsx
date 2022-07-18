@@ -1,41 +1,70 @@
-import React,{useState} from 'react';
-import { FormattedMessage} from "react-intl";
-import styled from 'styled-components';
+import React, { useState } from "react";
+import { FormattedMessage } from "react-intl";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 interface RightNavProps {
-    open: boolean,
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const RightNav = ({ open }:RightNavProps) => {
-
+const RightNav = ({ open, setOpen }: RightNavProps) => {
   return (
-        <RightNavContainer open={open}>
-                <NavList>
-                    <Link to="login">
-                        <LoginButton>
-                            <FormattedMessage id="login_btn" />
-                        </LoginButton>
-                    </Link>
-                    <Link to="dashboard"><FormattedMessage id="home" /></Link>
-                    <div><FormattedMessage id="about_us" /></div>
-                    <div><FormattedMessage id="terms" /></div>
-                    <div><FormattedMessage id="contacts" /></div>
-                    <HorizontalLine />
-                    <LanguageOptions>
-                        <div><FormattedMessage id="language_change1"/></div>
-                        <div>/</div>
-                        <div><FormattedMessage id="language_change2"/></div>
-                    </LanguageOptions>
-                </NavList>
-        </RightNavContainer>
-  )
-}
+    <>
+      <TouchExist open={open} onClick={() => setOpen(!open)} />
+      <RightNavContainer open={open}>
+        <NavList>
+          <Link to="login">
+            <LoginButton>
+              <FormattedMessage id="login_btn" />
+            </LoginButton>
+          </Link>
+          <Link to="dashboard">
+            <FormattedMessage id="home" />
+          </Link>
+          <div>
+            <FormattedMessage id="about_us" />
+          </div>
+          <div>
+            <FormattedMessage id="terms" />
+          </div>
+          <div>
+            <FormattedMessage id="contacts" />
+          </div>
+          <HorizontalLine />
+          <LanguageOptions>
+            <div>
+              <FormattedMessage id="language_change1" />
+            </div>
+            <div>/</div>
+            <div>
+              <FormattedMessage id="language_change2" />
+            </div>
+          </LanguageOptions>
+        </NavList>
+      </RightNavContainer>
+    </>
+  );
+};
 
 export default RightNav;
 
+const TouchExist = styled.div<{ open: boolean }>`
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  display: none;
+  @media (max-width: 768px) {
+    background-color: #00000055;
+    display: ${({ open }) => (open ? "block" : "none")};
+  }
 
-const RightNavContainer = styled.div<{open: boolean}>`
+`;
+
+const RightNavContainer = styled.div<{ open: boolean }>`
   z-index: 10;
   margin: 0;
   list-style: none;
@@ -46,7 +75,7 @@ const RightNavContainer = styled.div<{open: boolean}>`
     align-items: center;
     background-color: #161616;
     position: fixed;
-    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
     right: 0;
     height: 100vh;
@@ -60,46 +89,46 @@ const RightNavContainer = styled.div<{open: boolean}>`
 `;
 
 const NavList = styled.ul`
-    width: 70%;
-    height: 350px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  width: 70%;
+  height: 350px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-    a {
-        color: white;
-        text-decoration: none;
-    }
+  a {
+    color: white;
+    text-decoration: none;
+  }
 `;
 
 const HorizontalLine = styled.div`
-    width: 100%;
-    margin-top: 80px;
-    border-bottom: 2px solid #545454;
+  width: 100%;
+  margin-top: 80px;
+  border-bottom: 2px solid #545454;
 `;
 
 const LoginButton = styled.button`
-    border-radius: none;
-    border:2px solid white;
-    background: none;
-    color: white;
-    font-size:0.9em;
-    font-weight: bold;
-    height: 40px;
-    width: 120px;
-    margin-bottom: 25px;
+  border-radius: none;
+  border: 2px solid white;
+  background: none;
+  color: white;
+  font-size: 0.9em;
+  font-weight: bold;
+  height: 40px;
+  width: 120px;
+  margin-bottom: 25px;
 
-    :hover{
-        cursor: pointer;
-    }
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const LanguageOptions = styled.div`
-    display: flex;
-    align-self: flex-start;
+  display: flex;
+  align-self: flex-start;
 
-    div{
-        margin-right: 5px;
-    }
+  div {
+    margin-right: 5px;
+  }
 `;

@@ -116,7 +116,7 @@ const IdComponentWrapper = styled.div`
     padding: 0 10px;
     gap: 10px;
     margin-top: 18px;
-    border-left: 1px solid black;
+    border-left: 1px solid;
     border-right: none;
     border-bottom: none;
     border-top: none;

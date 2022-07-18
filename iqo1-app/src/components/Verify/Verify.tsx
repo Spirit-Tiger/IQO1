@@ -39,7 +39,7 @@ const VerifyContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-
+  gap: 20px;
 
   @media (min-width: 320px) {
     width: 85%;
@@ -62,7 +62,7 @@ const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin: 30px 0;
 
   .cardsWrapper {
     width: 100%;
@@ -73,6 +73,6 @@ const CardContainer = styled.div`
   }
 
   @media (min-width: 1280px) {
-    margin-top: 100px;
+    margin-top: 70px;
   }
 `;
