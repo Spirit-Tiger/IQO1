@@ -28,7 +28,6 @@ const TotalBalanceContainer = styled.div`
     height: 100%;
     width: 100%;
     position: relative;
-    background: rgba(0,0,0,.6) url(${question}) no-repeat center/75% ;
     top: 60px;
     flex-direction: column;
     display: flex;
@@ -41,15 +40,20 @@ const TotalBalanceContainer = styled.div`
         font-weight: 600;
     }
     @media (min-width: 320px){
+        min-height: 280px;
+        background: rgba(0,0,0,.6) url(${question}) no-repeat center/contain ;
+
     }
     @media (min-width: 768px){
         align-self: center;
         flex-basis: 80%;
-        height: 280px;
+        background: rgba(0,0,0,.6) url(${question}) no-repeat center/contain ;
+
     }
     @media (min-width: 1280px){
         flex-basis: 25%;
         height: 332px;
+        background: rgba(0,0,0,.6) url(${question}) no-repeat center/75% ;
 
     }
 `;
