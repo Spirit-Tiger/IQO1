@@ -29,7 +29,11 @@ const TotalBalanceContainer = styled.div`
     }
     
     @media (min-width: 768px) {
-      flex-basis: 50%;
+      flex-basis: 100%;
+    }
+
+    @media (min-width: 1280px){
+        flex-basis: 50%;
     }
 `;
 

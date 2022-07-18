@@ -8,7 +8,7 @@ const Referal : React.FC = () => {
   return (
     <TotalBalanceContainer>
         <BalanceHeader>
-            <FormattedMessage  id="dashboard_profit_title"/>
+            <FormattedMessage  id="dashboard_referal_title"/>
         </BalanceHeader>
         <FlexContainer>
             <BlockTitle>
@@ -56,6 +56,14 @@ const TotalBalanceContainer = styled.div`
     flex-basis: 25%;
     height: 100%;
     width: 100%;
+    @media (min-width: 320px){
+    }
+    @media (min-width: 768px){
+        flex-basis: 100%;
+    }
+    @media (min-width: 1280px){
+        flex-basis: 25%;
+    }
 `;
 const BalanceHeader = styled.h2`
     font-size: 18px;
