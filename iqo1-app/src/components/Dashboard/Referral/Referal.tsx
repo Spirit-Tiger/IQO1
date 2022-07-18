@@ -123,23 +123,21 @@ const IdComponentWrapper = styled.div`
     flex-direction:column;
     padding: 0 10px;
     gap: 10px;
-    margin-top: 18px;
+    margin-top: 10px;
     border-left: 1px solid;
     border-right: none;
     border-bottom: none;
     border-top: none;
-    border-image: linear-gradient(to bottom, grey 0%, grey 15%, grey 95%, #00000000 95%) 1;
+    border-image: linear-gradient(to bottom,#00000000 5%, grey 5%, grey 95%, #00000000 95%) 1;
     align-items: center;
    
 `
 const IdComponent = styled.div`
     text-align: center;
-    margin-top: -8px;
+    align-items: center;
     display: flex;
-        /* p{
-        margin-top:0;
-        } */
-    height: 100%;
+    height: 47px;
+    gap: 10px;
    
 `
 const ProfileImage = styled.img`
