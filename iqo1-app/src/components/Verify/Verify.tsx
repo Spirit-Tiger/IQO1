@@ -62,7 +62,7 @@ const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 30px 0;
+  margin: 60px 0;
 
   .cardsWrapper {
     width: 100%;
@@ -72,7 +72,7 @@ const CardContainer = styled.div`
     justify-content: center;
   }
 
-  @media (min-width: 1280px) {
-    margin-top: 70px;
+  @media (max-width: 1280px) {
+    margin-top: 20px;
   }
 `;
