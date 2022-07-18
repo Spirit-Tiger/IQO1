@@ -52,7 +52,7 @@
 
 @media screen and  (min-width: 320px) {
     .sliderPagination .swiper-pagination{
-        top: 78vh;
+        top: 75vh;
         left:0;
      }
   }
