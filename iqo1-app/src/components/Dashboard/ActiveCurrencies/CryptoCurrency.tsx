@@ -29,7 +29,7 @@ const CryptoCurrency = ({imgSrc, shortName, stats, price}: CurrencyProps) => {
     <div>
         <p>{stats.perc}%</p>
     </div>
-    <InvestButton>Check</InvestButton>
+    <InvestButton>CHECK</InvestButton>
    </Container>
   )
 }
@@ -74,10 +74,12 @@ const BalanceHeader = styled.h3`
     font-size: 18px;
 `;
 const InvestButton = styled.button`
-    background: linear-gradient(270deg, #9D7100 0%, #FF9900 100%);
+    background: linear-gradient(270deg,  #E68646
+ 0%, #F5C652 100%);
     border-radius: 8px;
     border: 0;
     font-size: 12px;
+    font-weight: 600;
     color: white;
     @media (min-width: 320px) {
         display: none;

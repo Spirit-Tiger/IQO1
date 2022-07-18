@@ -3,8 +3,13 @@ import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import 'react-circular-progressbar/dist/styles.css';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import GradientSVG from './GradientSVG';
+import ProgressProvider from './ProgressProvider';
 
 const Profit = () => {
+    const [valueEnd, setValueEnd] = useState(66);
+    const idCSS = "hello";
+    const percentage = 66;
   return (
     <TotalBalanceContainer>
         <BalanceHeader>
@@ -20,18 +25,41 @@ const Profit = () => {
                 </h3>
             </BlockTitle>
             <div  className='circle'>
-            <StyledCircularProgressbar value={66} maxValue={100} text={`66%`} 
-             styles={buildStyles({
-                strokeLinecap: 'butt',
-                // Can specify path transition in more detail, or remove it entirely
-                // pathTransition: 'none',
-            
-                // Colors  linear-gradient(92.77deg, #FFB800 16.59%, #9D7100 97.23%)
-                pathColor: `#FFB800 `,
-                textColor: '#ffffff',
-                trailColor: 'rgba(255, 255, 255, 0)',
-                backgroundColor: '#fcfcfc',
-              })}/>
+            <StyledGradientSVG />
+            <ProgressProvider  valueStart={0} valueEnd={valueEnd}>
+            {(value: number) => 
+            (<StyledCircularProgressbar value={value} maxValue={100} text={`66%`} 
+            //  styles={buildStyles({
+            //     strokeLinecap: 'butt',
+            //     // Can specify path transition in more detail, or remove it entirely
+            //     // pathTransition: 'none',
+                
+            //     // Colors  linear-gradient(92.77deg, #FFB800 16.59%, #9D7100 97.23%)
+            //     // pathColor: `#FFB800 `,
+            //     textColor: '#ffffff',
+            //     trailColor: 'rgba(255, 255, 255, 0)',
+            //     backgroundColor: '#fcfcfc',
+            //   })}
+            styles={{
+                path: { 
+                 stroke: `url(#${idCSS})`,
+                 height: "100%",
+                 strokeWidth:'8',
+                 strokeLinecap: 'butt',},
+                trail: {
+                  stroke: "#26313D",
+                  strokeLinecap: 'butt',
+                  color: '#ffff',
+                },
+                text: {
+                    // Text color
+                    fill: '#ffffff',
+                    // Text size
+                    fontSize: '16px',
+                  },
+              }}
+              />)}
+            </ProgressProvider>
             </div>
         </FlexContainer>
     </TotalBalanceContainer>
@@ -45,10 +73,18 @@ const TotalBalanceContainer = styled.div`
     flex-basis: 25%;
     height: 100%;
     width: 100%;
+    @media (min-width: 320px){
+    }
+    @media (min-width: 768px){
+        flex-basis: 100%;
+    }
+    @media (min-width: 1280px){
+        flex-basis: 25%;
+    }
 `;
 const StyledCircularProgressbar = styled(CircularProgressbar)`
    width: 100%;
-   max-height: 210px;
+   max-height: 250px;
    transform: scaleX(-1);
 
    .CircularProgressbar-text {
@@ -85,11 +121,7 @@ const FlexContainer = styled.div`
     height: calc(350px - 60px);
 
     justify-content: flex-start;
-   .circle{
-    margin-top: 20px;
-    width: 90%;
     
-   }
     /* justify-content: center; */
 
     @media (min-width: 320px){
@@ -97,12 +129,28 @@ const FlexContainer = styled.div`
         flex-direction: column;
         align-items: center;
         min-height: fit-content;
+        justify-content: space-between;
+        .circle{
+            width: 90%;
+            justify-content: center;
+            display: flex;
+        }
+    
     }
 
     @media (min-width: 768px){
+        justify-content: space-evenly;
 
         width: 100%;
         flex-direction: column;
         row-gap: 32px;
+        .circle{
+        width: 90%;
+            
+        }
     }
 `;
+
+const StyledGradientSVG = styled(GradientSVG)`
+    position: absolute;
+`

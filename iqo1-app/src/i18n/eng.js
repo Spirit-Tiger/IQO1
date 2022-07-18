@@ -87,6 +87,9 @@ export const messages = {
        dashboard_title:'Dashboard', 
        dashboard_active_currency_title:'Your active:',
        dashboard_profit_title:'Profit:',
+       dashboard_market_title:'Market:',
+       dashboard_referal_title:'Referals:',
+
 
        verify_info_header: "Verify :",
        verify_info_text: "Текст-заполнитель — это текст, который имеет некоторые характеристики реального письменного текста, но является случайным набором слов или сгенерирован иным образом. Его можно использовать для отображения образца шрифтов, создания текста для тестирования или обхода спам-фильтра.",
