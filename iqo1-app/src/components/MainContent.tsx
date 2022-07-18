@@ -1,282 +1,199 @@
 import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
-import { Canvas, } from '@react-three/fiber';
+import { Canvas } from "@react-three/fiber";
 import RenderGltf from "./Model3D";
 import GradientButton from "./GradientButton";
-import  { Pagination, Autoplay  } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import './sliderPagination.css';
+import { Pagination, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "./sliderPagination.css";
 
 const MainContent = () => {
-
   return (
-    <Swiper className='sliderPagination'
+    <ContentContainer>
+      <Swiper
+        className="sliderPagination"
         // allowTouchMove={false}
         modules={[Pagination, Autoplay]}
         slidesPerView={0.999}
         autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
+          delay: 500000,
+          disableOnInteraction: false,
         }}
         pagination={{
-        clickable: true,     
+          clickable: true,
         }}
         onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
-        >
-            <SwiperSlide>
-                <MainContentContainer>
-                    <MainTextContainer>
-                        <MainTextHeader>
-                            <FormattedMessage id="slogan_header"/>
-                        </MainTextHeader>
-                    </MainTextContainer>
-                    <ButtonContainer>
-                        <GradientButton textId="starting_btn"/>
-                    </ButtonContainer>
-                    <CanvasContainer>
-                        <Canvas>
-                            <RenderGltf shadow={false} scale={1.6} version={1}/> 
-                        </Canvas>
-                    </CanvasContainer>
-                </MainContentContainer>
-            </SwiperSlide>
-            <SwiperSlide>
-                <SecondSlideContainer>
-                    <SlideHeader1>
-                        <FormattedMessage id="slogan_header_slide2"/>
-                    </SlideHeader1>
-                    <MainText>
-                        <FormattedMessage id="slogan_text_slide2"/>
-                    </MainText>
-                    <GradientButton textId="starting_btn"/>
-                </SecondSlideContainer>
-            </SwiperSlide>
-            <SwiperSlide>  
-                <SecondSlideContainer>
-                    <SlideHeader2>
-                        <FormattedMessage id="slogan_header_slide3"/>
-                    </SlideHeader2>
-                    <GradientButton textId="starting_btn"/>
-                </SecondSlideContainer>
-            </SwiperSlide>
-    </Swiper>
+        onSlideChange={() => console.log("slide change")}
+      >
+        <SwiperSlide>
+          <MainContentContainer>
+            <MainTextHeader>
+              <FormattedMessage id="slogan_header" />
+            </MainTextHeader>
+            <ButtonContainer>
+              <GradientButton textId="starting_btn" />
+            </ButtonContainer>
+          </MainContentContainer>
+        </SwiperSlide>
+        <SwiperSlide>
+          <MainContentContainer>
+            <div>
+              <MainTextHeader>
+                <FormattedMessage id="slogan_header_slide2" />
+              </MainTextHeader>
+              <MainText>
+                <FormattedMessage id="slogan_text_slide2" />
+              </MainText>
+            </div>
+            <ButtonContainer>
+              <GradientButton textId="starting_btn" />
+            </ButtonContainer>
+          </MainContentContainer>
+        </SwiperSlide>
+        <SwiperSlide>
+          <MainContentContainer>
+            <MainTextHeader>
+              <FormattedMessage id="slogan_header_slide3" />
+            </MainTextHeader>
+            <ButtonContainer>
+              <GradientButton textId="starting_btn" />
+            </ButtonContainer>
+          </MainContentContainer>
+        </SwiperSlide>
+      </Swiper>
+      <CanvasContainer>
+        <Canvas>
+          <RenderGltf shadow={false} scale={1.6} version={1} />
+        </Canvas>
+      </CanvasContainer>
+    </ContentContainer>
   );
 };
 
 export default MainContent;
 
-const MainContentContainer = styled.div`
+const ContentContainer = styled.div`
+  height: calc(100vh - 120px);
+  min-height: 480px;
+  display: flex;
+
+  @media (min-width: 320px) {
+    flex-direction: column;
+    width: 82vw;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    flex-direction: row;
     width: 67.8vw;
-    height: calc(100vh - 120px) ;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-
-    @media (min-width: 320px) {
-        grid-template-columns: 1fr;
-        width: 82vw;
-        height: calc(100vh - 120px) ;
-    }
-
-    @media (min-width: 768px) {
-        width: 67.8vw;
-        height: calc(100vh - 120px) ;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(3, 1fr);
-    }
+  }
 `;
 
-const MainTextContainer = styled.div`
-    color: white;
-    display: flex;
-    flex-direction: column ;
-    align-self: center;
+const MainContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    
-    @media (min-width: 320px) {
-        align-self: start;
-        justify-self: center;
-        margin: 0 10px;
-    }
+  @media (min-width: 320px) {
+    width: 82vw;
+    height: 90vh;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    @media (min-width: 768px) {
-        color: white;
-        width: 30vw;
-        display: flex;
-        flex-direction: column ;
-        align-self: center;
-        justify-self: start;
-        margin: 0;
+  @media (min-width: 768px) {
+    padding-left: 3px;
+    width: 34vw;
+    height: 60vh;
+    justify-content: center;
+    align-items: flex-start;
+  }
 
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 1;
-        grid-row-end: 3;
-    }
-   
+  @media (min-width: 1080px) {
+    width: 38vw;
+  }
 `;
 
 const MainTextHeader = styled.h1`
-    margin: 0;
+  margin: 0;
+  color: white;
 
-    @media (min-width: 320px) {
-        font-size:1.5em;
-        text-align: center;
-    }
+  @media (min-width: 320px) {
+    font-size: 1.4em;
+    text-align: center;
+  }
 
-    @media (min-width: 768px) {
-        font-size:3.5vw ;
-        text-align: left;
-        margin-top: -20px;
-    }
+  @media (min-width: 768px) {
+    font-size: 3.5vw;
+    text-align: left;
+  }
 
-    @media (min-width: 1500px) {
-        font-size:3.2em ;
-    }
+  @media (min-width: 1080px) {
+    margin-top: 40px;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 3.7em;
+  }
 `;
 
 const MainText = styled.p`
-    margin: 0;
-    margin-bottom: 60px;
-    
-    @media (min-width: 320px) {
-        font-size:1.2em;
+  color: white;
+  margin: 0;
 
-    }
+  @media (min-width: 320px) {
+    font-size: 1.2em;
+    text-align: center;
+  }
 
-    @media (min-width: 768px) {
-        font-size:1.3em ;
-    }
+  @media (min-width: 768px) {
+    font-size: 1.3em;
+    text-align: left;
+  }
 `;
 
 const CanvasContainer = styled.div`
-    width: 450px;
+
+  @media (min-width: 320px) {
+    width: 82vw;
+    height: 62vh;
+    position: absolute;
+    top: 10vh;
+  }
+
+  @media (min-width: 375px) {
+    width: 82vw;
+    height: 62vh;
+  }
+
+  @media (min-width: 768px) {
+    position: static;
+    width: 32vw;
     height: 100%;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    justify-self: end;
-
-    @media (min-width: 320px) {
-        width: 82vw;
-        height: 62vh;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end: 3;
-        justify-self: center;
-    }
-
-    @media (min-width: 375px) {
-        width: 82vw;
-        height: 62vh;
-    }
-
-    @media (min-width: 768px) {
-        width: 450px;
-        height: 100%;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 4;
-        justify-self: end;
-    }
+  }
 `;
+
 const ButtonContainer = styled.div`
-    
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end:3;
-    align-self: center;
 
-    @media (min-width: 320px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 3;
-        grid-row-end:4;
-        justify-self: center;
-        align-self: start ;
-        margin-top: -45px;
-    }
 
-    @media (min-width: 375px) {
-        margin-top: -25px;
-    }
+  @media (min-width: 320px) {
+    margin-bottom: 90px;
+  }
 
-    @media (min-width: 768px) {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end:3;
-        align-self: center;
-        justify-self: start;
-        margin-top: 90px;
-    }
+  @media (min-width: 375px) {
+    margin-bottom: 110px;
+  }
 
-    @media (min-width: 1280px) {
-        margin-top: 70px;
-    }
+  @media (min-width: 768px) {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
 
-    @media (min-width: 1500px) {
-        margin-top: 20px;
-    }
+  @media (min-width: 1080px) {
+    margin-top: 60px;
+  }
 `;
-
-const SecondSlideContainer = styled.div`
-    color: white;
-    
-    @media (min-width: 320px) {
-        min-width: 280px;
-        height: calc(100vh - 120px) ;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    @media (min-width: 768px) {
-        width: 33vw;;
-        height: calc(100vh - 120px) ;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        text-align: left;
-        }
-`;
-
-const SlideHeader1 = styled(MainTextHeader)`
-    margin-top: -180px;
-
-    @media (min-width: 768px) {
-        margin-top: -200px;
-    }
-
-`;
-
-const SlideHeader2 = styled(MainTextHeader)`
-    margin-top: -180px;
-    margin-bottom: 60px;
-
-    @media (min-width: 768px) {
-        margin-top: -200px;
-    }
-`;
-
-

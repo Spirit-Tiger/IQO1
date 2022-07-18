@@ -14,7 +14,7 @@ const VerifyInfo = () => {
 export default VerifyInfo;
 
 const VerifyInfoContainer = styled.div`
-    margin-top: 25px;
+    margin-top: 15px;
     h2 {
         font-size: 32px;
     }
