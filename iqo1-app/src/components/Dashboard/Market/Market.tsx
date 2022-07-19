@@ -39,21 +39,21 @@ const Market = () => {
   })
   useEffect(() =>{
     setChartData({
-      labels: ['2','45','12','5'],
+      labels: ['2','45','12','5','12','230','90'],
       datasets: [
         {
           fill: true,
-          data:[2,45,12,5],
+          data:[20,80,230,130,170,130,70],
           borderColor:'#06b42c',
           backgroundColor: (context: ScriptableContext<"line">) => {
             const ctx = context.chart.ctx;
-            const gradient = ctx.createLinearGradient(0, 0, 0, 550);
+            const gradient = ctx.createLinearGradient(0, 0, 0, 560);
             gradient.addColorStop(0, "rgba(1, 162, 36, 0.47)");
             gradient.addColorStop(0.47, "rgba(0, 202, 44, 0");
             gradient.addColorStop(1, "rgba(0,0, 0, 0");
             return gradient;},
             borderRadius:15,
-            lineTension:0.2,    
+            lineTension:0.3,    
 
         }
       ]
@@ -61,13 +61,13 @@ const Market = () => {
     setChartOptions({
       responsive:true,
       maintainAspectRatio: false,
-      scales: {
-          yAxes: [{
-              ticks: {
-                  beginAtZero:true
-              }
-          }]
-      },
+      // scales: {
+      //     yAxes: [{
+      //         ticks: {
+      //             beginAtZero:true
+      //         }
+      //     }]
+      // },
       devicePixelRatio:1,
       plugins:{
         legend:{

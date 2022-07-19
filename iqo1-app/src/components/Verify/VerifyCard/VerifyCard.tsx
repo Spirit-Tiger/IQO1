@@ -90,7 +90,6 @@ const CardImage = styled.img`
 `;
 
 const Header = styled.h3`
-  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -100,7 +99,6 @@ const Header = styled.h3`
 `;
 
 const Text = styled.p`
-  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -124,7 +122,6 @@ const VerifyButton = styled.div`
     width: 150px;
     min-width: 120px;
     background: linear-gradient(90deg, #9d7100 0%, #ffb800 100%);
-    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -142,7 +139,6 @@ const VerifyButtonMobile = styled.div`
     width: 150px;
     font-size: 15px;
     background: linear-gradient(90deg, #9d7100 0%, #ffb800 100%);
-    font-family: "Inter";
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
