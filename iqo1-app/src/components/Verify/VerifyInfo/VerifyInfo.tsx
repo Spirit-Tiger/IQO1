@@ -14,7 +14,6 @@ const VerifyInfo = () => {
 export default VerifyInfo;
 
 const VerifyInfoContainer = styled.div`
-    margin-top: 15px;
     h2 {
         font-size: 32px;
     }
@@ -22,11 +21,12 @@ const VerifyInfoContainer = styled.div`
     p {
         margin: 0;
         font-size: 14px;
+        color: #E9E9E9;;
     }
 
     @media (max-width: 768px) {
       h2 {
-        font-size: 28px;
+        font-size: 24px;
     }
     }
 

@@ -1,43 +1,49 @@
-import GradientButton from 'components/GradientButton';
-import React from 'react'
-import { FormattedMessage } from 'react-intl';
-import styled from 'styled-components';
+import GradientButton from "components/GradientButton";
+import React from "react";
+import { FormattedMessage } from "react-intl";
+import styled from "styled-components";
+import VerifyQuestion from "images/verify_question_icon.png";
+import { Link } from "react-router-dom";
 
 const VerifyNeeded = () => {
   return (
     <VerifyNeededContainer>
       <VerifyNeededContent>
         <QuestionMark>
-          ?
+          <img src={VerifyQuestion} />
         </QuestionMark>
         <Text>
           <FormattedMessage id="verify_needed_text" />
         </Text>
         <StartButtonContainer>
-          <GradientButton textId="verify_needed_start_btn"/>
+          <Link to="/dashboard/verify">
+            <GradientButton textId="verify_needed_start_btn" />
+          </Link>
         </StartButtonContainer>
       </VerifyNeededContent>
     </VerifyNeededContainer>
-  )
-}
+  );
+};
 
 export default VerifyNeeded;
 
 const VerifyNeededContainer = styled.div`
   width: 30vw;
   min-width: 400px;
-  margin-top: 50px;
+  margin-top: 42px;
   display: flex;
   margin-bottom: 20px;
 
-  @media (max-width: 1280px){
+  @media (max-width: 1280px) {
     width: 60vw;
     justify-content: center;
     min-width: 300px;
+    margin-top: 0;
   }
 
   @media (max-width: 768px) {
     align-self: center;
+    margin-top: 20px;
   }
 `;
 
@@ -48,7 +54,7 @@ const VerifyNeededContent = styled.div`
   align-items: center;
   align-self: flex-start;
 
-  @media (max-width: 1280px){
+  @media (max-width: 1280px) {
     margin-left: 0;
   }
 `;
@@ -63,7 +69,6 @@ const QuestionMark = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 200px;
 `;
 
 const Text = styled.p`
@@ -71,12 +76,18 @@ const Text = styled.p`
   font-weight: 600;
 `;
 
-
 const StartButtonContainer = styled.div`
-  margin-top: 35px;
+  margin-top: 27px;
 
   button {
     color: black;
     font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 50px;
+    button {
+      width: 85vw;
+    }
   }
 `;

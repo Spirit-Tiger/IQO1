@@ -31,7 +31,7 @@ const DashboardMenu = () => {
             </MenuItem>
             <MenuItem>
               <MenuIcon src={VeifyIcon}/>
-              <Link to="veryfy"><FormattedMessage id="dm_verify" /></Link>
+              <Link to="profile_edit"><FormattedMessage id="dm_verify" /></Link>
             </MenuItem>
             <MenuItem>
               <MenuIcon src={SettingsIcon}/>

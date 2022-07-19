@@ -10,7 +10,7 @@ const VerifyStatus = () => {
         <h3>
           <FormattedMessage id="verify_status_header" />
         </h3>
-        <VerifyCurrentStatus>not veifyed</VerifyCurrentStatus>
+        <VerifyCurrentStatus>not veified</VerifyCurrentStatus>
         <img src={InfoIcon} />
       </div>
     </VerifyStatusContainer>
@@ -27,7 +27,6 @@ const VerifyStatusContainer = styled.div`
   align-items: center;
   justify-content: center;
   align-self: flex-end;
-  margin-top: 30px;
 
   div {
     width: 65%;
@@ -68,6 +67,7 @@ const VerifyStatusContainer = styled.div`
       p {
         margin: 0;
         font-size: 14px;
+        color: #E9E9E9;;
       }
 
       img {
@@ -79,6 +79,7 @@ const VerifyStatusContainer = styled.div`
 
   @media (min-width: 768px) {
     width: 60vw;
+    margin-top: 20px;
 
     div {
       width: 65%;
@@ -105,7 +106,8 @@ const VerifyStatusContainer = styled.div`
 
   @media (min-width: 1280px) {
     width: 30vw;
-
+    min-width: 480px;
+    margin-top: 30px;
     div {
       width: 65%;
       display: flex;

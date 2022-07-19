@@ -44,7 +44,7 @@ const DashboardRightNav = ({ open, setOpen }: RightNavProps) => {
             </MenuItem>
             <MenuItem onClick={() => setOpen(!open)}>
               <MenuIcon src={VeifyIcon} />
-              <Link to="veryfy">
+              <Link to="/dashboard/profile_edit">
                 <FormattedMessage id="dm_verify" />
               </Link>
             </MenuItem>

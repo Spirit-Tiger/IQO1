@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components';
-import { postAPI } from '../services/PostService';
+import { postAPI } from '../../services/PostService';
 
 const Market = () => {
   const {data: posts, error, isLoading} = postAPI.useFetchAllPostsQuery(5);

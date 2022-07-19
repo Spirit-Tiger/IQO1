@@ -40,7 +40,7 @@ const VerifyContainer = styled.div`
   flex-direction: column;
   height: fit-content;
   gap: 20px;
-
+  
   @media (min-width: 320px) {
     width: 85%;
   }
@@ -53,7 +53,12 @@ const VerifyContainer = styled.div`
 const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 10px;
+
+  @media (max-width: 1280px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `;
 
 const CardContainer = styled.div`
@@ -62,17 +67,22 @@ const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 60px 0;
+  margin: 70px 0;
 
   .cardsWrapper {
     width: 100%;
     gap: 20px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
   }
 
   @media (max-width: 1280px) {
     margin-top: 20px;
+  }
+
+  @media (max-width: 1380px) {
+    .cardsWrapper {
+      flex-wrap: wrap;
+    }
   }
 `;

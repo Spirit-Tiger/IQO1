@@ -7,12 +7,11 @@ import MainPage from './pages/Main.Page';
 import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
 import DashboardMain from './components/Dashboard';
-import Market from './components/Market';
+import Market from './components/Market/Market';
 import Deposit from './components/Deposit';
 import Verify from './components/Verify';
 import Settings from './components/Settings';
 import Registration from './pages/Registration';
-import Footer from "./components/Footer";
 import ProfileEdit from 'components/ProfileEdit';
 
 const Wrapper = ({children}:any) => {
@@ -39,7 +38,7 @@ function App() {
                   <Route index element={<DashboardMain />} />
                   <Route path="market" element={<Market />} />
                   <Route path="deposit" element={<Deposit />} />
-                  <Route path="veryfy" element={<Verify />} />
+                  <Route path="verify" element={<Verify />} />
                   <Route path="settings" element={<Settings />} />
                   <Route path="profile_edit" element={<ProfileEdit />} />
                 </Route>
