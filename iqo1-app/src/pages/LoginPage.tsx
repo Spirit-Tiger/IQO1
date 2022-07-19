@@ -107,7 +107,7 @@ const LoginPageContainer = styled.div`
 
   @media (min-width: 768px) {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 100%;
     color: white;
     background: linear-gradient(
@@ -131,6 +131,7 @@ const Logo = styled.img`
 
   @media (min-width: 768px) {
     width: 10%;
+    min-width: 150px;
     margin: 30px 0 40px 0;
   }
 `;
@@ -138,30 +139,24 @@ const Logo = styled.img`
 const FormContainer = styled.div`
   background-color: rgba(38, 49, 61, 1);
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 8px 4px rgba(0, 0, 0, 0.15);
+ 
 
   @media (min-width: 320px) {
-    width: 90vw;
-    height: 75vh;
-    max-height: 550px;
-    min-height: 400px;
-    justify-content: space-evenly;
+    padding: 33px 24px;
+    width: calc(315px - 48px);
+    height: calc(490px - 66px);
+   
   }
 
   @media (min-width: 768px) {
-    width: 70vw;
-    height: 65vh;
-    max-height: 700px;
-    min-height: 450px;
-    justify-content: space-evenly;
-  }
-
-  @media (min-width: 1080px) {
-    width: 30vw;
+    width: calc(510px - 96px);
+    height: calc(600px - 120px);
+    padding: 60px 48px;
   }
 `;
 
@@ -169,26 +164,19 @@ const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-  width: 85%;
-
-  @media (max-width: 768px) {
-    margin: 0;
-  }
+  width: 100%;
+  position: relative;
 `;
 
 const Header = styled.h2`
   margin: 0;
 
   @media (min-width: 320px) {
-    font-size: 1.6em;
+    font-size: 24px;
   }
 
-  @media (min-width: 1080px) {
-    font-size: 2em;
-  }
-
-  @media (min-width: 1400px) {
-    font-size: 2.4em;
+  @media (min-width: 768px) {
+    font-size: 36px;
   }
 `;
 
@@ -197,15 +185,14 @@ const Text = styled.p`
   color: rgba(199, 199, 199, 1);
 
   @media (min-width: 320px) {
-    font-size: 1em;
+    font-size: 14px;
+    margin-top: 15px;
+    position: absolute;
   }
 
-  @media (min-width: 1080px) {
-    font-size: 1.1em;
-  }
-
-  @media (min-width: 1400px) {
-    font-size: 1.2em;
+  @media (min-width: 768px) {
+    font-size: 18px;
+    margin-top: 0;
   }
 `;
 
@@ -219,11 +206,6 @@ const CloseBtn = styled.div`
   }
 
   @media (min-width: 768px) {
-    width: 26px;
-    height: 26px;
-  }
-
-  @media (min-width: 1400px) {
     width: 30px;
     height: 30px;
   }
@@ -235,37 +217,34 @@ const FormikStyledForm = styled(Form)`
   justify-content: space-between;
 
   @media (min-width: 320px) {
-    width: 85%;
-    height: 42vh;
-    min-height: 250px;
+    width: 100%;
+    margin-top: 60px;
+    height: 340px;
   }
 
   @media (min-width: 768px) {
-    width: 75%;
-    height: 38vh;
-    min-height: 300px;
+    margin-top: 54px;
+    width: 330px;
+    height: 340px;
   }
 `;
 
 const FormikStyledField = styled(Field)`
   font-size: 1.2em;
   color: white;
-  height: 40px;
+  height: 37px;
   min-height: 35px;
   padding: 3px 25px;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.58);
   background-color: rgba(38, 49, 61, 1);
-
-  @media (max-height: 700px) {
-    height: 30px;
-    min-height: 25px;
-    font-size: 1.1em;
-  }
 `;
 
 const ForgetPassButton = styled.div`
   text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+font-size: 14px;
   margin-bottom: -15px;
   a {
     color: white;
@@ -279,24 +258,19 @@ export const LoginButton = styled.button`
   border: none;
   background: linear-gradient(92.77deg, #ffb800 16.59%, #9d7100 97.23%);
   border-radius: 14px;
-  height: 48px;
+  height: 45px;
   margin-bottom: -10px;
 
   :hover {
     cursor: pointer;
   }
 
-  @media (max-height: 700px) {
-    height: 42px;
-    min-height: 30px;
-    font-size: 1.1em;
-  }
 `;
 
 const RegistrationButton = styled(Link)`
   color: white;
   font-size: 1.2em;
-  height: 48px;
+  height: 45px;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.58);
   border-radius: 14px;
@@ -304,10 +278,4 @@ const RegistrationButton = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media (max-height: 700px) {
-    height: 42px;
-    min-height: 30px;
-    font-size: 1.1em;
-  }
 `;
