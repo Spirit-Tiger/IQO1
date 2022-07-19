@@ -114,7 +114,8 @@ export const messages = {
        verify_card_header3: "Bank Statement / Utility",
        verify_card_header4: "Selfie",
        verify_card_btn: "Add photo",
-       
-
+       market_header: "Market :",
+       market_total_value: "Total Value Locked",
+       market_yearly_grow: "Yearly Grow",
     }
 };

@@ -29,7 +29,7 @@ const VerifyStatusContainer = styled.div`
   align-self: flex-end;
 
   div {
-    width: 65%;
+    width: 70%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -109,7 +109,7 @@ const VerifyStatusContainer = styled.div`
     min-width: 480px;
     margin-top: 30px;
     div {
-      width: 65%;
+      width: 70%;
       display: flex;
       align-items: center;
       justify-content: space-between;

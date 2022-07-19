@@ -132,7 +132,7 @@ const EllipseImage = styled.div`
 
     @media (min-width: 768px){
         width: 100%;
-        height: 994px;
+        height: 990px;
         top:5%;
         left: 0;
         margin-top: -180px;
