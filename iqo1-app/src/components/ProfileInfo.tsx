@@ -34,7 +34,7 @@ const ProfileInfo = ({className}:ProfileInfoProps) => {
 export default ProfileInfo;
 
 const ProfileInfoContainer = styled.div`
-  width: 170px;
+  width: fit-content;
   height: 47px;
   color: white;
   display: flex;
@@ -46,6 +46,7 @@ const ProfileInfoContainer = styled.div`
 `;
 
 const ProfileImage = styled.img`
+  margin-right:12px;
   border-radius: 50%;
   width: 47px;
 `;
