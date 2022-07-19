@@ -33,7 +33,11 @@ const TotalBalanceContainer = styled.div`
     }
 
     @media (min-width: 1280px){
+        flex-basis: 100%;
+    }
+    @media (min-width: 1550px){
         flex-basis: 50%;
+
     }
 `;
 
@@ -85,7 +89,7 @@ const objects = [
             dir:'up',
             perc:15
         },
-        price:150.5
+        price:10543.54
     },
     {
         shortName:"ETH",

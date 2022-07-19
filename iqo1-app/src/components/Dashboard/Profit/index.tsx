@@ -73,12 +73,16 @@ const TotalBalanceContainer = styled.div`
     flex-basis: 25%;
     height: 100%;
     width: 100%;
+    min-width: 255px;
     @media (min-width: 320px){
     }
     @media (min-width: 768px){
         flex-basis: 100%;
     }
     @media (min-width: 1280px){
+        flex-basis: calc(50% - 10px);
+    }
+    @media (min-width: 1500px){
         flex-basis: 25%;
     }
 `;

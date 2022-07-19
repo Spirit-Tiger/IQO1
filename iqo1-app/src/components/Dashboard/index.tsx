@@ -45,7 +45,7 @@ const DasboardMainContainer = styled.div`
     max-width: calc(100% - 380px);
   }
   @media (min-width: 1024px) {
-    width: 90%;
+    /* width: 100%; */
   }
 `;
 
@@ -79,8 +79,13 @@ const InfoBlockc = styled.div`
     max-height: 100%;
     /* max-height: 410px; */
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    
   }
+    @media (min-width: 1500px){
+      flex-wrap: nowrap;
+    }
 `;
 const MarketBlock = styled.div`
   display: flex;

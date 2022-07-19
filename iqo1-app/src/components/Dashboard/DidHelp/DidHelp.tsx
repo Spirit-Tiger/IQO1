@@ -62,7 +62,7 @@ const TextWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 80%;
+    width: 79%;
     p{
         color: #a8a8a8;
             font-size: 12px;
@@ -76,7 +76,7 @@ const Support = styled(Link)`
   font-size: 14px;
   font-weight: 700;
   line-height: 17px;
-  width: 265px;
+  width: 79%;
   height: 41px;
   text-decoration: none;
   border-radius: 14px;
