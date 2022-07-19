@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import TotalBalanceIcon from "images/total_balance_icon.png";
-
+import { ReactComponent as PriceUp } from 'images/price_up.svg';
 import InvestIcon from "images/invest_icon.png";
 import WithdrowIcon from "images/withdrow_icon.png";
 
@@ -23,11 +23,13 @@ const CryptoCurrency = ({imgSrc, shortName, stats, price}: CurrencyProps) => {
         <img src={imgSrc}></img>
         <p>{shortName}</p>
     </div>
-    <div>
-        <p>{price}$</p>
+    <div className='price'>
+        <p> {price} $</p>
     </div>
-    <div>
-        <p>{stats.perc}%</p>
+    <div className='percentage'>
+    <PriceUp/>
+
+        <p>{stats.perc} %</p>
     </div>
     <InvestButton>CHECK</InvestButton>
    </Container>
@@ -42,15 +44,30 @@ height: fit-content;
 align-items:center;
 justify-content: space-between;
 font-size:14px;
+width: 90%;
 p{
     margin: 0;
+    font-size: 14px;
+    font-weight: 600;
 }
-    width: 90%;
+.price {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    min-width: 68px;
+}
+.percentage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    color: #15AF37;
+}
     .align-center{
         display: flex;
         align-items: center;
         height: fit-content;
-        column-gap: 27px;
+        column-gap: 20px;
         justify-content: space-between;
         /* align-items: center; */
         font-weight: 500;
@@ -60,7 +77,7 @@ p{
         height: auto;
     }
     @media (min-width: 320px) {
-        padding-bottom: 5px;
+        /* padding-bottom: 5px; */
         border-bottom: 1px solid #5C5C5C;
     }
     

@@ -46,13 +46,12 @@ const VerifyCardContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    width: 45vw;
-    height: 180px;
+    width: 510px;
+    height: 203px;
   }
 
   @media (min-width: 1280px) {
-    width: 27vw;
-    min-width: 389px;
+    width: 510px;
     height: 203px;
   }
 `;
@@ -61,8 +60,7 @@ const VerifyCardContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
-  gap: 15px;
+  gap: 40px;
 
   .mainContent {
     display: flex;
@@ -71,37 +69,48 @@ const VerifyCardContent = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 85%;
+    width: 83%;
     margin-bottom: 20px;
+    gap: 12px;
 
     .mainContent {
-    min-width: 155px;
-  }
+      min-width: 155px;
+    }
   }
 `;
 
 const CardImage = styled.img`
-  width: 7vw;
+  width: 139px;
   min-width: 110px;
-  height: fit-content;
+  height: 79px;
 
   @media (max-width: 768px) {
-    width: 25vw;
-    min-width: 120px;
+    min-width: 130px;
   }
 `;
 
 const Header = styled.h3`
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
   margin: 0;
+  font-size: 18px;
 `;
 
 const Text = styled.p`
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
   color: #848484;
-  margin: 8px 0 22px 0;
+  margin: 2px 0 22px 0;
 
   @media (max-width: 768px) {
     font-size: 16px;
-    margin-top: 3px ;
+    margin-top: 3px;
   }
 `;
 
@@ -112,8 +121,14 @@ const VerifyButton = styled.div`
 
   button {
     color: black;
-    width: 9vw;
+    width: 150px;
     min-width: 120px;
+    background: linear-gradient(90deg, #9d7100 0%, #ffb800 100%);
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
   }
 `;
 
@@ -126,5 +141,11 @@ const VerifyButtonMobile = styled.div`
     color: black;
     width: 150px;
     font-size: 15px;
+    background: linear-gradient(90deg, #9d7100 0%, #ffb800 100%);
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 17px;
   }
 `;

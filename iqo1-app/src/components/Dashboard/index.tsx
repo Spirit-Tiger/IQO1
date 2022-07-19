@@ -45,7 +45,7 @@ const DasboardMainContainer = styled.div`
     max-width: calc(100% - 380px);
   }
   @media (min-width: 1024px) {
-    width: 90%;
+    /* width: 100%; */
   }
 `;
 
@@ -55,7 +55,6 @@ const DashboardTitle = styled.h2`
   font-size: 32px;
   margin: 0;
   @media (min-width: 320px) {
-    margin-top: 15px;
     font-size: 24px;
   }
   @media (min-width: 768px) {
@@ -80,8 +79,13 @@ const InfoBlockc = styled.div`
     max-height: 100%;
     /* max-height: 410px; */
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    
   }
+    @media (min-width: 1500px){
+      flex-wrap: nowrap;
+    }
 `;
 const MarketBlock = styled.div`
   display: flex;

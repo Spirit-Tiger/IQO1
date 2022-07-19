@@ -5,6 +5,7 @@ import { Formik, Form, Field } from "formik";
 
 import GradientButton from "./GradientButton";
 import CopyIdIcon from "images/copy_id_icon.png";
+import VerifiedIcon from "images/verified_icon.png";
 import ProfileImageEdit from "./ProfileImageEdit";
 
 interface MyFormValues {
@@ -96,14 +97,20 @@ const ProfileEditForm = () => {
                   <div>
                     <FormattedMessage id="profile_edit_email" />
                   </div>
-                  <FormikStyledField name="email" />
+                  <VerifiedInputContainer>
+                    <FormikStyledField name="email" />
+                    <img src={VerifiedIcon} />
+                  </VerifiedInputContainer>
                 </label>
 
                 <label htmlFor="phone">
                   <div>
                     <FormattedMessage id="profile_edit_phone" />
                   </div>
-                  <FormikStyledField name="phone" />
+                  <VerifiedInputContainer>
+                    <FormikStyledField name="phone" />
+                    <img src={VerifiedIcon} />
+                  </VerifiedInputContainer>
                 </label>
               </EmailAndPhone>
               <SaveButton>
@@ -120,7 +127,22 @@ const ProfileEditForm = () => {
 export default ProfileEditForm;
 
 const ProfileEditFormContainer = styled.div`
-  margin-top: 50px;
+  margin: 20px 0 50px 0;
+  * {
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+
+    h2 {
+      font-size: 24px;
+    }
+  }
 `;
 
 const FormikStyledForm = styled(Form)`
@@ -198,7 +220,7 @@ const FormContainer = styled.div`
   width: 100%;
 
   label div {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
   }
 `;
@@ -238,6 +260,24 @@ const IdInputContainer = styled.div`
     :active {
       transform: scale(1.1);
     }
+  }
+
+  @media (max-width: 768px) {
+    img {
+      margin-right: 4%;
+    }
+  }
+`;
+
+const VerifiedInputContainer = styled.div`
+  position: relative;
+
+  img {
+    position: absolute;
+    margin-top: 15px;
+    margin-right: 4%;
+    top: 0;
+    right: 0;
   }
 `;
 

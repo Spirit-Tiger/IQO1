@@ -56,12 +56,16 @@ const TotalBalanceContainer = styled.div`
     flex-basis: 25%;
     height: 100%;
     width: 100%;
+    min-width: 282px;
     @media (min-width: 320px){
     }
     @media (min-width: 768px){
         flex-basis: 100%;
     }
     @media (min-width: 1280px){
+        flex-basis: calc(50% - 10px);
+    }
+    @media (min-width: 1500px){
         flex-basis: 25%;
     }
 `;
@@ -77,14 +81,19 @@ const FlexContainer = styled.div`
     border-radius: 12px;
     display: flex;
     height: fit-content;
-  
+    height: 290px;
+    p{
+        font-weight:500;
+        font-size: 12px;
+        color: white;
+    }
     /* justify-content: center; */
 
     @media (min-width: 320px){
         min-height: fit-content;
         flex-direction: column;
         align-items: center;
-
+        max-height: 290px;
     }
 
     @media (min-width: 768px){
@@ -103,18 +112,21 @@ const NameContainer = styled.div`
         font-weight: 500;
         font-size: 14px;
     }
+    overflow: hidden;
 `
 const NameComponentWrapper = styled.div`
     align-items: center;
     display: flex;
     flex-direction:column;
-    gap: 10px;
-    margin-top: 10px;
+    /* gap: 15px; */
+    row-gap: 15px;
+    margin-top: 15px;
 `
 const NameComponent = styled.div`
     align-items: center;
     display: flex;
-    gap: 10px;
+    height: 40px;
+    column-gap: 10px;
 `
 const IdComponentWrapper = styled.div`
     height:275px;
@@ -122,21 +134,19 @@ const IdComponentWrapper = styled.div`
     display: flex;
     flex-direction:column;
     padding: 0 10px;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 15px;
+    margin-top: 15px;
     border-left: 1px solid;
     border-right: none;
     border-bottom: none;
     border-top: none;
-    border-image: linear-gradient(to bottom,#00000000 5%, grey 5%, grey 95%, #00000000 95%) 1;
-    align-items: center;
-   
+    border-image: linear-gradient(to bottom,#00000000 0%, grey 0%, grey 95%, #00000000 95%) 1;
 `
 const IdComponent = styled.div`
     text-align: center;
     align-items: center;
     display: flex;
-    height: 47px;
+    height: 40px;
     gap: 10px;
    
 `
@@ -148,23 +158,23 @@ const ProfileImage = styled.img`
 
 const objects = [
     {
-        name:'Andrusha',
-        id:123
+        name:'Andrusha Sinkevich',
+        id:123456
     },
     {
-        name:'Andrusha',
-        id:123
+        name:'Andrusha Sinkevich',
+        id:123456
     },
     {
-        name:'Andrusha',
-        id:123
+        name:'Andrusha Sinkevich',
+        id:123456
     },
     {
-        name:'Andrusha',
-        id:123
+        name:'Andrusha Sinkevich',
+        id:123456
     },
     {
-        name:'Andrusha',
-        id:123
+        name:'Andrusha Sinkevich',
+        id:123456
     }
 ]
