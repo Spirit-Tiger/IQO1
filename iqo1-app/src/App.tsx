@@ -7,7 +7,7 @@ import MainPage from './pages/Main.Page';
 import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
 import DashboardMain from './components/Dashboard';
-import Market from './components/Market/Market';
+import Market from './components/Market';
 import Deposit from './components/Deposit';
 import Verify from './components/Verify';
 import Settings from './components/Settings';
