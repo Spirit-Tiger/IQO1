@@ -5,7 +5,7 @@ const DepositHistoryListItem = () => {
   return (
     <ItemContainer>
       <Transaction>Invest in TrashCoin by: 450,00 tokens</Transaction>
-      <Sum>+ 1200$</Sum>
+      <Sum className="sum">+ 1200$</Sum>
       <Date>12.10.22</Date>
     </ItemContainer>
   );
@@ -27,9 +27,15 @@ const ItemContainer = styled.div`
 
 const Transaction = styled.div`
   width: 326px;
+  font-size: 14px;
 `;
 
 const Sum = styled.div`
-width: 130px;`;
+  width: 130px;
+  font-weight: 700;
+  font-size: 16px;
+`;
 
-const Date = styled.div``;
+const Date = styled.div`
+  font-size: 14px;
+`;

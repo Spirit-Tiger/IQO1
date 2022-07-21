@@ -4,7 +4,7 @@ import styled from "styled-components";
 import DepositHistoryListItem from "../DepositHistoryListItem";
 
 const DepositHistoryList = () => {
-  const myArr = [1,2,3,4,5,6,7];
+  const myArr = [1, 2, 3, 4, 5, 6, 7];
 
   return (
     <HistoryListContainer>
@@ -17,7 +17,9 @@ const DepositHistoryList = () => {
           <SumHeader>Sum:</SumHeader>
           <DateHeader>Date:</DateHeader>
         </ListHeadings>
-        {myArr.map(()=>(<DepositHistoryListItem />))}
+        {myArr.map(() => (
+          <DepositHistoryListItem />
+        ))}
       </HistoryListContent>
     </HistoryListContainer>
   );
@@ -26,7 +28,9 @@ const DepositHistoryList = () => {
 export default DepositHistoryList;
 
 const HistoryListContainer = styled.div`
-  margin-top: 37px; width: 30vw;
+  margin-top: 37px;
+  width: 30vw;
+  min-width: 540px;
   h2 {
     font-weight: 600;
     font-size: 24px;
@@ -37,10 +41,16 @@ const HistoryListContainer = styled.div`
 
 const HistoryListContent = styled.div`
   /* width: 518px; */
-  height: 485px;
+  height: 500px;
   padding: 26px;
   background: #26313d;
   border-radius: 16px;
+
+  div:nth-child(2) {
+    .sum {
+      color: #00ca2c;
+    }
+  }
 
   div:last-child {
     border: none;

@@ -239,7 +239,7 @@ const CoinInput = styled.input`
 const ContinueContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 50px;
+  margin-top: 46px;
 `;
 
 const ContinueText = styled.p`
