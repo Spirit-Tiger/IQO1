@@ -117,5 +117,17 @@ export const messages = {
        market_header: "Market :",
        market_total_value: "Total Value Locked",
        market_yearly_grow: "Yearly Grow",
+
+       deposit_info_header: "Deposit",
+       deposit_info_text: "Текст-заполнитель — это текст, который имеет некоторые характеристики реального письменного текста, но является случайным набором слов или сгенерирован иным образом. Его можно использовать для отображения образца шрифтов, создания текста для тестирования или обхода спам-фильтра.",
+       deposit_choose_type_header: "Choose type:",
+       deposit_adress_header: "Adress:",
+       deposit_money_input_header: "How many:",
+       deposit_coin_input_header: "Coin:",
+       deposit_continue_text: "We check your transaction from 15 minute!",
+       deposit_continue_btn: "Continue",
+       deposit_history: "History transactions:",
+       
+
     }
 };
