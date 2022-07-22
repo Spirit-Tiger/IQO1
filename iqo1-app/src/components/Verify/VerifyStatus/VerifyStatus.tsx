@@ -51,8 +51,8 @@ const VerifyStatusContainer = styled.div`
   }
 
   @media (min-width: 320px) {
-    width: 90vw;
-
+    width: 85vw;
+    margin-top: 20px;
     div {
       width: 65%;
       display: flex;

@@ -47,7 +47,6 @@ flex-direction: column;
 const VerifyFlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  gap:10px;
 
   @media (max-width: 1280px) {
     justify-content: center;

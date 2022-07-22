@@ -14,7 +14,6 @@ export default DepositCoinList;
 
 const CoinListContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 170px);
   justify-content: space-between;
   grid-gap: 24px 28px;
   width: calc(100% - 100px);
@@ -23,4 +22,20 @@ const CoinListContainer = styled.div`
   margin-bottom: 40px;
   background: #26313d;
   border-radius: 16px;
+
+  @media (min-width: 320px) {
+    width: calc(85vw - 52px);
+    grid-template-columns: 100%;
+    grid-gap: 10px;
+    padding: 26px;
+    margin-top: 30px;
+  }
+
+  @media (min-width: 768px) {
+    width: calc(100% - 100px);
+    grid-template-columns: repeat(auto-fill, 170px);
+    grid-gap: 24px 28px;
+    padding: 32px 50px;
+    margin-top: 60px;
+  }
 `;

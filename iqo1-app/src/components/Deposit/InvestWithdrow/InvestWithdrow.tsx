@@ -83,10 +83,22 @@ const InvestWithdrowContainer = styled.div`
   width: 691px;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 320px) {
+    flex-direction: column;
+    width: 85vw;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 691px;
+  }
 `;
 
 const ChooseTypeContainer = styled.div`
   margin-top: 32px;
+  display: flex;
+  flex-direction: column;
 
   h3 {
     font-weight: 600;
@@ -106,6 +118,16 @@ const InvestWithdrowToggle = styled.div`
 
   button {
     padding: 0;
+  }
+
+  @media (min-width: 320px) {
+    align-self: center;
+    margin-top: 12px;
+  }
+
+  @media (min-width: 768px) {
+    align-self: flex-start;
+    margin-top: 0;
   }
 `;
 
@@ -172,10 +194,21 @@ const AdressInputContaien = styled.div`
     font-size: 14px;
     margin-top: 0;
   }
+
+  @media (min-width: 320px) {
+    h3 {
+      font-size: 10px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 14px;
+    }
+  }
 `;
 
 const AdressInput = styled.input`
-  width: 550px;
   height: 47px;
   border: 1px solid #7e7e7e;
   border-radius: 16px;
@@ -184,12 +217,32 @@ const AdressInput = styled.input`
   font-size: 16px;
   padding-left: 25px;
   color: #ffffff;
+
+  @media (min-width: 320px) {
+    width: calc(85vw - 25px);
+    border-radius: 8px;
+  }
+
+  @media (min-width: 768px) {
+    width: 550px;
+    border-radius: 16px;
+  }
 `;
 
 const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 690px;
+  width: 691px;
+
+  @media (min-width: 320px) {
+    flex-direction: column;
+    width: 85vw;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 691px;
+  }
 `;
 
 const MoneyInputContainer = styled.div`
@@ -199,6 +252,21 @@ const MoneyInputContainer = styled.div`
     font-weight: 600;
     font-size: 16px;
     margin-top: 0;
+  }
+  @media (min-width: 320px) {
+    margin-top: 20px;
+
+    h3 {
+      font-size: 10px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 32px;
+
+    h3 {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -212,6 +280,18 @@ const MoneyInput = styled.input`
   background: #12181e;
   font-weight: 600;
   font-size: 24px;
+
+  @media (min-width: 320px) {
+    width: calc(85vw - 25px);
+    height: 53px;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 768px) {
+    width: 300px;
+    height: 62px;
+    border-radius: 16px;
+  }
 `;
 
 const CoinInputContainer = styled.div`
@@ -221,6 +301,20 @@ const CoinInputContainer = styled.div`
     font-weight: 600;
     font-size: 16px;
     margin-top: 0;
+  }
+
+  @media (min-width: 320px) {
+    margin-top: 20px;
+    h3 {
+      font-size: 10px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 32px;
+    h3 {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -234,18 +328,44 @@ const CoinInput = styled.input`
   border: 1px solid #7e7e7e;
   border-radius: 16px;
   background: #12181e;
+
+  @media (min-width: 320px) {
+    width: calc(85vw - 25px);
+    height: 53px;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 768px) {
+    width: 300px;
+    height: 62px;
+    border-radius: 16px;
+  }
 `;
 
 const ContinueContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 46px;
+  
+
+  @media (min-width: 320px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 42px;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-top: 46px;
+  }
 `;
 
 const ContinueText = styled.p`
   font-size: 14px;
   color: #ffffff;
-  margin-right: 30px;
+  
+  @media (min-width: 768px) {
+    margin-right: 30px;
+  }
 `;
 
 const ContinueButton = styled.div`
@@ -255,5 +375,19 @@ const ContinueButton = styled.div`
     color: #000000;
     height: 46px;
     width: 210px;
+  }
+
+  @media (min-width: 320px) {
+    button {
+      font-weight: 800;
+      width: 85vw;
+    }
+  }
+
+  @media (min-width: 768px) {
+    button {
+      font-weight: 600;
+      width: 210px;
+    }
   }
 `;

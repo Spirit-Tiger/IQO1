@@ -14,6 +14,7 @@ const DepositHistoryList = () => {
       <HistoryListContent>
         <ListHeadings>
           <TransactionsHeader>Transactions:</TransactionsHeader>
+          <SumDateHeader>Sum/Date</SumDateHeader>
           <SumHeader>Sum:</SumHeader>
           <DateHeader>Date:</DateHeader>
         </ListHeadings>
@@ -30,12 +31,29 @@ export default DepositHistoryList;
 const HistoryListContainer = styled.div`
   margin-top: 37px;
   width: 30vw;
-  min-width: 540px;
+
   h2 {
     font-weight: 600;
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 12px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 30px;
+
+    h2 {
+      display: none;
+    }
+  }
+
+  @media (min-width: 320px) {
+    width: 85vw;
+  }
+
+  @media (min-width: 768px) {
+    width: 30vw;
+    min-width: 540px;
   }
 `;
 
@@ -47,7 +65,7 @@ const HistoryListContent = styled.div`
   border-radius: 16px;
 
   div:nth-child(2) {
-    .sum {
+    div .sum {
       color: #00ca2c;
     }
   }
@@ -55,6 +73,18 @@ const HistoryListContent = styled.div`
   div:last-child {
     border: none;
   }
+
+  @media (min-width: 320px) {
+    width: calc(85vw - 52px);
+    height: fit-content;
+    padding-bottom: 10px;
+  } 
+
+  @media (min-width: 768px) {
+    width: calc(100% - 52px);
+    height: 510px;
+    padding: 26px;
+  } 
 `;
 
 const ListHeadings = styled.div`
@@ -70,10 +100,42 @@ const ListHeadings = styled.div`
 
 const TransactionsHeader = styled.p`
   width: 326px;
+  font-size: 12px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+`;
+
+const SumDateHeader = styled.p`
+  font-size: 12px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const SumHeader = styled.p`
   width: 139px;
+  font-size: 16px;
+
+  @media (min-width: 320px) {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
 
-const DateHeader = styled.p``;
+const DateHeader = styled.p`
+  font-size: 16px;
+
+  @media (min-width: 320px) {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;

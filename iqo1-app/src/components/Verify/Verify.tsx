@@ -53,7 +53,6 @@ const VerifyContainer = styled.div`
 const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 10px;
 
   @media (max-width: 1280px) {
     justify-content: center;
