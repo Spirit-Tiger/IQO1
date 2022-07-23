@@ -33,7 +33,7 @@ export default Market;
 
 const MarketContainer = styled.div`
   color: white;
-  width: 100%;
+  width: 85%;
 `;
 
 const FlexContainer = styled.div`

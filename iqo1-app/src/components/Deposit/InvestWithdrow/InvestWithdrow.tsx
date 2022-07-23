@@ -90,8 +90,12 @@ const InvestWithdrowContainer = styled.div`
   }
 
   @media (min-width: 768px) {
+    width: 100%;
+  }
+
+  @media (min-width: 1280px) {
     flex-direction: row;
-    width: 691px;
+    width: 30vw;
   }
 `;
 
@@ -224,7 +228,12 @@ const AdressInput = styled.input`
   }
 
   @media (min-width: 768px) {
-    width: 550px;
+    width: calc(100% - 25px);
+    border-radius: 16px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 28vw;
     border-radius: 16px;
   }
 `;
@@ -232,7 +241,6 @@ const AdressInput = styled.input`
 const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 691px;
 
   @media (min-width: 320px) {
     flex-direction: column;
@@ -241,12 +249,19 @@ const FlexContainer = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    width: 691px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1280px) {
+    flex-direction: row;
+    width: 35vw;
   }
 `;
 
 const MoneyInputContainer = styled.div`
   margin-top: 32px;
+  width: 48%;
 
   h3 {
     font-weight: 600;
@@ -288,7 +303,7 @@ const MoneyInput = styled.input`
   }
 
   @media (min-width: 768px) {
-    width: 300px;
+    width: calc(100% - 25px);
     height: 62px;
     border-radius: 16px;
   }
@@ -296,6 +311,7 @@ const MoneyInput = styled.input`
 
 const CoinInputContainer = styled.div`
   margin-top: 32px;
+  width: 48%;
 
   h3 {
     font-weight: 600;
@@ -336,7 +352,7 @@ const CoinInput = styled.input`
   }
 
   @media (min-width: 768px) {
-    width: 300px;
+    width: calc(100% - 25px);
     height: 62px;
     border-radius: 16px;
   }
@@ -345,7 +361,6 @@ const CoinInput = styled.input`
 const ContinueContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  
 
   @media (min-width: 320px) {
     flex-direction: column;
@@ -362,7 +377,7 @@ const ContinueContainer = styled.div`
 const ContinueText = styled.p`
   font-size: 14px;
   color: #ffffff;
-  
+
   @media (min-width: 768px) {
     margin-right: 30px;
   }

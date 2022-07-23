@@ -23,8 +23,8 @@ const DashboardMain = () => {
         <Referal />
       </InfoBlockc>
       <MarketBlock>
-      <Market />
-      <DidHelp />
+        <Market />
+        <DidHelp />
       </MarketBlock>
     </DasboardMainContainer>
   );
@@ -37,16 +37,7 @@ const DasboardMainContainer = styled.div`
   flex-direction: column;
   height: fit-content;
   gap: 20px;
-  @media (min-width: 320px) {
-    width: 85%;
-  }
-  @media (min-width: 768px) {
-    width: 100%;
-    max-width: calc(100% - 380px);
-  }
-  @media (min-width: 1024px) {
-    /* width: 100%; */
-  }
+  width: 85%;
 `;
 
 const DashboardTitle = styled.h2`
@@ -81,11 +72,10 @@ const InfoBlockc = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    
   }
-    @media (min-width: 1500px){
-      flex-wrap: nowrap;
-    }
+  @media (min-width: 1500px) {
+    flex-wrap: nowrap;
+  }
 `;
 const MarketBlock = styled.div`
   display: flex;

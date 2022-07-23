@@ -29,7 +29,7 @@ const ItemContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    justify-content: flex-start;
+    justify-content: space-between;
 
     div {
       font-size: 16px;
@@ -59,7 +59,7 @@ const Sum = styled.div`
   }
 
   @media (min-width: 768px) {
-    width: 130px;
+    width: 120px;
   }
 `;
 

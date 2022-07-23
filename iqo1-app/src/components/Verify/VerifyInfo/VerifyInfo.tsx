@@ -39,7 +39,7 @@ const VerifyInfoContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    width: 60vw;
+    width: 100%;
   }
 
   @media (min-width: 1280px) {

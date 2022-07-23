@@ -28,7 +28,7 @@ const VerifyNeeded = () => {
 export default VerifyNeeded;
 
 const VerifyNeededContainer = styled.div`
-  width: 30vw;
+  width: 50vw;
   min-width: 400px;
   margin-top: 36px;
   display: flex;

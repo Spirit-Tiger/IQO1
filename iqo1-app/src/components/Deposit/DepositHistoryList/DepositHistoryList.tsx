@@ -15,12 +15,16 @@ const DepositHistoryList = () => {
         <ListHeadings>
           <TransactionsHeader>Transactions:</TransactionsHeader>
           <SumDateHeader>Sum/Date</SumDateHeader>
-          <SumHeader>Sum:</SumHeader>
-          <DateHeader>Date:</DateHeader>
+          <div>
+            <SumHeader>Sum:</SumHeader>
+            <DateHeader>Date:</DateHeader>
+          </div>
         </ListHeadings>
-        {myArr.map(() => (
-          <DepositHistoryListItem />
-        ))}
+        <ListItems>
+          {myArr.map(() => (
+            <DepositHistoryListItem />
+          ))}
+        </ListItems>
       </HistoryListContent>
     </HistoryListContainer>
   );
@@ -31,6 +35,7 @@ export default DepositHistoryList;
 const HistoryListContainer = styled.div`
   margin-top: 37px;
   width: 30vw;
+  height: initial;
 
   h2 {
     font-weight: 600;
@@ -52,19 +57,20 @@ const HistoryListContainer = styled.div`
   }
 
   @media (min-width: 768px) {
+    width: 100%;
+  }
+
+  @media (min-width: 1280px) {
     width: 30vw;
-    min-width: 540px;
   }
 `;
 
 const HistoryListContent = styled.div`
-  /* width: 518px; */
-  height: 500px;
   padding: 26px;
   background: #26313d;
   border-radius: 16px;
 
-  div:nth-child(2) {
+  div div:nth-child(1) {
     div .sum {
       color: #00ca2c;
     }
@@ -76,26 +82,44 @@ const HistoryListContent = styled.div`
 
   @media (min-width: 320px) {
     width: calc(85vw - 52px);
-    height: fit-content;
+    height: initial;
     padding-bottom: 10px;
-  } 
+  }
 
   @media (min-width: 768px) {
     width: calc(100% - 52px);
-    height: 510px;
     padding: 26px;
-  } 
+    padding-bottom: 5px;
+    height: calc(100% - 83px);
+  }
 `;
 
 const ListHeadings = styled.div`
   display: flex;
   padding: 0 6px;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(96, 96, 96, 1);
 
   p {
     margin-top: 0;
   }
 
-  border-bottom: 1px solid rgba(96, 96, 96, 1);
+  div p {
+    margin-top: 0;
+  }
+
+  @media (min-width: 320px) {
+    div {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    div {
+      display: flex;
+      align-items: center;
+    }
+  }
 `;
 
 const TransactionsHeader = styled.p`
@@ -116,26 +140,15 @@ const SumDateHeader = styled.p`
 `;
 
 const SumHeader = styled.p`
-  width: 139px;
+  width: 130px;
   font-size: 16px;
-
-  @media (min-width: 320px) {
-    display: none;
-  }
-
-  @media (min-width: 768px) {
-    display: block;
-  }
 `;
 
 const DateHeader = styled.p`
   font-size: 16px;
+`;
 
-  @media (min-width: 320px) {
-    display: none;
-  }
-
-  @media (min-width: 768px) {
-    display: block;
-  }
+const ListItems = styled.div`
+  height: 510px;
+  overflow: auto;
 `;
