@@ -26,6 +26,14 @@ const CoinItemContainer = styled.div`
   background: #1b242d;
   box-shadow: 0px 2px 15px rgba(1, 29, 102, 0.2);
   border-radius: 10px;
+
+  @media (min-width: 320px) {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    width: 170px;
+  }
 `;
 
 const ContentContainer = styled.div`

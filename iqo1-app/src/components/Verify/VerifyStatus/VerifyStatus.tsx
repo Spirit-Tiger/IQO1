@@ -51,8 +51,8 @@ const VerifyStatusContainer = styled.div`
   }
 
   @media (min-width: 320px) {
-    width: 90vw;
-
+    width: 100%;
+    margin-top: 20px;
     div {
       width: 65%;
       display: flex;
@@ -78,23 +78,25 @@ const VerifyStatusContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    width: 60vw;
+    width: 100%;
     margin-top: 20px;
 
     div {
       width: 65%;
+      min-width: 330px;
+      max-width: 430px;
       display: flex;
       align-items: center;
       justify-content: space-between;
 
       h3 {
         margin: 0;
-        font-size: 24px;
+        font-size: 22px;
       }
 
       p {
         margin: 0;
-        font-size: 18px;
+        font-size: 17px;
       }
 
       img {
@@ -106,7 +108,7 @@ const VerifyStatusContainer = styled.div`
 
   @media (min-width: 1280px) {
     width: 30vw;
-    min-width: 480px;
+    min-width: 400px;
     margin-top: 30px;
     div {
       width: 70%;

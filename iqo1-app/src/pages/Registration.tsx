@@ -207,7 +207,7 @@ const FormContainer = styled.div`
   box-shadow: 0 8px 4px rgba(0, 0, 0, 0.15);
 
   @media (min-width: 350px) {
-    width: 90vw;
+    width: 85vw;
     margin: 0px 10px 30px 10px;
   }
 

@@ -18,18 +18,32 @@ const DepositInfo = () => {
 export default DepositInfo;
 
 const DepositInfoContainer = styled.div`
-  width: 570px;
-  color: #ffffff;
-
   h2 {
     font-weight: 600;
     font-size: 32px;
-    margin-bottom: 12px;
   }
 
   p {
-    color: #e9e9e9;
+    margin: 0;
     font-size: 14px;
-    margin-bottom: 0;
+    color: #e9e9e9;
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: 320px) {
+    width: 85vw;
+  }
+
+  @media (min-width: 768px) {
+    width: 60vw;
+  }
+
+  @media (min-width: 1280px) {
+    width: 30vw;
   }
 `;

@@ -127,6 +127,7 @@ const ProfileEditForm = () => {
 export default ProfileEditForm;
 
 const ProfileEditFormContainer = styled.div`
+width: 100%;
   margin: 20px 0 50px 0;
   * {
     font-weight: 600;
@@ -155,7 +156,7 @@ const FormikStyledForm = styled(Form)`
   }
 
   @media (min-width: 768px) {
-    width: 60vw;
+    width: 100%;
   }
   @media (min-width: 1280px) {
     width: 30vw;
@@ -219,9 +220,21 @@ const FormContainer = styled.div`
   flex-direction: column;
   width: 100%;
 
+  label {
+    width: 100%;
+  }
+
   label div {
     font-size: 10px;
     font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    width: calc(100% - 110px);
+  }
+
+  @media (min-width: 1280px) {
+    width: 100%;
   }
 `;
 
@@ -310,7 +323,7 @@ const MobileContainer = styled.div`
     gap: 10px;
 
     input {
-      width: calc(24vw - 52px);
+      width: calc(100% - 52px);
     }
   }
 
@@ -344,7 +357,7 @@ const MobileContainer2 = styled.div`
     gap: 10px;
 
     input {
-      width: calc(24vw - 52px);
+      width: calc(100% - 52px);
     }
   }
 

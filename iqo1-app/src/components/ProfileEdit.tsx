@@ -37,17 +37,29 @@ const ProfileEdit = () => {
 export default ProfileEdit;
 
 const ProfileEditContainer = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   height: fit-content;
   width: 85%;
   gap: 20px;
+
+  @media (min-width: 320px) {
+    .totalBalance {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .totalBalance {
+      align-self: center;
+      width: calc(100% - 3vw);
+    }
+  }
 `;
 
 const VerifyFlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  gap:10px;
 
   @media (max-width: 1280px) {
     justify-content: center;

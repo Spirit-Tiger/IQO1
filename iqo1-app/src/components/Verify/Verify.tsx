@@ -40,20 +40,12 @@ const VerifyContainer = styled.div`
   flex-direction: column;
   height: fit-content;
   gap: 20px;
-  
-  @media (min-width: 320px) {
-    width: 85%;
-  }
-
-  @media (min-width: 768px) {
-    width: 100%;
-  }
+  width: 85%;
 `;
 
 const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 10px;
 
   @media (max-width: 1280px) {
     justify-content: center;
