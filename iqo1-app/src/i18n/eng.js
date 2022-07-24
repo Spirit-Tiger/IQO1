@@ -83,7 +83,7 @@ export const messages = {
 
        total_balance_header: "Total Balance :",
        invest_btn: "Invest",
-       withdrow_btn: "Withdrow",
+       withdrow_btn: "Withdraw",
        dashboard_title:'Dashboard', 
        dashboard_active_currency_title:'Your active:',
        dashboard_profit_title:'Profit:',
