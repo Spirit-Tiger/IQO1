@@ -12,12 +12,12 @@ const TotalBalance = () => {
       <BalanceHeader>
         <FormattedMessage id="total_balance_header" />
       </BalanceHeader>
-      <FlexContainer>
+      <FlexContainer className="forMarketChart">
         <BalanceContainer>
           <img src={TotalBalanceIcon} />
           <p>10 000, 00 $</p>
         </BalanceContainer>
-        <ButtonsContainer>
+        <ButtonsContainer className="hideButtons">
           <InvestButton>
             <img src={InvestIcon} />
             <FormattedMessage id="invest_btn" />
