@@ -38,7 +38,7 @@ function App() {
                 <Route path="dashboard" element={<Dashboard />}> 
                   <Route index element={<DashboardMain />} />
                   <Route path="market" element={<Market />} />
-                  <Route path="market/chart" element={<MarketChart />} />
+                  <Route path="market/:chart" element={<MarketChart />} />
                   <Route path="deposit" element={<Deposit />} />
                   <Route path="verify" element={<Verify />} />
                   <Route path="settings" element={<Settings />} />

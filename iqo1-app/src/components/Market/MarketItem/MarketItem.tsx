@@ -6,30 +6,29 @@ import { Link } from "react-router-dom";
 
 const MarketItem = () => {
   return (
-    <StyledLink to='chart' state={{chartSymbol:'AVAL'}}>
-    <MarketItemContainer>
-      <ContentContainer>
-        <TitleContainer>
-          <CoinImage src={CoinImg} />
-          <CoinHeader>COIN</CoinHeader>
-        </TitleContainer>
-        <InfoContainer>
-          <TotalValueContainer>
-            <Amount>1M$</Amount>
-
-            <TotalValue>
-              <FormattedMessage id="market_total_value" />
-            </TotalValue>
-          </TotalValueContainer>
-          <YearlyGrowContainer>
-            <Percentage>38.41%</Percentage>
-            <YearlyGrow>
-              <FormattedMessage id="market_yearly_grow" />
-            </YearlyGrow>
-          </YearlyGrowContainer>
-        </InfoContainer>
-      </ContentContainer>
-    </MarketItemContainer>
+    <StyledLink to="ETHUSDT">
+      <MarketItemContainer>
+        <ContentContainer>
+          <TitleContainer>
+            <CoinImage src={CoinImg} />
+            <CoinHeader>COIN</CoinHeader>
+          </TitleContainer>
+          <InfoContainer>
+            <TotalValueContainer>
+              <Amount>1M$</Amount>
+              <TotalValue>
+                <FormattedMessage id="market_total_value" />
+              </TotalValue>
+            </TotalValueContainer>
+            <YearlyGrowContainer>
+              <Percentage>38.41%</Percentage>
+              <YearlyGrow>
+                <FormattedMessage id="market_yearly_grow" />
+              </YearlyGrow>
+            </YearlyGrowContainer>
+          </InfoContainer>
+        </ContentContainer>
+      </MarketItemContainer>
     </StyledLink>
   );
 };
@@ -49,7 +48,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   /* color:rgba(137, 137, 137, 1); */
   color: inherit;
-`
+`;
 const ContentContainer = styled.div`
   width: 132px;
   height: 128px;
