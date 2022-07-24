@@ -13,6 +13,7 @@ import Verify from './components/Verify';
 import Settings from './components/Settings';
 import Registration from './pages/Registration';
 import ProfileEdit from 'components/ProfileEdit';
+import MarketChart from 'components/Market/MarketChart';
 
 const Wrapper = ({children}:any) => {
   const location = useLocation();
@@ -37,6 +38,7 @@ function App() {
                 <Route path="dashboard" element={<Dashboard />}> 
                   <Route index element={<DashboardMain />} />
                   <Route path="market" element={<Market />} />
+                  <Route path="market/chart" element={<MarketChart />} />
                   <Route path="deposit" element={<Deposit />} />
                   <Route path="verify" element={<Verify />} />
                   <Route path="settings" element={<Settings />} />

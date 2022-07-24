@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import CoinImg from "images/coin_icon.png";
 import { FormattedMessage } from "react-intl";
+import { Link } from "react-router-dom";
 
 const MarketItem = () => {
   return (
+    <StyledLink to='chart' state={{chartSymbol:'AVAL'}}>
     <MarketItemContainer>
       <ContentContainer>
         <TitleContainer>
@@ -28,6 +30,7 @@ const MarketItem = () => {
         </InfoContainer>
       </ContentContainer>
     </MarketItemContainer>
+    </StyledLink>
   );
 };
 
@@ -42,7 +45,11 @@ const MarketItemContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
-
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  /* color:rgba(137, 137, 137, 1); */
+  color: inherit;
+`
 const ContentContainer = styled.div`
   width: 132px;
   height: 128px;
